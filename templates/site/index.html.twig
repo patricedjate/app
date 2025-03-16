@@ -1,0 +1,44 @@
+{% extends 'acceuilBase.html.twig' %}
+{% block title %}Acceuil
+{% endblock %}
+{% block body %}
+<main class="container">
+	<div id="logo" class="sticky-top">
+		<a href="index.html"><img src="{{asset("assets/img/banner.png")}}" alt="" height="150px" width="100%"></a>
+	</div>
+	
+	<header class="masthead">
+		<div class="container px-4 px-lg-5 h-100">
+			<div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+				<div class="col-lg-8 align-self-end">
+					<h1 class="text-white font-weight-bold">Bienvenue Sur La Plateforme De Gestion De La Procedure D'Empotage</h1>
+					<hr class="divider"/>
+				</div>
+				<div class="col-lg-8 align-self-baseline">
+					<ul class="navbar-nav ms-auto my-2 my-lg-0 btn btn-success ">
+
+
+						<li class="nav-item dropdown ">
+							<a class="nav-link dropdown-toggle fs-5 " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Se Connecter
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a class="dropdown-item" href="{{path("chef_Index")}}">En tant que chef de bureau</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="{{path("agentIndex")}}">En tant qu'agent de visite</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="{{path("demandeEmpotage")}}">En tant que CDA</a>
+								</li>
+							</ul>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	</main>
+{% endblock %}

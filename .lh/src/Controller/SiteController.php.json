@@ -1,0 +1,98 @@
+{
+    "sourceFile": "src/Controller/SiteController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 20,
+            "patches": [
+                {
+                    "date": 1674463918945,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1674471102923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,5 +12,10 @@\n     public function index(): Response\n     {\n         return $this->render('site/index.html.twig');\n     }\n+    #[Route('/', name: 'HomePage')]\n+    public function chef(): Response\n+    {\n+        return $this->render('site/test.html.twig');\n+    }\n }\n"
+                },
+                {
+                    "date": 1674471136157,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     public function index(): Response\n     {\n         return $this->render('site/index.html.twig');\n     }\n-    #[Route('/', name: 'HomePage')]\n+    #[Route('/chef', name: 'chef.index')]\n     public function chef(): Response\n     {\n         return $this->render('site/test.html.twig');\n     }\n"
+                },
+                {
+                    "date": 1674483201700,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,7 +15,7 @@\n     }\n     #[Route('/chef', name: 'chef.index')]\n     public function chef(): Response\n     {\n-        return $this->render('site/test.html.twig');\n+        return $this->render('chef/test.html.twig');\n     }\n }\n"
+                },
+                {
+                    "date": 1674488305873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,10 @@\n     public function index(): Response\n     {\n         return $this->render('site/index.html.twig');\n     }\n-    #[Route('/chef', name: 'chef.index')]\n-    public function chef(): Response\n+    #[Route('/demandeEmpotage', name: 'demandeEmpoatge')]\n+    public function demande(): Response\n     {\n-        return $this->render('chef/test.html.twig');\n+        return $this->render('site/demande.html.twig');\n     }\n }\n"
+                },
+                {
+                    "date": 1676895870473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,21 +1,29 @@\n <?php\n \n namespace App\\Controller;\n \n+use App\\Repository\\UserRepository;\n use Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\n use Symfony\\Component\\HttpFoundation\\Response;\n use Symfony\\Component\\Routing\\Annotation\\Route;\n-\n class SiteController extends AbstractController\n {\n     #[Route('/', name: 'HomePage')]\n     public function index(): Response\n     {\n         return $this->render('site/index.html.twig');\n     }\n-    #[Route('/demandeEmpotage', name: 'demandeEmpoatge')]\n-    public function demande(): Response\n+    #[Route('/enregistrement', name: 'EnregistrementSucces')]\n+    public function succes(): Response\n     {\n-        return $this->render('site/demande.html.twig');\n+        return $this->render('site/EnregistrementSucces.html.twig');\n     }\n+    #[Route('/demandeEffectué', name: 'demandeSucces')]\n+    public function success(UserRepository $userRepository): Response\n+    {\n+        $nom = $userRepository->;\n+        return $this->render('site/Succes.html.twig');\n+    }\n+\n+ \n }\n"
+                },
+                {
+                    "date": 1676896098579,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <?php\n \n namespace App\\Controller;\n \n+use App\\Repository\\FicheRepository;\n use App\\Repository\\UserRepository;\n use Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\n use Symfony\\Component\\HttpFoundation\\Response;\n use Symfony\\Component\\Routing\\Annotation\\Route;\n@@ -18,11 +19,11 @@\n     {\n         return $this->render('site/EnregistrementSucces.html.twig');\n     }\n     #[Route('/demandeEffectué', name: 'demandeSucces')]\n-    public function success(UserRepository $userRepository): Response\n+    public function success(FicheRepository $ficheRepository): Response\n     {\n-        $nom = $userRepository->;\n+        $nom = $ficheRepository->find\n         return $this->render('site/Succes.html.twig');\n     }\n \n  \n"
+                },
+                {
+                    "date": 1676896210959,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,12 @@\n     }\n     #[Route('/demandeEffectué', name: 'demandeSucces')]\n     public function success(FicheRepository $ficheRepository): Response\n     {\n-        $nom = $ficheRepository->find\n+        $user = $ficheRepository->findOneById();\n+        $nom =$user->getUser()->getNom();\n+        $prenom =$user->getUser()->getPrenom();\n+        $Contact =$user->getUser()->getNom();\n         return $this->render('site/Succes.html.twig');\n     }\n \n  \n"
+                },
+                {
+                    "date": 1676896402778,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,10 +24,12 @@\n     {\n         $user = $ficheRepository->findOneById();\n         $nom =$user->getUser()->getNom();\n         $prenom =$user->getUser()->getPrenom();\n-        $Contact =$user->getUser()->getNom();\n-        return $this->render('site/Succes.html.twig');\n+        $Contact =$user->getUser()->getContact();\n+        return $this->render('site/Succes.html.twig',[\n+            \"nom\"=>$nom,\n+            \"prenom\"=>$prenom,\n+            \"contact\"=>$Contact,\n+        ]);\n     }\n-\n- \n }\n"
+                },
+                {
+                    "date": 1676896682505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,8 @@\n \n namespace App\\Controller;\n \n use App\\Repository\\FicheRepository;\n-use App\\Repository\\UserRepository;\n use Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\n use Symfony\\Component\\HttpFoundation\\Response;\n use Symfony\\Component\\Routing\\Annotation\\Route;\n class SiteController extends AbstractController\n@@ -22,9 +21,10 @@\n     #[Route('/demandeEffectué', name: 'demandeSucces')]\n     public function success(FicheRepository $ficheRepository): Response\n     {\n         $user = $ficheRepository->findOneById();\n-        $nom =$user->getUser()->getNom();\n+        $nom =$user->getUser();\n+        $nom = $nom->getNom();\n         $prenom =$user->getUser()->getPrenom();\n         $Contact =$user->getUser()->getContact();\n         return $this->render('site/Succes.html.twig',[\n             \"nom\"=>$nom,\n"
+                },
+                {
+                    "date": 1676896734786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     }\n     #[Route('/demandeEffectué', name: 'demandeSucces')]\n     public function success(FicheRepository $ficheRepository): Response\n     {\n-        $user = $ficheRepository->findOneById();\n+        $user = $ficheRepository->findId();\n         $nom =$user->getUser();\n         $nom = $nom->getNom();\n         $prenom =$user->getUser()->getPrenom();\n         $Contact =$user->getUser()->getContact();\n"
+                },
+                {
+                    "date": 1676902827342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,15 +21,14 @@\n     #[Route('/demandeEffectué', name: 'demandeSucces')]\n     public function success(FicheRepository $ficheRepository): Response\n     {\n         $user = $ficheRepository->findId();\n-        $nom =$user->getUser();\n-        $nom = $nom->getNom();\n-        $prenom =$user->getUser()->getPrenom();\n-        $Contact =$user->getUser()->getContact();\n+        $nom =$user->getUser()->getNom();\n+       dd($nom);\n+       # $prenom =$user->getUser()->getPrenom();\n+       # $Contact =$user->getUser()->getContact();\n         return $this->render('site/Succes.html.twig',[\n             \"nom\"=>$nom,\n-            \"prenom\"=>$prenom,\n-            \"contact\"=>$Contact,\n+          \n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1676902941685,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n     #[Route('/demandeEffectué', name: 'demandeSucces')]\n     public function success(FicheRepository $ficheRepository): Response\n     {\n         $user = $ficheRepository->findId();\n-        $nom =$user->getUser()->getNom();\n+        $nom =$user->getUser();\n        dd($nom);\n        # $prenom =$user->getUser()->getPrenom();\n        # $Contact =$user->getUser()->getContact();\n         return $this->render('site/Succes.html.twig',[\n"
+                },
+                {
+                    "date": 1676903100985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,14 +21,14 @@\n     #[Route('/demandeEffectué', name: 'demandeSucces')]\n     public function success(FicheRepository $ficheRepository): Response\n     {\n         $user = $ficheRepository->findId();\n-        $nom =$user->getUser();\n-       dd($nom);\n+        #$nom =$user->getUser();\n+       dd($user);\n        # $prenom =$user->getUser()->getPrenom();\n        # $Contact =$user->getUser()->getContact();\n         return $this->render('site/Succes.html.twig',[\n-            \"nom\"=>$nom,\n+           # \"nom\"=>$nom,\n           \n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1676903228629,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,11 +20,11 @@\n     }\n     #[Route('/demandeEffectué', name: 'demandeSucces')]\n     public function success(FicheRepository $ficheRepository): Response\n     {\n-        $user = $ficheRepository->findId();\n+        #$user = $ficheRepository->findId();\n         #$nom =$user->getUser();\n-       dd($user);\n+       #dd($user);\n        # $prenom =$user->getUser()->getPrenom();\n        # $Contact =$user->getUser()->getContact();\n         return $this->render('site/Succes.html.twig',[\n            # \"nom\"=>$nom,\n"
+                },
+                {
+                    "date": 1676904727505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,11 +20,11 @@\n     }\n     #[Route('/demandeEffectué', name: 'demandeSucces')]\n     public function success(FicheRepository $ficheRepository): Response\n     {\n-        #$user = $ficheRepository->findId();\n-        #$nom =$user->getUser();\n-       #dd($user);\n+        $user = $ficheRepository->findId();\n+        #$nom =$user->\n+       dd($user);\n        # $prenom =$user->getUser()->getPrenom();\n        # $Contact =$user->getUser()->getContact();\n         return $this->render('site/Succes.html.twig',[\n            # \"nom\"=>$nom,\n"
+                },
+                {
+                    "date": 1676904979040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,11 +20,11 @@\n     }\n     #[Route('/demandeEffectué', name: 'demandeSucces')]\n     public function success(FicheRepository $ficheRepository): Response\n     {\n-        $user = $ficheRepository->findId();\n+        $test = $ficheRepository->findId();\n         #$nom =$user->\n-       dd($user);\n+       dd($test);\n        # $prenom =$user->getUser()->getPrenom();\n        # $Contact =$user->getUser()->getContact();\n         return $this->render('site/Succes.html.twig',[\n            # \"nom\"=>$nom,\n"
+                },
+                {
+                    "date": 1676905461168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\n \n namespace App\\Controller;\n \n-use App\\Repository\\FicheRepository;\n+use App\\Repository\\UserRepository;\n use Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\n use Symfony\\Component\\HttpFoundation\\Response;\n use Symfony\\Component\\Routing\\Annotation\\Route;\n class SiteController extends AbstractController\n@@ -18,17 +18,12 @@\n     {\n         return $this->render('site/EnregistrementSucces.html.twig');\n     }\n     #[Route('/demandeEffectué', name: 'demandeSucces')]\n-    public function success(FicheRepository $ficheRepository): Response\n+    public function success(): Response\n     {\n-        $test = $ficheRepository->findId();\n-        #$nom =$user->\n-       dd($test);\n-       # $prenom =$user->getUser()->getPrenom();\n-       # $Contact =$user->getUser()->getContact();\n-        return $this->render('site/Succes.html.twig',[\n-           # \"nom\"=>$nom,\n-          \n-        ]);\n+        \n+        return $this->render('site/Succes.html.twig');\n     }\n+\n+ \n }\n"
+                },
+                {
+                    "date": 1676907054921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <?php\n \n namespace App\\Controller;\n \n+use App\\Repository\\FicheRepository;\n use App\\Repository\\UserRepository;\n use Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\n use Symfony\\Component\\HttpFoundation\\Response;\n use Symfony\\Component\\Routing\\Annotation\\Route;\n@@ -18,11 +19,12 @@\n     {\n         return $this->render('site/EnregistrementSucces.html.twig');\n     }\n     #[Route('/demandeEffectué', name: 'demandeSucces')]\n-    public function success(): Response\n+    public function success(FicheRepository $ficheRepository): Response\n     {\n-        \n+        $nom = $ficheRepository->finduserBy()->getUser()->getNom();\n+        dd($nom);\n         return $this->render('site/Succes.html.twig');\n     }\n \n  \n"
+                },
+                {
+                    "date": 1676907275883,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n \n namespace App\\Controller;\n-\n+use App\\Entity\\User;\n use App\\Repository\\FicheRepository;\n use App\\Repository\\UserRepository;\n use Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\n use Symfony\\Component\\HttpFoundation\\Response;\n"
+                },
+                {
+                    "date": 1676907310057,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,12 +19,12 @@\n     {\n         return $this->render('site/EnregistrementSucces.html.twig');\n     }\n     #[Route('/demandeEffectué', name: 'demandeSucces')]\n-    public function success(FicheRepository $ficheRepository): Response\n+    public function success(): Response\n     {\n-        $nom = $ficheRepository->finduserBy()->getUser()->getNom();\n-        dd($nom);\n+       \n+       \n         return $this->render('site/Succes.html.twig');\n     }\n \n  \n"
+                }
+            ],
+            "date": 1674463918945,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Controller;\n\nuse Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\nuse Symfony\\Component\\HttpFoundation\\Response;\nuse Symfony\\Component\\Routing\\Annotation\\Route;\n\nclass SiteController extends AbstractController\n{\n    #[Route('/', name: 'HomePage')]\n    public function index(): Response\n    {\n        return $this->render('site/index.html.twig');\n    }\n}\n"
+        }
+    ]
+}

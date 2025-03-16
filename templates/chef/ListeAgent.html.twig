@@ -1,0 +1,50 @@
+{% extends 'chefdashboardbase.html.twig' %}
+
+{% block title %}Liste Des Différents Agents De Visite{% endblock %}
+{% block stylesheets %}
+{{ parent() }}
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" />
+{% endblock %}
+{% block body %}
+    <h1>Liste Des Différents Agents De Visite</h1>
+
+    <table class="table"  id='table1'>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Contact</th>
+                <th>Nombre de Dossier</th>
+                <th >Voir les Demandes</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for agent in agents %}
+            <tr>
+                <td>{{ agent.nom }}</td>
+                <td>{{ agent.prenom }}</td>
+                <td>{{ agent.contact }}</td>
+                <td>{{ agent.NombreDossier }}</td>
+                <td><a href="{{path('ListeFicheTraite', {'id': agent.id})}}" class="btn btn-success">Traité<br> ()</a>
+                <a href="{{path('ListeFicheNonTraite', {'id': agent.id})}}" class="btn btn-danger">Non Traité<br> ()</a></td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="13">Aucun Enregistrement Trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    
+{% endblock %}
+{% block script %}
+{{ parent() }}
+
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script>
+	$(document).ready(function () {
+    $('#table1').DataTable();
+});
+</script>
+{% endblock %}

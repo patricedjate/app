@@ -1,0 +1,74 @@
+{
+    "sourceFile": "src/Repository/FicheRepository.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1676896055347,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1676896107221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -106,9 +106,9 @@\n             ->setParameter('val', $value)\n             ->getQuery()\n             ->getResult();\n    }\n-   public function findOneByNombreDossier() : ?fiche\n+   public function findOneById() : ?fiche\n     {\n         return $this->createQueryBuilder('a')\n         ->orderBy('a.Id', 'DESC')\n         ->setMaxResults(1)\n"
+                },
+                {
+                    "date": 1676896726054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -106,9 +106,9 @@\n             ->setParameter('val', $value)\n             ->getQuery()\n             ->getResult();\n    }\n-   public function findOneById() : ?fiche\n+   public function findId() : ?fiche\n     {\n         return $this->createQueryBuilder('a')\n         ->orderBy('a.Id', 'DESC')\n         ->setMaxResults(1)\n"
+                },
+                {
+                    "date": 1676903160150,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -106,9 +106,9 @@\n             ->setParameter('val', $value)\n             ->getQuery()\n             ->getResult();\n    }\n-   public function findId() : ?fiche\n+   public function findId() : ?Fiche\n     {\n         return $this->createQueryBuilder('a')\n         ->orderBy('a.Id', 'DESC')\n         ->setMaxResults(1)\n"
+                },
+                {
+                    "date": 1676904669458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -106,14 +106,13 @@\n             ->setParameter('val', $value)\n             ->getQuery()\n             ->getResult();\n    }\n-   public function findId() : ?Fiche\n+   public function findId() : array\n     {\n         return $this->createQueryBuilder('a')\n         ->orderBy('a.Id', 'DESC')\n         ->setMaxResults(1)\n         ->getQuery()\n-        ->getOneOrNullResult()\n-       ;\n+        ->getResult();\n    }\n }\n"
+                },
+                {
+                    "date": 1676904838019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -109,9 +109,9 @@\n    }\n    public function findId() : array\n     {\n         return $this->createQueryBuilder('a')\n-        ->orderBy('a.Id', 'DESC')\n+        ->orderBy('a.id', 'DESC')\n         ->setMaxResults(1)\n         ->getQuery()\n         ->getResult();\n    }\n"
+                },
+                {
+                    "date": 1676904882540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -109,9 +109,9 @@\n    }\n    public function findId() : array\n     {\n         return $this->createQueryBuilder('a')\n-        ->orderBy('a.id', 'DESC')\n+        ->orderBy('DESC')\n         ->setMaxResults(1)\n         ->getQuery()\n         ->getResult();\n    }\n"
+                },
+                {
+                    "date": 1676904928220,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -110,9 +110,9 @@\n    public function findId() : array\n     {\n         return $this->createQueryBuilder('a')\n         ->orderBy('DESC')\n-        ->setMaxResults(1)\n+        ->limit(1)\n         ->getQuery()\n         ->getResult();\n    }\n }\n"
+                },
+                {
+                    "date": 1676904937202,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -110,9 +110,9 @@\n    public function findId() : array\n     {\n         return $this->createQueryBuilder('a')\n         ->orderBy('DESC')\n-        ->limit(1)\n+        ->setMaxResults(1)\n         ->getQuery()\n         ->getResult();\n    }\n }\n"
+                },
+                {
+                    "date": 1676904947351,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -109,10 +109,8 @@\n    }\n    public function findId() : array\n     {\n         return $this->createQueryBuilder('a')\n-        ->orderBy('DESC')\n-        ->setMaxResults(1)\n         ->getQuery()\n         ->getResult();\n    }\n }\n"
+                },
+                {
+                    "date": 1676905096524,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -108,9 +108,9 @@\n             ->getResult();\n    }\n    public function findId() : array\n     {\n-        return $this->createQueryBuilder('a')\n+        return $this->createQueryBuilder('r')\n         ->getQuery()\n         ->getResult();\n    }\n }\n"
+                },
+                {
+                    "date": 1676905443399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -106,11 +106,6 @@\n             ->setParameter('val', $value)\n             ->getQuery()\n             ->getResult();\n    }\n-   public function findId() : array\n-    {\n-        return $this->createQueryBuilder('r')\n-        ->getQuery()\n-        ->getResult();\n-   }\n+  \n }\n"
+                },
+                {
+                    "date": 1676906805263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -106,6 +106,10 @@\n             ->setParameter('val', $value)\n             ->getQuery()\n             ->getResult();\n    }\n+   public function finduserBy(){\n+    return->createQueryBuilder('r')\n+    \n+   }\n   \n }\n"
+                },
+                {
+                    "date": 1676906951073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -106,10 +106,13 @@\n             ->setParameter('val', $value)\n             ->getQuery()\n             ->getResult();\n    }\n-   public function finduserBy(){\n-    return->createQueryBuilder('r')\n-    \n-   }\n+   public function finduserBy(): ?Fiche\n+   {\n+    return $this->createQueryBuilder('r')\n+                ->orderBy('r.User', 'DESC');\n+                ->getQuery();\n+                ->getResult();\n+   } \n   \n }\n"
+                },
+                {
+                    "date": 1676906995157,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -109,10 +109,10 @@\n    }\n    public function finduserBy(): ?Fiche\n    {\n     return $this->createQueryBuilder('r')\n-                ->orderBy('r.User', 'DESC');\n-                ->getQuery();\n-                ->getResult();\n+                ->orderBy('r.User', 'DESC')\n+                ->getQuery()\n+                ->getOneOrNullResult();\n    } \n   \n }\n"
+                }
+            ],
+            "date": 1676896055347,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Repository;\n\nuse App\\Entity\\Fiche;\nuse Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository;\nuse Doctrine\\Persistence\\ManagerRegistry;\n\n/**\n * @extends ServiceEntityRepository<Fiche>\n *\n * @method Fiche|null find($id, $lockMode = null, $lockVersion = null)\n * @method Fiche|null findOneBy(array $criteria, array $orderBy = null)\n * @method Fiche[]    findAll()\n * @method Fiche[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)\n */\nclass FicheRepository extends ServiceEntityRepository\n{\n    public function __construct(ManagerRegistry $registry)\n    {\n        parent::__construct($registry, Fiche::class);\n    }\n\n    public function save(Fiche $entity, bool $flush = false): void\n    {\n        $this->getEntityManager()->persist($entity);\n\n        if ($flush) {\n            $this->getEntityManager()->flush();\n        }\n    }\n\n    public function remove(Fiche $entity, bool $flush = false): void\n    {\n        $this->getEntityManager()->remove($entity);\n\n        if ($flush) {\n            $this->getEntityManager()->flush();\n        }\n    }\n\n//    /**\n//     * @return Fiche[] Returns an array of Fiche objects\n//     */\n//    public function findByExampleField($value): array\n//    {\n//        return $this->createQueryBuilder('f')\n//            ->andWhere('f.exampleField = :val')\n//            ->setParameter('val', $value)\n//            ->orderBy('f.id', 'ASC')\n//            ->setMaxResults(10)\n//            ->getQuery()\n//            ->getResult()\n//        ;\n//    }\n\n//    public function findOneBySomeField($value): ?Fiche\n//    {\n//        return $this->createQueryBuilder('f')\n//            ->andWhere('f.exampleField = :val')\n//            ->setParameter('val', $value)\n//            ->getQuery()\n//            ->getOneOrNullResult()\n//        ;\n//    }\npublic function findNbre()\n   {\n       return $this->createQueryBuilder('r')\n           ->getQuery()\n           ->getResult();\n   }\n   public function findFiche($value):?Fiche\n   {\n        return $this->createQueryBuilder('r')\n            ->andWhere('r.id = :val')\n            ->setParameter('val', $value)\n            ->getQuery()\n            ->getOneOrNullResult();\n   }\n   public function findAllFicheByUser($value): array{\n        return $this->createQueryBuilder('r')\n            ->andWhere('r.user = :val and r.statut = false')\n            ->setParameter('val',$value)\n            ->getQuery()\n            ->getResult();\n   }\n   public function findAllFicheEffectueByUser($value): array{\n    return $this->createQueryBuilder('r')\n        ->andWhere('r.user = :val and r.statut = true')\n        ->setParameter('val',$value)\n        ->getQuery()\n        ->getResult();\n}\n   public function countByDate()\n   {\n        return $this->createQueryBuilder('r')\n            ->select('SUBSTRING(r.date, 1,10) as nbrejour, COUNT(r) as count')\n            ->groupby('nbrejour')\n            ->getquery()\n            ->getResult();\n   }\n   public function findFicheByUser($value) : array\n   {\n        return $this->createQueryBuilder('r')\n            ->andWhere('r.user = :val')\n            ->setParameter('val', $value)\n            ->getQuery()\n            ->getResult();\n   }\n   public function findOneByNombreDossier() : ?fiche\n    {\n        return $this->createQueryBuilder('a')\n        ->orderBy('a.Id', 'DESC')\n        ->setMaxResults(1)\n        ->getQuery()\n        ->getOneOrNullResult()\n       ;\n   }\n}\n"
+        }
+    ]
+}

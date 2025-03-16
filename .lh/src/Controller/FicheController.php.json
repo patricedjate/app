@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/Controller/FicheController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1675331530107,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1675331595102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,8 @@\n \n namespace App\\Controller;\n \n use App\\Entity\\Fiche;\n-use App\\Entity\\RapportEmpotage;\n-use App\\Form\\RapportEmpotageType;\n use App\\Form\\Fiche1Type;\n use App\\Repository\\FicheRepository;\n use Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\n use Symfony\\Component\\HttpFoundation\\Request;\n"
+                },
+                {
+                    "date": 1675776097381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n         return $this->render('chef/fiche/show.html.twig', [\n             'fiche' => $fiche,\n         ]);\n     }\n-\n+    \n     #[Route('/{id}/edit', name: 'app_fiche_edit', methods: ['GET', 'POST'])]\n     public function edit(Request $request, Fiche $fiche, FicheRepository $ficheRepository): Response\n     {\n         $form = $this->createForm(Fiche1Type::class, $fiche);\n"
+                },
+                {
+                    "date": 1694594344249,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n         }\n \n         return $this->renderForm('chef/fiche/edit.html.twig', [\n             'fiche' => $fiche,\n-            'form' => $form,\n+            'form' => $form,²\n         ]);\n     }\n \n     #[Route('/{id}', name: 'app_fiche_delete', methods: ['POST'])]\n"
+                }
+            ],
+            "date": 1675331530107,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Controller;\n\nuse App\\Entity\\Fiche;\nuse App\\Entity\\RapportEmpotage;\nuse App\\Form\\RapportEmpotageType;\nuse App\\Form\\Fiche1Type;\nuse App\\Repository\\FicheRepository;\nuse Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\nuse Symfony\\Component\\HttpFoundation\\Request;\nuse Symfony\\Component\\HttpFoundation\\Response;\nuse Symfony\\Component\\Routing\\Annotation\\Route;\n\n#[Route('/chef/fiche')]\nclass FicheController extends AbstractController\n{\n    #[Route('/', name: 'app_fiche_index', methods: ['GET'])]\n    public function index(FicheRepository $ficheRepository): Response\n    {\n        return $this->render('chef/fiche/index.html.twig', [\n            'fiches' => $ficheRepository->findAll(),\n        ]);\n    }\n\n    #[Route('/new', name: 'app_fiche_new', methods: ['GET', 'POST'])]\n    public function new(Request $request, FicheRepository $ficheRepository): Response\n    {\n        $fiche = new Fiche();\n        $form = $this->createForm(Fiche1Type::class, $fiche);\n        $form->handleRequest($request);\n\n        if ($form->isSubmitted() && $form->isValid()) {\n            $ficheRepository->save($fiche, true);\n\n            return $this->redirectToRoute('app_fiche_index', [], Response::HTTP_SEE_OTHER);\n        }\n\n        return $this->renderForm('chef/fiche/new.html.twig', [\n            'fiche' => $fiche,\n            'form' => $form,\n        ]);\n    }\n\n    #[Route('/{id}', name: 'app_fiche_show', methods: ['GET'])]\n    public function show(Fiche $fiche): Response\n    {\n        return $this->render('chef/fiche/show.html.twig', [\n            'fiche' => $fiche,\n        ]);\n    }\n\n    #[Route('/{id}/edit', name: 'app_fiche_edit', methods: ['GET', 'POST'])]\n    public function edit(Request $request, Fiche $fiche, FicheRepository $ficheRepository): Response\n    {\n        $form = $this->createForm(Fiche1Type::class, $fiche);\n        $form->handleRequest($request);\n\n        if ($form->isSubmitted() && $form->isValid()) {\n            $ficheRepository->save($fiche, true);\n\n            return $this->redirectToRoute('app_fiche_index', [], Response::HTTP_SEE_OTHER);\n        }\n\n        return $this->renderForm('chef/fiche/edit.html.twig', [\n            'fiche' => $fiche,\n            'form' => $form,\n        ]);\n    }\n\n    #[Route('/{id}', name: 'app_fiche_delete', methods: ['POST'])]\n    public function delete(Request $request, Fiche $fiche, FicheRepository $ficheRepository): Response\n    {\n        if ($this->isCsrfTokenValid('delete'.$fiche->getId(), $request->request->get('_token'))) {\n            $ficheRepository->remove($fiche, true);\n        }\n\n        return $this->redirectToRoute('app_fiche_index', [], Response::HTTP_SEE_OTHER);\n    }\n}\n"
+        }
+    ]
+}

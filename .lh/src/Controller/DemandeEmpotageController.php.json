@@ -1,0 +1,82 @@
+{
+    "sourceFile": "src/Controller/DemandeEmpotageController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 16,
+            "patches": [
+                {
+                    "date": 1674549147359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1674549519609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,11 +18,11 @@\n         $form = $this->createForm(FicheType::class, $fiche);\n         $form->handleRequest($request);\n         if ($form->isSubmitted() && $form->isValid()) {\n             $fiche = $form->getData();\n+            $manager->persist($fiche);\n+            $manager->flush();\n             # return $this->redirectToRoute('task_success');\n-            $manager->persist($fiche);\n-            $manager->persist();\n         }\n         return $this->render('demande_empotage/index.html.twig', [\n             'form' => $form,\n         ]);\n"
+                },
+                {
+                    "date": 1674549583581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n \n namespace App\\Controller;\n \n use App\\Entity\\Fiche;\n+use App\\Form\\FicheType;\n use Doctrine\\ORM\\EntityManagerInterface;\n use Symfony\\Component\\HttpFoundation\\Request;\n use Symfony\\Component\\HttpFoundation\\Response;\n use Symfony\\Component\\Routing\\Annotation\\Route;\n"
+                },
+                {
+                    "date": 1676895143156,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,17 @@\n <?php\n \n namespace App\\Controller;\n \n+use App\\Entity\\AgentVisite;\n+use App\\Entity\\RapportEmpotage;\n+use doctrine;\n+use App\\Entity\\User;\n use App\\Entity\\Fiche;\n use App\\Form\\FicheType;\n+use App\\Repository\\AgentVisiteRepository;\n+use App\\Repository\\RapportEmpotageRepository;\n+use App\\Repository\\UserRepository;\n use Doctrine\\ORM\\EntityManagerInterface;\n use Symfony\\Component\\HttpFoundation\\Request;\n use Symfony\\Component\\HttpFoundation\\Response;\n use Symfony\\Component\\Routing\\Annotation\\Route;\n@@ -12,20 +19,37 @@\n \n class DemandeEmpotageController extends AbstractController\n {\n     #[Route('/demandeEmpotage', name: 'demandeEmpotage')]\n-    public function index(Request $request, EntityManagerInterface $manager): Response\n+    public function index(Request $request, EntityManagerInterface $manager, UserRepository $repository): Response\n     {\n         $fiche = new Fiche();\n+        $rapport = new RapportEmpotage;\n+        $agent = $repository->findOneByNombreDossier();\n+        $agentNbre = $agent->getNombreDossier();\n+        $NbreDossier =   $agentNbre+1;\n+        $nomAgent = $agent->getNom();\n+        $prenomAgent = $agent->getPrenom();\n+        $contactAgent = $agent->getContact();\n+        $NbreDossier = strval($NbreDossier);\n         $form = $this->createForm(FicheType::class, $fiche);\n         $form->handleRequest($request);\n         if ($form->isSubmitted() && $form->isValid()) {\n             $fiche = $form->getData();\n+            $fiche->setUser($agent);\n+            $fiche->setStatut(false);\n+            $agent->setNombreDossier($NbreDossier);\n             $manager->persist($fiche);\n+            $rapport->setFiche($fiche);\n+            $rapport->setUser($agent);\n+            $manager->persist($rapport);\n             $manager->flush();\n-            # return $this->redirectToRoute('task_success');\n+            return $this->redirectToRoute('demandeSucces');\n         }\n         return $this->render('demande_empotage/index.html.twig', [\n             'form' => $form,\n+            \"nom\"=>$nomAgent,\n+            \"prenom\"=>$prenomAgent,\n+            \"contact\"=>$contactAgent,\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1676896628736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,10 +46,7 @@\n             return $this->redirectToRoute('demandeSucces');\n         }\n         return $this->render('demande_empotage/index.html.twig', [\n             'form' => $form,\n-            \"nom\"=>$nomAgent,\n-            \"prenom\"=>$prenomAgent,\n-            \"contact\"=>$contactAgent,\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1676905521820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,7 +46,10 @@\n             return $this->redirectToRoute('demandeSucces');\n         }\n         return $this->render('demande_empotage/index.html.twig', [\n             'form' => $form,\n+            \"nom\"=>$nomAgent,\n+            \"prenom\"=>$prenomAgent,\n+            \"contact\"=>$contactAgent,\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1676906672775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,11 @@\n             $rapport->setFiche($fiche);\n             $rapport->setUser($agent);\n             $manager->persist($rapport);\n             $manager->flush();\n-            return $this->redirectToRoute('demandeSucces');\n+            return $this->redirectToRoute('demandeSucces',[\n+                'nom'=> $nomAgent,\n+            ]);\n         }\n         return $this->render('demande_empotage/index.html.twig', [\n             'form' => $form,\n             \"nom\"=>$nomAgent,\n"
+                },
+                {
+                    "date": 1676906740646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,11 +42,9 @@\n             $rapport->setFiche($fiche);\n             $rapport->setUser($agent);\n             $manager->persist($rapport);\n             $manager->flush();\n-            return $this->redirectToRoute('demandeSucces',[\n-                'nom'=> $nomAgent,\n-            ]);\n+            return $this->redirectToRoute('demandeSucces');\n         }\n         return $this->render('demande_empotage/index.html.twig', [\n             'form' => $form,\n             \"nom\"=>$nomAgent,\n"
+                },
+                {
+                    "date": 1677513317058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n use Symfony\\Component\\HttpFoundation\\Request;\n use Symfony\\Component\\HttpFoundation\\Response;\n use Symfony\\Component\\Routing\\Annotation\\Route;\n use Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\n-\n+#[Route('/cda')]\n class DemandeEmpotageController extends AbstractController\n {\n     #[Route('/demandeEmpotage', name: 'demandeEmpotage')]\n     public function index(Request $request, EntityManagerInterface $manager, UserRepository $repository): Response\n"
+                },
+                {
+                    "date": 1677739510201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,10 @@\n use doctrine;\n use App\\Entity\\User;\n use App\\Entity\\Fiche;\n use App\\Form\\FicheType;\n-use App\\Repository\\AgentVisiteRepository;\n-use App\\Repository\\RapportEmpotageRepository;\n+use Symfony\\Component\\Mailer\\MailerInterface;\n+use Symfony\\Component\\Mime\\Email;\n use App\\Repository\\UserRepository;\n use Doctrine\\ORM\\EntityManagerInterface;\n use Symfony\\Component\\HttpFoundation\\Request;\n use Symfony\\Component\\HttpFoundation\\Response;\n"
+                },
+                {
+                    "date": 1677739557218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,12 @@\n #[Route('/cda')]\n class DemandeEmpotageController extends AbstractController\n {\n     #[Route('/demandeEmpotage', name: 'demandeEmpotage')]\n-    public function index(Request $request, EntityManagerInterface $manager, UserRepository $repository): Response\n+    public function index(Request $request, \n+    EntityManagerInterface $manager,\n+     UserRepository $repository,\n+     MailerInterface $mailer): Response\n     {\n         $fiche = new Fiche();\n         $rapport = new RapportEmpotage;\n         $agent = $repository->findOneByNombreDossier();\n"
+                },
+                {
+                    "date": 1677739576398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,8 +45,20 @@\n             $rapport->setFiche($fiche);\n             $rapport->setUser($agent);\n             $manager->persist($rapport);\n             $manager->flush();\n+            $email = (new Email())\n+            ->from('hello@example.com')\n+            ->to('you@example.com')\n+            //->cc('cc@example.com')\n+            //->bcc('bcc@example.com')\n+            //->replyTo('fabien@example.com')\n+            //->priority(Email::PRIORITY_HIGH)\n+            ->subject('Time for Symfony Mailer!')\n+            ->text('Sending emails is fun again!')\n+            ->html('<p>See Twig integration for better HTML integration!</p>');\n+\n+        $mailer->send($email);\n             return $this->redirectToRoute('demandeSucces');\n         }\n         return $this->render('demande_empotage/index.html.twig', [\n             'form' => $form,\n"
+                },
+                {
+                    "date": 1677739632986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,11 +52,11 @@\n             //->cc('cc@example.com')\n             //->bcc('bcc@example.com')\n             //->replyTo('fabien@example.com')\n             //->priority(Email::PRIORITY_HIGH)\n-            ->subject('Time for Symfony Mailer!')\n+            ->subject('Time for Symfony Mailerreeryezry!')\n             ->text('Sending emails is fun again!')\n-            ->html('<p>See Twig integration for better HTML integration!</p>');\n+            ->html('<p>See Twig integration for better HTML integration!ezyrzezer</p>');\n \n         $mailer->send($email);\n             return $this->redirectToRoute('demandeSucces');\n         }\n"
+                },
+                {
+                    "date": 1677740654274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,10 +46,10 @@\n             $rapport->setUser($agent);\n             $manager->persist($rapport);\n             $manager->flush();\n             $email = (new Email())\n-            ->from('hello@example.com')\n-            ->to('you@example.com')\n+            ->from('djtpCompany@gmail.com')\n+            ->to('test@gmail.com')\n             //->cc('cc@example.com')\n             //->bcc('bcc@example.com')\n             //->replyTo('fabien@example.com')\n             //->priority(Email::PRIORITY_HIGH)\n"
+                },
+                {
+                    "date": 1703539038723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,10 +21,9 @@\n {\n     #[Route('/demandeEmpotage', name: 'demandeEmpotage')]\n     public function index(Request $request, \n     EntityManagerInterface $manager,\n-     UserRepository $repository,\n-     MailerInterface $mailer): Response\n+     UserRepository $repository): Response\n     {\n         $fiche = new Fiche();\n         $rapport = new RapportEmpotage;\n         $agent = $repository->findOneByNombreDossier();\n@@ -39,32 +38,18 @@\n         if ($form->isSubmitted() && $form->isValid()) {\n             $fiche = $form->getData();\n             $fiche->setUser($agent);\n             $fiche->setStatut(false);\n+            $fiche->set\n             $agent->setNombreDossier($NbreDossier);\n             $manager->persist($fiche);\n             $rapport->setFiche($fiche);\n             $rapport->setUser($agent);\n             $manager->persist($rapport);\n             $manager->flush();\n-            $email = (new Email())\n-            ->from('djtpCompany@gmail.com')\n-            ->to('test@gmail.com')\n-            //->cc('cc@example.com')\n-            //->bcc('bcc@example.com')\n-            //->replyTo('fabien@example.com')\n-            //->priority(Email::PRIORITY_HIGH)\n-            ->subject('Time for Symfony Mailerreeryezry!')\n-            ->text('Sending emails is fun again!')\n-            ->html('<p>See Twig integration for better HTML integration!ezyrzezer</p>');\n-\n-        $mailer->send($email);\n-            return $this->redirectToRoute('demandeSucces');\n-        }\n-        return $this->render('demande_empotage/index.html.twig', [\n-            'form' => $form,\n-            \"nom\"=>$nomAgent,\n-            \"prenom\"=>$prenomAgent,\n-            \"contact\"=>$contactAgent,\n-        ]);\n+        \n     }\n+    return $this->render('demande_empotage/index.html.twig',[\n+        'form' => $form->createView(),\n+    ]);\n }\n+}\n"
+                },
+                {
+                    "date": 1703539064245,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n         if ($form->isSubmitted() && $form->isValid()) {\n             $fiche = $form->getData();\n             $fiche->setUser($agent);\n             $fiche->setStatut(false);\n-            $fiche->set\n+            $fiche->setCdaId()\n             $agent->setNombreDossier($NbreDossier);\n             $manager->persist($fiche);\n             $rapport->setFiche($fiche);\n             $rapport->setUser($agent);\n"
+                },
+                {
+                    "date": 1703539570033,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,8 @@\n         if ($form->isSubmitted() && $form->isValid()) {\n             $fiche = $form->getData();\n             $fiche->setUser($agent);\n             $fiche->setStatut(false);\n-            $fiche->setCdaId()\n             $agent->setNombreDossier($NbreDossier);\n             $manager->persist($fiche);\n             $rapport->setFiche($fiche);\n             $rapport->setUser($agent);\n"
+                }
+            ],
+            "date": 1674549147359,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Controller;\n\nuse App\\Entity\\Fiche;\nuse Doctrine\\ORM\\EntityManagerInterface;\nuse Symfony\\Component\\HttpFoundation\\Request;\nuse Symfony\\Component\\HttpFoundation\\Response;\nuse Symfony\\Component\\Routing\\Annotation\\Route;\nuse Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\n\nclass DemandeEmpotageController extends AbstractController\n{\n    #[Route('/demandeEmpotage', name: 'demandeEmpotage')]\n    public function index(Request $request, EntityManagerInterface $manager): Response\n    {\n        $fiche = new Fiche();\n        $form = $this->createForm(FicheType::class, $fiche);\n        $form->handleRequest($request);\n        if ($form->isSubmitted() && $form->isValid()) {\n            $fiche = $form->getData();\n            # return $this->redirectToRoute('task_success');\n            $manager->persist($fiche);\n            $manager->persist();\n        }\n        return $this->render('demande_empotage/index.html.twig', [\n            'form' => $form,\n        ]);\n    }\n}\n"
+        }
+    ]
+}

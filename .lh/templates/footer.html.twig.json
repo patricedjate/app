@@ -1,0 +1,150 @@
+{
+    "sourceFile": "templates/footer.html.twig",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 33,
+            "patches": [
+                {
+                    "date": 1674465684421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1674465721093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -85,9 +85,9 @@\n \t\t\t<div class=\"copyright\">\r\n \t\t\t\t<div class=\"row\">\r\n \t\t\t\t\t<div class=\"col-md-6 col-lg-6\">\r\n \t\t\t\t\t\t<div class=\"copyright-text\">\r\n-\t\t\t\t\t\t\t<p class=\"mb-0\">&copy; 2023 Doccure. Tous droits reservés.</p>\r\n+\t\t\t\t\t\t\t<p class=\"mb-0\">&copy; 2023 Douanes Ivoiriennes. Tous droits reservés.</p>\r\n \t\t\t\t\t\t</div>\r\n \t\t\t\t\t</div>\r\n \t\t\t\t\t<div class=\"col-md-6 col-lg-6\">\r\n \r\n"
+                },
+                {
+                    "date": 1674465742229,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<footer class=\"footer footer-one\">\r\n+<footer class=\"footer footer-one bg-warning\">\r\n \r\n \t<div class=\"footer-top aos\" data-aos=\"fade-up\">\r\n \t\t<div class=\"container\">\r\n \t\t\t<div class=\"row\">\r\n"
+                },
+                {
+                    "date": 1674465769238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,112 +1,5 @@\n <footer class=\"footer footer-one bg-warning\">\r\n \r\n-\t<div class=\"footer-top aos\" data-aos=\"fade-up\">\r\n-\t\t<div class=\"container\">\r\n-\t\t\t<div class=\"row\">\r\n-\t\t\t\t<div class=\"col-lg-3 col-md-6\">\r\n+\t\r\n \r\n-\t\t\t\t\t<div class=\"footer-widget footer-about\">\r\n-\t\t\t\t\t\t<div class=\"footer-logo\">\r\n-\t\t\t\t\t\t\t<img src=\"assets/img/footer-logo.png\" alt=\"logo\">\r\n-\t\t\t\t\t\t</div>\r\n-\t\t\t\t\t\t<div class=\"footer-about-content\">\r\n-\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n-\t\t\t\t\t\t\t<div class=\"social-icon\">\r\n-\t\t\t\t\t\t\t\t<ul>\r\n-\t\t\t\t\t\t\t\t\t<li><a href=\"#\" target=\"_blank\"><i class=\"fab fa-facebook\"></i></a></li>\r\n-\t\t\t\t\t\t\t\t\t<li><a href=\"#\" target=\"_blank\"><i class=\"fab fa-linkedin\"></i></a></li>\r\n-\t\t\t\t\t\t\t\t\t<li><a href=\"#\" target=\"_blank\"><i class=\"fab fa-instagram\"></i></a></li>\r\n-\t\t\t\t\t\t\t\t\t<li><a href=\"#\" target=\"_blank\"><i class=\"fab fa-twitter\"></i></a></li>\r\n-\t\t\t\t\t\t\t\t</ul>\r\n-\t\t\t\t\t\t\t</div>\r\n-\t\t\t\t\t\t</div>\r\n-\t\t\t\t\t</div>\r\n-\r\n-\t\t\t\t</div>\r\n-\t\t\t\t<div class=\"col-lg-3 col-md-6\">\r\n-\r\n-\t\t\t\t\t<div class=\"footer-widget footer-menu\">\r\n-\t\t\t\t\t\t<h2 class=\"footer-title\">Pour Les Patients</h2>\r\n-\t\t\t\t\t\t<ul>\r\n-\t\t\t\t\t\t\t<li><a href=\"search.html\">Rechercher un docteur</a></li>\r\n-\t\t\t\t\t\t\t<li><a href=\"login.html\">Se connecter</a></li>\r\n-\t\t\t\t\t\t\t<li><a href=\"register.html\">S'inscrire</a></li>\r\n-\t\t\t\t\t\t\t<li><a href=\"booking.html\">Réservation</a></li>\r\n-\t\t\t\t\t\t\t<li><a href=\"patient-dashboard.html\">Dashboard des patients</a></li>\r\n-\t\t\t\t\t\t</ul>\r\n-\t\t\t\t\t</div>\r\n-\r\n-\t\t\t\t</div>\r\n-\t\t\t\t<div class=\"col-lg-3 col-md-6\">\r\n-\r\n-\t\t\t\t\t<div class=\"footer-widget footer-menu\">\r\n-\t\t\t\t\t\t<h2 class=\"footer-title\">Pour Les Docteurs</h2>\r\n-\t\t\t\t\t\t<ul>\r\n-\t\t\t\t\t\t\t<li><a href=\"appointments.html\">Rendez-vous</a></li>\r\n-\t\t\t\t\t\t\t<li><a href=\"chat.html\">Chat</a></li>\r\n-\t\t\t\t\t\t\t<li><a href=\"login.html\">Se connecter</a></li>\r\n-\t\t\t\t\t\t\t<li><a href=\"doctor-register.html\">S'inscrire</a></li>\r\n-\t\t\t\t\t\t\t<li><a href=\"doctor-dashboard.html\">Dashboard du docteur</a></li>\r\n-\t\t\t\t\t\t</ul>\r\n-\t\t\t\t\t</div>\r\n-\r\n-\t\t\t\t</div>\r\n-\t\t\t\t<div class=\"col-lg-3 col-md-6\">\r\n-\r\n-\t\t\t\t\t<div class=\"footer-widget footer-contact\">\r\n-\t\t\t\t\t\t<h2 class=\"footer-title\">Contactez-nous</h2>\r\n-\t\t\t\t\t\t<div class=\"footer-contact-info\">\r\n-\t\t\t\t\t\t\t<div class=\"footer-address\">\r\n-\t\t\t\t\t\t\t\t<span>\r\n-\t\t\t\t\t\t\t\t\t<i class=\"feather-map-pin\"></i>\r\n-\t\t\t\t\t\t\t\t</span>\r\n-\t\t\t\t\t\t\t\t<p>3556 Rue du Hêtre, Abidjan,\r\n-\t\t\t\t\t\t\t\t\t<br>Côte d'ivoire</p>\r\n-\t\t\t\t\t\t\t</div>\r\n-\t\t\t\t\t\t\t<p>\r\n-\t\t\t\t\t\t\t\t<i class=\"feather-phone\"></i>\r\n-\t\t\t\t\t\t\t\t+225 07 07 07 07 07</p>\r\n-\t\t\t\t\t\t\t<p class=\"mb-0\">\r\n-\t\t\t\t\t\t\t\t<i class=\"feather-mail\"></i>\r\n-\t\t\t\t\t\t\t\t<a href=\"https://doccure-html.dreamguystech.com/cdn-cgi/l/email-protection\" class=\"__cf_email__\" data-cfemail=\"ceaaa1adadbbbcab8eabb6afa3bea2abe0ada1a3\">[email&#160;protected]</a>\r\n-\t\t\t\t\t\t\t</p>\r\n-\t\t\t\t\t\t</div>\r\n-\t\t\t\t\t</div>\r\n-\r\n-\t\t\t\t</div>\r\n-\t\t\t</div>\r\n-\t\t</div>\r\n-\t</div>\r\n-\r\n-\r\n-\t<div class=\"footer-bottom\">\r\n-\t\t<div class=\"container\">\r\n-\r\n-\t\t\t<div class=\"copyright\">\r\n-\t\t\t\t<div class=\"row\">\r\n-\t\t\t\t\t<div class=\"col-md-6 col-lg-6\">\r\n-\t\t\t\t\t\t<div class=\"copyright-text\">\r\n-\t\t\t\t\t\t\t<p class=\"mb-0\">&copy; 2023 Douanes Ivoiriennes. Tous droits reservés.</p>\r\n-\t\t\t\t\t\t</div>\r\n-\t\t\t\t\t</div>\r\n-\t\t\t\t\t<div class=\"col-md-6 col-lg-6\">\r\n-\r\n-\t\t\t\t\t\t<div class=\"copyright-menu\">\r\n-\t\t\t\t\t\t\t<ul class=\"policy-menu\">\r\n-\t\t\t\t\t\t\t\t<li>\r\n-\t\t\t\t\t\t\t\t\t<a href=\"term-condition.html\">Termes et conditions</a>\r\n-\t\t\t\t\t\t\t\t</li>\r\n-\t\t\t\t\t\t\t\t<li>\r\n-\t\t\t\t\t\t\t\t\t<a href=\"privacy-policy.html\">Politique</a>\r\n-\t\t\t\t\t\t\t\t</li>\r\n-\t\t\t\t\t\t\t</ul>\r\n-\t\t\t\t\t\t</div>\r\n-\r\n-\t\t\t\t\t</div>\r\n-\t\t\t\t</div>\r\n-\t\t\t</div>\r\n-\r\n-\t\t</div>\r\n-\t</div>\r\n-\r\n </footer>\r\n"
+                },
+                {
+                    "date": 1674465778886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<footer class=\"footer footer-one bg-warning\">\r\n+<footer class=\" bg-warning\">\r\n \r\n \t\r\n \r\n </footer>\r\n"
+                },
+                {
+                    "date": 1674465785541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<footer class=\" bg-warning\">\r\n+<footer class=\"bg-warning\">\r\n \r\n \t\r\n \r\n </footer>\r\n"
+                },
+                {
+                    "date": 1674465861608,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,10 @@\n <footer class=\"bg-warning\">\r\n \r\n-\t\r\n+\t<div class=\"row\">\r\n+\t<div class=\"col-md-4\">\r\n+\t</div>\r\n \r\n+\t</div>\r\n+\r\n+\r\n </footer>\r\n"
+                },
+                {
+                    "date": 1674465974903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,12 @@\n \r\n \t<div class=\"row\">\r\n \t<div class=\"col-md-4\">\r\n \t</div>\r\n-\r\n+\t<div class=\"col-md-4\">\r\n \t</div>\r\n+\t<div class=\"col-md-4\">\r\n+\t</div>\r\n+\t</div>\r\n \r\n \r\n </footer>\r\n"
+                },
+                {
+                    "date": 1674465984648,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,16 @@\n <footer class=\"bg-warning\">\r\n \r\n \t<div class=\"row\">\r\n-\t<div class=\"col-md-4\">\r\n+\t\t<div class=\"col-md-4\">\r\n+\t\t\r\n+\t\t</div>\r\n+\t\t<div class=\"col-md-4\">\r\n+\t\t\r\n+\t\t</div>\r\n+\t\t<div class=\"col-md-4\">\r\n+\t\t\r\n+\t\t</div>\r\n \t</div>\r\n-\t<div class=\"col-md-4\">\r\n-\t</div>\r\n-\t<div class=\"col-md-4\">\r\n-\t</div>\r\n-\t</div>\r\n \r\n \r\n </footer>\r\n"
+                },
+                {
+                    "date": 1674466051351,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <footer class=\"bg-warning\">\r\n \r\n \t<div class=\"row\">\r\n \t\t<div class=\"col-md-4\">\r\n-\t\t\r\n+\t\t\t<img src=\"{{asset(asset/img/logo.jpg\">\r\n \t\t</div>\r\n \t\t<div class=\"col-md-4\">\r\n \t\t\r\n \t\t</div>\r\n"
+                },
+                {
+                    "date": 1674466097935,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <footer class=\"bg-warning\">\r\n \r\n \t<div class=\"row\">\r\n \t\t<div class=\"col-md-4\">\r\n-\t\t\t<img src=\"{{asset(asset/img/logo.jpg\">\r\n+\t\t\t<img src=\"{{asset(\"asset/img/logoDouane.jpeg\")}}\">\r\n \t\t</div>\r\n \t\t<div class=\"col-md-4\">\r\n \t\t\r\n \t\t</div>\r\n"
+                },
+                {
+                    "date": 1674466151561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <footer class=\"bg-warning\">\r\n \r\n \t<div class=\"row\">\r\n \t\t<div class=\"col-md-4\">\r\n-\t\t\t<img src=\"{{asset(\"asset/img/logoDouane.jpeg\")}}\">\r\n+\t\t\t<img src=\"{{asset(\"assets/img/logoDouane.jpeg\")}}\">\r\n \t\t</div>\r\n \t\t<div class=\"col-md-4\">\r\n \t\t\r\n \t\t</div>\r\n"
+                },
+                {
+                    "date": 1674466179031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <footer class=\"bg-warning\">\r\n \r\n \t<div class=\"row\">\r\n \t\t<div class=\"col-md-4\">\r\n-\t\t\t<img src=\"{{asset(\"assets/img/logoDouane.jpeg\")}}\">\r\n+\t\t\t<img src=\"{{asset(\"assets/img/logoDouane.jpeg\")}}\" width=\"50px\" height=\"50px\">\r\n \t\t</div>\r\n \t\t<div class=\"col-md-4\">\r\n \t\t\r\n \t\t</div>\r\n"
+                },
+                {
+                    "date": 1674466194748,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <footer class=\"bg-warning\">\r\n \r\n \t<div class=\"row\">\r\n \t\t<div class=\"col-md-4\">\r\n-\t\t\t<img src=\"{{asset(\"assets/img/logoDouane.jpeg\")}}\" width=\"50px\" height=\"50px\">\r\n+\t\t\t<img src=\"{{asset(\"assets/img/logoDouane.jpeg\")}}\" width=\"100px\" height=\"100px\">\r\n \t\t</div>\r\n \t\t<div class=\"col-md-4\">\r\n \t\t\r\n \t\t</div>\r\n"
+                },
+                {
+                    "date": 1674466214301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <footer class=\"bg-warning\">\r\n \r\n \t<div class=\"row\">\r\n \t\t<div class=\"col-md-4\">\r\n-\t\t\t<img src=\"{{asset(\"assets/img/logoDouane.jpeg\")}}\" width=\"100px\" height=\"100px\">\r\n+\t\t\t<img src=\"{{asset(\"assets/img/logoDouane.jpeg\")}}\" width=\"100px\" height=\"150px\">\r\n \t\t</div>\r\n \t\t<div class=\"col-md-4\">\r\n \t\t\r\n \t\t</div>\r\n"
+                },
+                {
+                    "date": 1674466370779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,16 @@\n \t\t<div class=\"col-md-4\">\r\n \t\t\r\n \t\t</div>\r\n \t\t<div class=\"col-md-4\">\r\n-\t\t\r\n+\t\t<h3>Nous contacter<h3>\r\n+\t\t<p>Abidjan-Plateau, Place de la république <br> \r\n+\t\tTél: +225 27 20 25 15 00 <br>\r\n+\t\tFax: +225 27 20 25 15 14 <br>\r\n+\t\tBP V 25 ABIDJAN <br>\r\n+\t\tNuméro Vert : 800 800 70 <br>\r\n+\t\tEcrivez nous\r\n+\t\t</p>\r\n \t\t</div>\r\n \t</div>\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1674466548847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,14 @@\n \t\t<div class=\"col-md-4\">\r\n \t\t\t<img src=\"{{asset(\"assets/img/logoDouane.jpeg\")}}\" width=\"100px\" height=\"150px\">\r\n \t\t</div>\r\n \t\t<div class=\"col-md-4\">\r\n-\t\t\r\n+\t\t<p>SUGGESTIONS</p>\r\n+\t\t<p>F.A.Q</p>\r\n+\t\t<p>FOCUS</p>\r\n+\t\t<p>LIENS UTILES</p>\r\n+\t\t<p>GLOSSAIRE</p>\r\n+\t\t<p>PLAN DU SITE</p>\r\n \t\t</div>\r\n \t\t<div class=\"col-md-4\">\r\n \t\t<h3>Nous contacter<h3>\r\n \t\t<p>Abidjan-Plateau, Place de la république <br> \r\n"
+                },
+                {
+                    "date": 1674466612067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,14 +13,14 @@\n \t\t<p>PLAN DU SITE</p>\r\n \t\t</div>\r\n \t\t<div class=\"col-md-4\">\r\n \t\t<h3>Nous contacter<h3>\r\n-\t\t<p>Abidjan-Plateau, Place de la république <br> \r\n-\t\tTél: +225 27 20 25 15 00 <br>\r\n-\t\tFax: +225 27 20 25 15 14 <br>\r\n-\t\tBP V 25 ABIDJAN <br>\r\n-\t\tNuméro Vert : 800 800 70 <br>\r\n-\t\tEcrivez nous\r\n+\t\t<p> Abidjan-Plateau, Place de la république </p>\r\n+\t\t<p> Tél: +225 27 20 25 15 00 </p>\r\n+\t\t<p> Fax: +225 27 20 25 15 14 </p>\r\n+\t\t<p> BP V 25 ABIDJAN </p>\r\n+\t\t<p> Numéro Vert : 800 800 70 </p>\r\n+\t\t <p>Ecrivez nous\r\n \t\t</p>\r\n \t\t</div>\r\n \t</div>\r\n \r\n"
+                },
+                {
+                    "date": 1674466620131,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,25 +4,35 @@\n \t\t<div class=\"col-md-4\">\r\n \t\t\t<img src=\"{{asset(\"assets/img/logoDouane.jpeg\")}}\" width=\"100px\" height=\"150px\">\r\n \t\t</div>\r\n \t\t<div class=\"col-md-4\">\r\n-\t\t<p>SUGGESTIONS</p>\r\n-\t\t<p>F.A.Q</p>\r\n-\t\t<p>FOCUS</p>\r\n-\t\t<p>LIENS UTILES</p>\r\n-\t\t<p>GLOSSAIRE</p>\r\n-\t\t<p>PLAN DU SITE</p>\r\n+\t\t\t<p>SUGGESTIONS</p>\r\n+\t\t\t<p>F.A.Q</p>\r\n+\t\t\t<p>FOCUS</p>\r\n+\t\t\t<p>LIENS UTILES</p>\r\n+\t\t\t<p>GLOSSAIRE</p>\r\n+\t\t\t<p>PLAN DU SITE</p>\r\n \t\t</div>\r\n \t\t<div class=\"col-md-4\">\r\n-\t\t<h3>Nous contacter<h3>\r\n-\t\t<p> Abidjan-Plateau, Place de la république </p>\r\n-\t\t<p> Tél: +225 27 20 25 15 00 </p>\r\n-\t\t<p> Fax: +225 27 20 25 15 14 </p>\r\n-\t\t<p> BP V 25 ABIDJAN </p>\r\n-\t\t<p> Numéro Vert : 800 800 70 </p>\r\n-\t\t <p>Ecrivez nous\r\n-\t\t</p>\r\n-\t\t</div>\r\n-\t</div>\r\n+\t\t\t<h3>Nous contacter<h3>\r\n+\t\t\t\t\t<p>\r\n+\t\t\t\t\t\tAbidjan-Plateau, Place de la république\r\n+\t\t\t\t\t</p>\r\n+\t\t\t\t\t<p>\r\n+\t\t\t\t\t\tTél: +225 27 20 25 15 00\r\n+\t\t\t\t\t</p>\r\n+\t\t\t\t\t<p>\r\n+\t\t\t\t\t\tFax: +225 27 20 25 15 14\r\n+\t\t\t\t\t</p>\r\n+\t\t\t\t\t<p>\r\n+\t\t\t\t\t\tBP V 25 ABIDJAN\r\n+\t\t\t\t\t</p>\r\n+\t\t\t\t\t<p>\r\n+\t\t\t\t\t\tNuméro Vert : 800 800 70\r\n+\t\t\t\t\t</p>\r\n+\t\t\t\t\t<p>Ecrivez nous\r\n+\t\t\t\t\t</p>\r\n+\t\t\t\t</div>\r\n+\t\t\t</div>\r\n \r\n \r\n-</footer>\r\n+\t\t</footer>\r\n"
+                },
+                {
+                    "date": 1674466640626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \t\t\t<p>GLOSSAIRE</p>\r\n \t\t\t<p>PLAN DU SITE</p>\r\n \t\t</div>\r\n \t\t<div class=\"col-md-4\">\r\n-\t\t\t<h3>Nous contacter<h3>\r\n+\t\t\t<h3>Nous contacter</h3>\r\n \t\t\t\t\t<p>\r\n \t\t\t\t\t\tAbidjan-Plateau, Place de la république\r\n \t\t\t\t\t</p>\r\n \t\t\t\t\t<p>\r\n"
+                },
+                {
+                    "date": 1674466853409,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <footer class=\"bg-warning\">\r\n \r\n \t<div class=\"row\">\r\n \t\t<div class=\"col-md-4\">\r\n-\t\t\t<img src=\"{{asset(\"assets/img/logoDouane.jpeg\")}}\" width=\"100px\" height=\"150px\">\r\n+\t\t\t<img src=\"{{asset(\"assets/img/logoDouane.png\")}}\" width=\"100px\" height=\"150px\">\r\n \t\t</div>\r\n \t\t<div class=\"col-md-4\">\r\n \t\t\t<p>SUGGESTIONS</p>\r\n \t\t\t<p>F.A.Q</p>\r\n"
+                },
+                {
+                    "date": 1674466925625,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<footer class=\"bg-warning\">\r\n+<footer class=\"bg-body-secondary\">\r\n \r\n \t<div class=\"row\">\r\n \t\t<div class=\"col-md-4\">\r\n \t\t\t<img src=\"{{asset(\"assets/img/logoDouane.png\")}}\" width=\"100px\" height=\"150px\">\r\n"
+                },
+                {
+                    "date": 1674466949228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<footer class=\"bg-body-secondary\">\r\n+<footer class=\"bg-black text-white\">\r\n \r\n \t<div class=\"row\">\r\n \t\t<div class=\"col-md-4\">\r\n \t\t\t<img src=\"{{asset(\"assets/img/logoDouane.png\")}}\" width=\"100px\" height=\"150px\">\r\n"
+                },
+                {
+                    "date": 1674466991210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \t\t\t<p>GLOSSAIRE</p>\r\n \t\t\t<p>PLAN DU SITE</p>\r\n \t\t</div>\r\n \t\t<div class=\"col-md-4\">\r\n-\t\t\t<h3>Nous contacter</h3>\r\n+\t\t\t<p>Nous contacter</p>\r\n \t\t\t\t\t<p>\r\n \t\t\t\t\t\tAbidjan-Plateau, Place de la république\r\n \t\t\t\t\t</p>\r\n \t\t\t\t\t<p>\r\n"
+                },
+                {
+                    "date": 1674467019740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \t\t\t<p>GLOSSAIRE</p>\r\n \t\t\t<p>PLAN DU SITE</p>\r\n \t\t</div>\r\n \t\t<div class=\"col-md-4\">\r\n-\t\t\t<p>Nous contacter</p>\r\n+\t\t\t<p class=\"fs-3\">Nous contacter</p>\r\n \t\t\t\t\t<p>\r\n \t\t\t\t\t\tAbidjan-Plateau, Place de la république\r\n \t\t\t\t\t</p>\r\n \t\t\t\t\t<p>\r\n"
+                },
+                {
+                    "date": 1674468641898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <footer class=\"bg-black text-white\">\r\n \r\n \t<div class=\"row\">\r\n \t\t<div class=\"col-md-4\">\r\n-\t\t\t<img src=\"{{asset(\"assets/img/logoDouane.png\")}}\" width=\"100px\" height=\"150px\">\r\n+\t\t\t<img src=\"{{asset(\"assets/img/logoDouane.png\")}}\" width=\"100px\" height=\"150px\" class=\"mt-3\">\r\n \t\t</div>\r\n \t\t<div class=\"col-md-4\">\r\n \t\t\t<p>SUGGESTIONS</p>\r\n \t\t\t<p>F.A.Q</p>\r\n"
+                },
+                {
+                    "date": 1674468651815,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <footer class=\"bg-black text-white\">\r\n \r\n \t<div class=\"row\">\r\n \t\t<div class=\"col-md-4\">\r\n-\t\t\t<img src=\"{{asset(\"assets/img/logoDouane.png\")}}\" width=\"100px\" height=\"150px\" class=\"mt-3\">\r\n+\t\t\t<img src=\"{{asset(\"assets/img/logoDouane.png\")}}\" width=\"100px\" height=\"150px\" class=\"mt-5\">\r\n \t\t</div>\r\n \t\t<div class=\"col-md-4\">\r\n \t\t\t<p>SUGGESTIONS</p>\r\n \t\t\t<p>F.A.Q</p>\r\n"
+                },
+                {
+                    "date": 1674468665752,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \t\t\t<p>GLOSSAIRE</p>\r\n \t\t\t<p>PLAN DU SITE</p>\r\n \t\t</div>\r\n \t\t<div class=\"col-md-4\">\r\n-\t\t\t<p class=\"fs-3\">Nous contacter</p>\r\n+\t\t\t<p class=\"fs-3 mt-3\">Nous contacter</p>\r\n \t\t\t\t\t<p>\r\n \t\t\t\t\t\tAbidjan-Plateau, Place de la république\r\n \t\t\t\t\t</p>\r\n \t\t\t\t\t<p>\r\n"
+                },
+                {
+                    "date": 1674468682039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \t\t<div class=\"col-md-4\">\r\n \t\t\t<img src=\"{{asset(\"assets/img/logoDouane.png\")}}\" width=\"100px\" height=\"150px\" class=\"mt-5\">\r\n \t\t</div>\r\n \t\t<div class=\"col-md-4\">\r\n-\t\t\t<p>SUGGESTIONS</p>\r\n+\t\t\t<p class=\"mt-3\">SUGGESTIONS</p>\r\n \t\t\t<p>F.A.Q</p>\r\n \t\t\t<p>FOCUS</p>\r\n \t\t\t<p>LIENS UTILES</p>\r\n \t\t\t<p>GLOSSAIRE</p>\r\n"
+                },
+                {
+                    "date": 1674468766914,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<footer class=\"bg-black text-white\">\r\n+<footer class=\"bg-light-subtle text-emphasis-light\">\r\n \r\n \t<div class=\"row\">\r\n \t\t<div class=\"col-md-4\">\r\n \t\t\t<img src=\"{{asset(\"assets/img/logoDouane.png\")}}\" width=\"100px\" height=\"150px\" class=\"mt-5\">\r\n"
+                },
+                {
+                    "date": 1674468793276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<footer class=\"bg-light-subtle text-emphasis-light\">\r\n+<footer class=\"bg-dark-subtle text-emphasis-dark\">\r\n \r\n \t<div class=\"row\">\r\n \t\t<div class=\"col-md-4\">\r\n \t\t\t<img src=\"{{asset(\"assets/img/logoDouane.png\")}}\" width=\"100px\" height=\"150px\" class=\"mt-5\">\r\n"
+                },
+                {
+                    "date": 1674468834348,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<footer class=\"bg-dark-subtle text-emphasis-dark\">\r\n+<footer class=\"bg-black text-white\">\r\n \r\n \t<div class=\"row\">\r\n \t\t<div class=\"col-md-4\">\r\n \t\t\t<img src=\"{{asset(\"assets/img/logoDouane.png\")}}\" width=\"100px\" height=\"150px\" class=\"mt-5\">\r\n"
+                },
+                {
+                    "date": 1674484622621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <footer class=\"bg-black text-white\">\r\n \r\n-\t<div class=\"row\">\r\n+\t<div class=\"row mt-5\">\r\n \t\t<div class=\"col-md-4\">\r\n \t\t\t<img src=\"{{asset(\"assets/img/logoDouane.png\")}}\" width=\"100px\" height=\"150px\" class=\"mt-5\">\r\n \t\t</div>\r\n \t\t<div class=\"col-md-4\">\r\n"
+                },
+                {
+                    "date": 1674484632590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <footer class=\"bg-black text-white\">\r\n \r\n-\t<div class=\"row mt-5\">\r\n+\t<div class=\"row\">\r\n \t\t<div class=\"col-md-4\">\r\n \t\t\t<img src=\"{{asset(\"assets/img/logoDouane.png\")}}\" width=\"100px\" height=\"150px\" class=\"mt-5\">\r\n \t\t</div>\r\n \t\t<div class=\"col-md-4\">\r\n"
+                }
+            ],
+            "date": 1674465684421,
+            "name": "Commit-0",
+            "content": "<footer class=\"footer footer-one\">\r\n\r\n\t<div class=\"footer-top aos\" data-aos=\"fade-up\">\r\n\t\t<div class=\"container\">\r\n\t\t\t<div class=\"row\">\r\n\t\t\t\t<div class=\"col-lg-3 col-md-6\">\r\n\r\n\t\t\t\t\t<div class=\"footer-widget footer-about\">\r\n\t\t\t\t\t\t<div class=\"footer-logo\">\r\n\t\t\t\t\t\t\t<img src=\"assets/img/footer-logo.png\" alt=\"logo\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"footer-about-content\">\r\n\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n\t\t\t\t\t\t\t<div class=\"social-icon\">\r\n\t\t\t\t\t\t\t\t<ul>\r\n\t\t\t\t\t\t\t\t\t<li><a href=\"#\" target=\"_blank\"><i class=\"fab fa-facebook\"></i></a></li>\r\n\t\t\t\t\t\t\t\t\t<li><a href=\"#\" target=\"_blank\"><i class=\"fab fa-linkedin\"></i></a></li>\r\n\t\t\t\t\t\t\t\t\t<li><a href=\"#\" target=\"_blank\"><i class=\"fab fa-instagram\"></i></a></li>\r\n\t\t\t\t\t\t\t\t\t<li><a href=\"#\" target=\"_blank\"><i class=\"fab fa-twitter\"></i></a></li>\r\n\t\t\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"col-lg-3 col-md-6\">\r\n\r\n\t\t\t\t\t<div class=\"footer-widget footer-menu\">\r\n\t\t\t\t\t\t<h2 class=\"footer-title\">Pour Les Patients</h2>\r\n\t\t\t\t\t\t<ul>\r\n\t\t\t\t\t\t\t<li><a href=\"search.html\">Rechercher un docteur</a></li>\r\n\t\t\t\t\t\t\t<li><a href=\"login.html\">Se connecter</a></li>\r\n\t\t\t\t\t\t\t<li><a href=\"register.html\">S'inscrire</a></li>\r\n\t\t\t\t\t\t\t<li><a href=\"booking.html\">Réservation</a></li>\r\n\t\t\t\t\t\t\t<li><a href=\"patient-dashboard.html\">Dashboard des patients</a></li>\r\n\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t</div>\r\n\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"col-lg-3 col-md-6\">\r\n\r\n\t\t\t\t\t<div class=\"footer-widget footer-menu\">\r\n\t\t\t\t\t\t<h2 class=\"footer-title\">Pour Les Docteurs</h2>\r\n\t\t\t\t\t\t<ul>\r\n\t\t\t\t\t\t\t<li><a href=\"appointments.html\">Rendez-vous</a></li>\r\n\t\t\t\t\t\t\t<li><a href=\"chat.html\">Chat</a></li>\r\n\t\t\t\t\t\t\t<li><a href=\"login.html\">Se connecter</a></li>\r\n\t\t\t\t\t\t\t<li><a href=\"doctor-register.html\">S'inscrire</a></li>\r\n\t\t\t\t\t\t\t<li><a href=\"doctor-dashboard.html\">Dashboard du docteur</a></li>\r\n\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t</div>\r\n\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"col-lg-3 col-md-6\">\r\n\r\n\t\t\t\t\t<div class=\"footer-widget footer-contact\">\r\n\t\t\t\t\t\t<h2 class=\"footer-title\">Contactez-nous</h2>\r\n\t\t\t\t\t\t<div class=\"footer-contact-info\">\r\n\t\t\t\t\t\t\t<div class=\"footer-address\">\r\n\t\t\t\t\t\t\t\t<span>\r\n\t\t\t\t\t\t\t\t\t<i class=\"feather-map-pin\"></i>\r\n\t\t\t\t\t\t\t\t</span>\r\n\t\t\t\t\t\t\t\t<p>3556 Rue du Hêtre, Abidjan,\r\n\t\t\t\t\t\t\t\t\t<br>Côte d'ivoire</p>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t<p>\r\n\t\t\t\t\t\t\t\t<i class=\"feather-phone\"></i>\r\n\t\t\t\t\t\t\t\t+225 07 07 07 07 07</p>\r\n\t\t\t\t\t\t\t<p class=\"mb-0\">\r\n\t\t\t\t\t\t\t\t<i class=\"feather-mail\"></i>\r\n\t\t\t\t\t\t\t\t<a href=\"https://doccure-html.dreamguystech.com/cdn-cgi/l/email-protection\" class=\"__cf_email__\" data-cfemail=\"ceaaa1adadbbbcab8eabb6afa3bea2abe0ada1a3\">[email&#160;protected]</a>\r\n\t\t\t\t\t\t\t</p>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n\r\n\r\n\t<div class=\"footer-bottom\">\r\n\t\t<div class=\"container\">\r\n\r\n\t\t\t<div class=\"copyright\">\r\n\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t<div class=\"col-md-6 col-lg-6\">\r\n\t\t\t\t\t\t<div class=\"copyright-text\">\r\n\t\t\t\t\t\t\t<p class=\"mb-0\">&copy; 2023 Doccure. Tous droits reservés.</p>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"col-md-6 col-lg-6\">\r\n\r\n\t\t\t\t\t\t<div class=\"copyright-menu\">\r\n\t\t\t\t\t\t\t<ul class=\"policy-menu\">\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"term-condition.html\">Termes et conditions</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"privacy-policy.html\">Politique</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t</div>\r\n\t</div>\r\n\r\n</footer>\r\n"
+        }
+    ]
+}

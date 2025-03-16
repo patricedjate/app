@@ -1,0 +1,54 @@
+{
+    "sourceFile": "templates/agent/rapport.html.twig",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1675330544414,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1675330570888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,7 @@\n {% block title %}Liste des fiches de demande d'empotage{% endblock %}\r\n {% block stylesheets %}\r\n \r\n {% endblock %}\r\n-{% block body %}\n\\ No newline at end of file\n+{% block body %}\r\n+{{form(form)}}\r\n+{% endblock %}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1675330972557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,6 +4,19 @@\n {% block stylesheets %}\r\n \r\n {% endblock %}\r\n {% block body %}\r\n-{{form(form)}}\r\n+{{ form_start(form) }}\r\n+    <div class=\"my-custom-class-for-errors\">\r\n+        {{ form_errors(form) }}\r\n+    </div>\r\n+\r\n+    <div class=\"row\">\r\n+        <div class=\"col\">\r\n+            {{ form_row(form.task) }}\r\n+        </div>\r\n+        <div class=\"col\" id=\"some-custom-id\">\r\n+            {{ form_row(form.dueDate) }}\r\n+        </div>\r\n+    </div>\r\n+{{ form_end(form) }}\r\n {% endblock %}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1675330985159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,12 +11,9 @@\n     </div>\r\n \r\n     <div class=\"row\">\r\n         <div class=\"col\">\r\n-            {{ form_row(form.task) }}\r\n+            {{ form_row(form.contenu) }}\r\n         </div>\r\n-        <div class=\"col\" id=\"some-custom-id\">\r\n-            {{ form_row(form.dueDate) }}\r\n-        </div>\r\n     </div>\r\n {{ form_end(form) }}\r\n {% endblock %}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1675333097734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-{% extends 'agentdashboardbase.html.twig' %}\r\n+{% extends 'dashboardbase.html.twig' %}\r\n \r\n {% block title %}Liste des fiches de demande d'empotage{% endblock %}\r\n {% block stylesheets %}\r\n \r\n"
+                },
+                {
+                    "date": 1675333147643,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-{% extends 'dashboardbase.html.twig' %}\r\n+{% extends 'base.html.twig' %}\r\n \r\n {% block title %}Liste des fiches de demande d'empotage{% endblock %}\r\n {% block stylesheets %}\r\n \r\n"
+                },
+                {
+                    "date": 1675333222494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,16 +4,5 @@\n {% block stylesheets %}\r\n \r\n {% endblock %}\r\n {% block body %}\r\n-{{ form_start(form) }}\r\n-    <div class=\"my-custom-class-for-errors\">\r\n-        {{ form_errors(form) }}\r\n-    </div>\r\n-\r\n-    <div class=\"row\">\r\n-        <div class=\"col\">\r\n-            {{ form_row(form.contenu) }}\r\n-        </div>\r\n-    </div>\r\n-{{ form_end(form) }}\r\n {% endblock %}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1675333642369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-{% extends 'base.html.twig' %}\r\n+{% extends 'agentdashboardbase.html.twig' %}\r\n \r\n {% block title %}Liste des fiches de demande d'empotage{% endblock %}\r\n {% block stylesheets %}\r\n \r\n"
+                },
+                {
+                    "date": 1675333694958,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,5 @@\n {% extends 'agentdashboardbase.html.twig' %}\r\n \r\n {% block title %}Liste des fiches de demande d'empotage{% endblock %}\r\n-{% block stylesheets %}\r\n-\r\n-{% endblock %}\r\n {% block body %}\r\n {% endblock %}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1675333821971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n {% extends 'agentdashboardbase.html.twig' %}\r\n \r\n {% block title %}Liste des fiches de demande d'empotage{% endblock %}\r\n {% block body %}\r\n+{{form(form)}}\r\n {% endblock %}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1675330544414,
+            "name": "Commit-0",
+            "content": "{% extends 'agentdashboardbase.html.twig' %}\r\n\r\n{% block title %}Liste des fiches de demande d'empotage{% endblock %}\r\n{% block stylesheets %}\r\n\r\n{% endblock %}\r\n{% block body %}"
+        }
+    ]
+}

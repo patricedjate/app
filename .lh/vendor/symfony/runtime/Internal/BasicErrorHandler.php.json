@@ -1,0 +1,26 @@
+{
+    "sourceFile": "vendor/symfony/runtime/Internal/BasicErrorHandler.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1703330568241,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1703330994271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n \n         if (0 <= \\ini_get('zend.assertions')) {\n             ini_set('zend.assertions', 1);\n             ini_set('assert.active', $debug);\n-            ini_set('assert.warning', 1);\n+            ini_set('assert.warning', 0);\n             ini_set('assert.exception', 1);\n         }\n \n         set_error_handler(new self());\n"
+                },
+                {
+                    "date": 1703331059814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n \n         if (0 <= \\ini_get('zend.assertions')) {\n             ini_set('zend.assertions', 1);\n             ini_set('assert.active', $debug);\n-            ini_set('assert.warning', 0);\n+            ini_set('assert.warning', 1);\n             ini_set('assert.exception', 1);\n         }\n \n         set_error_handler(new self());\n"
+                }
+            ],
+            "date": 1703330568241,
+            "name": "Commit-0",
+            "content": "<?php\n\n/*\n * This file is part of the Symfony package.\n *\n * (c) Fabien Potencier <fabien@symfony.com>\n *\n * For the full copyright and license information, please view the LICENSE\n * file that was distributed with this source code.\n */\n\nnamespace Symfony\\Component\\Runtime\\Internal;\n\n/**\n * @author Nicolas Grekas <p@tchwork.com>\n *\n * @internal\n */\nclass BasicErrorHandler\n{\n    public static function register(bool $debug): void\n    {\n        error_reporting(-1);\n\n        if (!\\in_array(\\PHP_SAPI, ['cli', 'phpdbg'], true)) {\n            ini_set('display_errors', $debug);\n        } elseif (!filter_var(\\ini_get('log_errors'), \\FILTER_VALIDATE_BOOL) || \\ini_get('error_log')) {\n            // CLI - display errors only if they're not already logged to STDERR\n            ini_set('display_errors', 1);\n        }\n\n        if (0 <= \\ini_get('zend.assertions')) {\n            ini_set('zend.assertions', 1);\n            ini_set('assert.active', $debug);\n            ini_set('assert.warning', 1);\n            ini_set('assert.exception', 1);\n        }\n\n        set_error_handler(new self());\n    }\n\n    public function __invoke(int $type, string $message, string $file, int $line): bool\n    {\n        if ((\\E_DEPRECATED | \\E_USER_DEPRECATED) & $type) {\n            return true;\n        }\n\n        if ((error_reporting() | \\E_ERROR | \\E_RECOVERABLE_ERROR | \\E_PARSE | \\E_CORE_ERROR | \\E_COMPILE_ERROR | \\E_USER_ERROR) & $type) {\n            throw new \\ErrorException($message, 0, $type, $file, $line);\n        }\n\n        return false;\n    }\n}\n"
+        }
+    ]
+}

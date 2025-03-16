@@ -1,0 +1,113 @@
+{% extends 'connexionbase.html.twig' %}
+
+{% block title %}Connexion
+{% endblock %}
+{% block stylesheets %}
+	{{ parent() }}
+	<style>
+.bg-image {
+  /* The image used */
+  background-image: url({{asset("assets/img/home2.jpg")}});
+  
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  
+  /* Full height */
+  height: 100%; 
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+}
+	</style>
+{% endblock %}
+
+{% block body %}
+  
+<div class="bg-image"></div>
+	{{ form_start(registrationForm) }}
+<div class="bg-text">
+{% for message in app.flashes('success') %}
+<div class="alert alert-success">
+{{ message }}
+</div>
+        {% endfor %}
+		<div class="container py-5 h-100">
+			<div class="row d-flex justify-content-center align-items-center h-100">
+				<div class="col col-xl-10">
+					<div class="card" style="border-radius: 1rem;">
+						<div class="row g-0">
+							<div class="col-md-6 col-lg-5 d-none d-md-block">
+								<img src="{{asset('assets/img/sign.jpg')}}" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;"/>
+							</div>
+							<div class="col-md-6 col-lg-7 d-flex align-items-center">
+								<div class="card-body p-4 p-lg-5 text-black">
+
+									<div class="d-flex align-items-center mb-3 pb-1">
+										<img src="{{asset('admin/assets/img/douane.jpg')}}" width="200px">
+									</div>
+
+
+									<h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Inscrivez-vous</h5>
+									<div class="row">
+										<div class="form-outline mb-4 col">
+											{{ form_row(registrationForm.nom) }}
+										</div>
+
+										<div class="form-outline mb-4 col">
+											{{ form_row(registrationForm.prenom) }}
+										</div>
+									</div>
+									
+									<div class="row">
+										<div class="form-outline mb-4 col">
+											{{ form_row(registrationForm.email) }}
+										</div>
+										<div class="form-outline mb-4 col">
+											{{ form_row(registrationForm.plainPassword, {
+            label: 'Mot de passe'
+        }) }}
+										</div>
+									</div>
+									<div class="form-outline mb-4">
+										{{ form_row(registrationForm.contact) }}
+									</div>
+									<div class="form-outline mb-4">
+										{{ form_row(registrationForm.agreeTerms) }}
+									</div>
+
+									<div class="text-start">
+										<a class="forgot-link" href="{{path("app_login")}}">Vous avez déja un compte?</a>
+									</div>
+
+									<div class="pt-1 mb-4">
+										<button type="submit" class="btn btn-dark btn-lg btn-block">S'inscrire</button>
+									</div>
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+
+	{{ form_end(registrationForm) }}
+{% endblock %}

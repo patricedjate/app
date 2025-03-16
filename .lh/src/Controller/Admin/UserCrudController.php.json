@@ -1,0 +1,62 @@
+{
+    "sourceFile": "src/Controller/Admin/UserCrudController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1674460181578,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1674460293285,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,12 @@\n \n namespace App\\Controller\\Admin;\n \n use App\\Entity\\User;\n+use EasyCorp\\Bundle\\EasyAdminBundle\\Config\\Crud;\n+use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\IdField;\n+use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\TextField;\n+use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\TextEditorField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n \n class UserCrudController extends AbstractCrudController\n {\n@@ -13,8 +17,11 @@\n     }\n     public static function configureCrud(Crud $crud): Crud\n     {\n         return $crud\n+            ->setEntityLabelInPlural('Utilisateurs')\n+            ->setEntityLabelInSingular('Utilisateurs')\n+            ->setPageTitle(\"index\", \"Administration des utilisateurs\");\n     }\n     /*\n     public function configureFields(string $pageName): iterable\n     {\n"
+                },
+                {
+                    "date": 1674460345887,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,22 +14,22 @@\n     public static function getEntityFqcn(): string\n     {\n         return User::class;\n     }\n-    public static function configureCrud(Crud $crud): Crud\n+    public function configureCrud(Crud $crud): Crud\n     {\n         return $crud\n             ->setEntityLabelInPlural('Utilisateurs')\n             ->setEntityLabelInSingular('Utilisateurs')\n             ->setPageTitle(\"index\", \"Administration des utilisateurs\");\n     }\n-    /*\n+    \n     public function configureFields(string $pageName): iterable\n     {\n         return [\n             IdField::new('id'),\n             TextField::new('title'),\n             TextEditorField::new('description'),\n         ];\n     }\n-    */\n+    \n }\n"
+                },
+                {
+                    "date": 1674460440361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,10 +26,14 @@\n     public function configureFields(string $pageName): iterable\n     {\n         return [\n             IdField::new('id'),\n-            TextField::new('title'),\n-            TextEditorField::new('description'),\n+            TextField::new('email'),\n+            TextField::new('roles'),\n+            TextField::new('nom'),\n+            TextField::new('prenom'),\n+            TextField::new('contact'),\n+            TextField::new('date'),\n         ];\n     }\n     \n }\n"
+                },
+                {
+                    "date": 1674460476840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n     {\n         return [\n             IdField::new('id'),\n             TextField::new('email'),\n-            TextField::new('roles'),\n+            StringField::new('roles'),\n             TextField::new('nom'),\n             TextField::new('prenom'),\n             TextField::new('contact'),\n             TextField::new('date'),\n"
+                },
+                {
+                    "date": 1674460704164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n             StringField::new('roles'),\n             TextField::new('nom'),\n             TextField::new('prenom'),\n             TextField::new('contact'),\n-            TextField::new('date'),\n+            DateTimeField::new('date')->onlyOnDetail,\n         ];\n     }\n     \n }\n"
+                },
+                {
+                    "date": 1674460710361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n use App\\Entity\\User;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Config\\Crud;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\IdField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\TextField;\n+use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\DateTimeField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\TextEditorField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n \n class UserCrudController extends AbstractCrudController\n"
+                },
+                {
+                    "date": 1674460787958,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,13 +28,13 @@\n     {\n         return [\n             IdField::new('id'),\n             TextField::new('email'),\n-            StringField::new('roles'),\n+            Field::new('roles'),\n             TextField::new('nom'),\n             TextField::new('prenom'),\n             TextField::new('contact'),\n-            DateTimeField::new('date')->onlyOnDetail,\n+            DateTimeField::new('date')->onlyOnDetail(),\n         ];\n     }\n     \n }\n"
+                },
+                {
+                    "date": 1674460793280,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n namespace App\\Controller\\Admin;\n \n use App\\Entity\\User;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Config\\Crud;\n+use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\Field;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\IdField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\TextField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\DateTimeField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\TextEditorField;\n"
+                },
+                {
+                    "date": 1674460818882,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n     {\n         return [\n             IdField::new('id'),\n             TextField::new('email'),\n-            Field::new('roles'),\n+            ArrayField::new('roles'),\n             TextField::new('nom'),\n             TextField::new('prenom'),\n             TextField::new('contact'),\n             DateTimeField::new('date')->onlyOnDetail(),\n"
+                },
+                {
+                    "date": 1674461444204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n use EasyCorp\\Bundle\\EasyAdminBundle\\Config\\Crud;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\Field;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\IdField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\TextField;\n+use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\ArrayField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\DateTimeField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\TextEditorField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n \n@@ -27,9 +28,8 @@\n     \n     public function configureFields(string $pageName): iterable\n     {\n         return [\n-            IdField::new('id'),\n             TextField::new('email'),\n             ArrayField::new('roles'),\n             TextField::new('nom'),\n             TextField::new('prenom'),\n"
+                },
+                {
+                    "date": 1676992647228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\ArrayField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\DateTimeField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\TextEditorField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n+use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\ImageField;\n \n class UserCrudController extends AbstractCrudController\n {\n     public static function getEntityFqcn(): string\n"
+                }
+            ],
+            "date": 1674460181578,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Controller\\Admin;\n\nuse App\\Entity\\User;\nuse EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n\nclass UserCrudController extends AbstractCrudController\n{\n    public static function getEntityFqcn(): string\n    {\n        return User::class;\n    }\n    public static function configureCrud(Crud $crud): Crud\n    {\n        return $crud\n    }\n    /*\n    public function configureFields(string $pageName): iterable\n    {\n        return [\n            IdField::new('id'),\n            TextField::new('title'),\n            TextEditorField::new('description'),\n        ];\n    }\n    */\n}\n"
+        }
+    ]
+}

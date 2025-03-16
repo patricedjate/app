@@ -1,0 +1,110 @@
+{
+    "sourceFile": "templates/site/index.html.twig",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 23,
+            "patches": [
+                {
+                    "date": 1674463880538,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1674467030102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n \n {% block title %}Acceuil{% endblock %}\n \n {% block body %}\n-\n+sdfygfuiiuouh\n {% endblock %}\n"
+                },
+                {
+                    "date": 1674467219609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n \n {% block title %}Acceuil{% endblock %}\n \n {% block body %}\n-sdfygfuiiuouh\n+<p>Faire une demande d'empotage </p>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1674467256936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n \n {% block title %}Acceuil{% endblock %}\n \n {% block body %}\n-<p>Faire une demande d'empotage </p>\n+<p>Faire Une Demande De Suivie D'Empotage </p>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1674467275398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n \n {% block title %}Acceuil{% endblock %}\n \n {% block body %}\n-<p>Faire Une Demande De Suivie D'Empotage </p>\n+<p>Faire Une Demande <br> De Suivie D'Empotage </p>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1674467286373,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n \n {% block title %}Acceuil{% endblock %}\n \n {% block body %}\n-<p>Faire Une Demande <br> De Suivie D'Empotage </p>\n+<p class=\"\">Faire Une Demande <br> De Suivie D'Empotage </p>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1674467297799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n \n {% block title %}Acceuil{% endblock %}\n \n {% block body %}\n-<p class=\"\">Faire Une Demande <br> De Suivie D'Empotage </p>\n+<p class=\"fs-3\">Faire Une Demande <br> De Suivie D'Empotage </p>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1674467304705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n \n {% block title %}Acceuil{% endblock %}\n \n {% block body %}\n-<p class=\"fs-3\">Faire Une Demande <br> De Suivie D'Empotage </p>\n+<p class=\"fs-2\">Faire Une Demande <br> De Suivie D'Empotage </p>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1674467310565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n \n {% block title %}Acceuil{% endblock %}\n \n {% block body %}\n-<p class=\"fs-2\">Faire Une Demande <br> De Suivie D'Empotage </p>\n+<p class=\"fs-1\">Faire Une Demande <br> De Suivie D'Empotage </p>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1674467334636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n \n {% block title %}Acceuil{% endblock %}\n \n {% block body %}\n-<p class=\"fs-1\">Faire Une Demande <br> De Suivie D'Empotage </p>\n+<p class=\"fs-1 text-center\">Faire Une Demande <br> De Suivie D'Empotage </p>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1674467500451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,6 @@\n {% block title %}Acceuil{% endblock %}\n \n {% block body %}\n <p class=\"fs-1 text-center\">Faire Une Demande <br> De Suivie D'Empotage </p>\n+<img src=\"{{asset(\"assets/img/bas.jpg\")}}\">\n {% endblock %}\n"
+                },
+                {
+                    "date": 1674467636612,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n {% block title %}Acceuil{% endblock %}\n \n {% block body %}\n <p class=\"fs-1 text-center\">Faire Une Demande <br> De Suivie D'Empotage </p>\n-<img src=\"{{asset(\"assets/img/bas.jpg\")}}\">\n+<img src=\"{{asset(\"assets/img/bas.png\")}}\">\n {% endblock %}\n"
+                },
+                {
+                    "date": 1674467667669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n {% block title %}Acceuil{% endblock %}\n \n {% block body %}\n <p class=\"fs-1 text-center\">Faire Une Demande <br> De Suivie D'Empotage </p>\n-<img src=\"{{asset(\"assets/img/bas.png\")}}\">\n+<img src=\"{{asset(\"assets/img/bas.png\")}}\" class=\"text-center\">\n {% endblock %}\n"
+                },
+                {
+                    "date": 1674467675494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n {% block title %}Acceuil{% endblock %}\n \n {% block body %}\n <p class=\"fs-1 text-center\">Faire Une Demande <br> De Suivie D'Empotage </p>\n-<img src=\"{{asset(\"assets/img/bas.png\")}}\" class=\"text-center\">\n+<img src=\"{{asset(\"assets/img/bas.png\")}}\" class=\"\">\n {% endblock %}\n"
+                },
+                {
+                    "date": 1674467724988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,8 @@\n {% block title %}Acceuil{% endblock %}\n \n {% block body %}\n <p class=\"fs-1 text-center\">Faire Une Demande <br> De Suivie D'Empotage </p>\n+<div class=\"position-relative\">\n <img src=\"{{asset(\"assets/img/bas.png\")}}\" class=\"\">\n+</div>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1674467748211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,10 @@\n \n {% block body %}\n <p class=\"fs-1 text-center\">Faire Une Demande <br> De Suivie D'Empotage </p>\n <div class=\"position-relative\">\n-<img src=\"{{asset(\"assets/img/bas.png\")}}\" class=\"\">\n+  <div class=\"position-absolute top-50 start-50\">\n+  <img src=\"{{asset(\"assets/img/bas.png\")}}\">\n+  </div>\n+\n </div>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1674467810370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,11 +3,6 @@\n {% block title %}Acceuil{% endblock %}\n \n {% block body %}\n <p class=\"fs-1 text-center\">Faire Une Demande <br> De Suivie D'Empotage </p>\n-<div class=\"position-relative\">\n-  <div class=\"position-absolute top-50 start-50\">\n   <img src=\"{{asset(\"assets/img/bas.png\")}}\">\n-  </div>\n-\n-</div>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1674467928955,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,11 @@\n {% block title %}Acceuil{% endblock %}\n \n {% block body %}\n <p class=\"fs-1 text-center\">Faire Une Demande <br> De Suivie D'Empotage </p>\n-  <img src=\"{{asset(\"assets/img/bas.png\")}}\">\n+<div class=\"row\">\n+    <div class=\"col-4 mx-auto text-center\">\n+        <img src=\"{{asset(\"assets/img/bas.png\")}}\">\n+    </div>\n+</div\n+ \n {% endblock %}\n"
+                },
+                {
+                    "date": 1674468016066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n {% block body %}\n <p class=\"fs-1 text-center\">Faire Une Demande <br> De Suivie D'Empotage </p>\n <div class=\"row\">\n     <div class=\"col-4 mx-auto text-center\">\n-        <img src=\"{{asset(\"assets/img/bas.png\")}}\">\n+        <img src=\"{{asset(\"assets/img/bas.png\")}}\" height=\"100px\">\n     </div>\n </div\n  \n {% endblock %}\n"
+                },
+                {
+                    "date": 1674468034551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n <p class=\"fs-1 text-center\">Faire Une Demande <br> De Suivie D'Empotage </p>\n <div class=\"row\">\n     <div class=\"col-4 mx-auto text-center\">\n         <img src=\"{{asset(\"assets/img/bas.png\")}}\" height=\"100px\">\n+        <\n     </div>\n </div\n  \n {% endblock %}\n"
+                },
+                {
+                    "date": 1674468219875,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,19 @@\n <p class=\"fs-1 text-center\">Faire Une Demande <br> De Suivie D'Empotage </p>\n <div class=\"row\">\n     <div class=\"col-4 mx-auto text-center\">\n         <img src=\"{{asset(\"assets/img/bas.png\")}}\" height=\"100px\">\n-        <\n+        <div class=\"wrapper\">\n+  <div class=\"link_wrapper\">\n+    <a href=\"#\">Cliquer Ici</a>\n+    <div class=\"icon\">\n+      <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 268.832 268.832\">\n+        <path d=\"M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z\"/>\n+      </svg>\n     </div>\n+  </div>\n+  \n+</div>\n+    </div>\n </div\n  \n {% endblock %}\n"
+                },
+                {
+                    "date": 1674468304992,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,19 +6,8 @@\n <p class=\"fs-1 text-center\">Faire Une Demande <br> De Suivie D'Empotage </p>\n <div class=\"row\">\n     <div class=\"col-4 mx-auto text-center\">\n         <img src=\"{{asset(\"assets/img/bas.png\")}}\" height=\"100px\">\n-        <div class=\"wrapper\">\n-  <div class=\"link_wrapper\">\n-    <a href=\"#\">Cliquer Ici</a>\n-    <div class=\"icon\">\n-      <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 268.832 268.832\">\n-        <path d=\"M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z\"/>\n-      </svg>\n     </div>\n-  </div>\n-  \n-</div>\n-    </div>\n </div\n  \n {% endblock %}\n"
+                },
+                {
+                    "date": 1674468321709,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,16 @@\n     <div class=\"col-4 mx-auto text-center\">\n         <img src=\"{{asset(\"assets/img/bas.png\")}}\" height=\"100px\">\n     </div>\n </div\n- \n+ <div class=\"wrapper\">\n+  <div class=\"link_wrapper\">\n+    <a href=\"#\">Hover Me!</a>\n+    <div class=\"icon\">\n+      <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 268.832 268.832\">\n+        <path d=\"M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z\"/>\n+      </svg>\n+    </div>\n+  </div>\n+  \n+</div>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1674468372569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n <p class=\"fs-1 text-center\">Faire Une Demande <br> De Suivie D'Empotage </p>\n <div class=\"row\">\n     <div class=\"col-4 mx-auto text-center\">\n         <img src=\"{{asset(\"assets/img/bas.png\")}}\" height=\"100px\">\n+        <a href\n     </div>\n </div\n  \n {% endblock %}\n"
+                }
+            ],
+            "date": 1674463880538,
+            "name": "Commit-0",
+            "content": "{% extends 'base.html.twig' %}\n\n{% block title %}Acceuil{% endblock %}\n\n{% block body %}\n\n{% endblock %}\n"
+        }
+    ]
+}

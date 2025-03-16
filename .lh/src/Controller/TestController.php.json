@@ -1,0 +1,70 @@
+{
+    "sourceFile": "src/Controller/TestController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 13,
+            "patches": [
+                {
+                    "date": 1675331688417,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1675331699871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,15 @@\n <?php\n \n namespace App\\Controller;\n \n-use Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\n+use App\\Entity\\RapportEmpotage;\n+use App\\Form\\RapportEmpotageType;\n+use Doctrine\\ORM\\EntityManagerInterface;\n+use Symfony\\Component\\HttpFoundation\\Request;\n use Symfony\\Component\\HttpFoundation\\Response;\n use Symfony\\Component\\Routing\\Annotation\\Route;\n+use Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\n \n class TestController extends AbstractController\n {\n     #[Route('/test', name: 'app_test')]\n"
+                },
+                {
+                    "date": 1675332025151,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,8 @@\n     }\n     #[Route('/AddRapport', name: 'agent_AddRapport')]\n     public function add(Request $request, EntityManagerInterface $manager): Response\n     {\n-       \n         $rapport = new RapportEmpotage();\n         $form = $this->createForm(RapportEmpotageType::class, $rapport);\n         $form->handleRequest($request);\n         if ($form->isSubmitted() && $form->isValid()) {\n"
+                },
+                {
+                    "date": 1675332323949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n         return $this->render('test/index.html.twig', [\n             'controller_name' => 'TestController',\n         ]);\n     }\n-    #[Route('/AddRapport', name: 'agent_AddRapport')]\n+    #[Route('/agent/AddRapport', name: 'agent_AddRapport')]\n     public function add(Request $request, EntityManagerInterface $manager): Response\n     {\n         $rapport = new RapportEmpotage();\n         $form = $this->createForm(RapportEmpotageType::class, $rapport);\n"
+                },
+                {
+                    "date": 1675332511515,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,22 +18,6 @@\n         return $this->render('test/index.html.twig', [\n             'controller_name' => 'TestController',\n         ]);\n     }\n-    #[Route('/agent/AddRapport', name: 'agent_AddRapport')]\n-    public function add(Request $request, EntityManagerInterface $manager): Response\n-    {\n-        $rapport = new RapportEmpotage();\n-        $form = $this->createForm(RapportEmpotageType::class, $rapport);\n-        $form->handleRequest($request);\n-        if ($form->isSubmitted() && $form->isValid()) {\n-            $rapport = $form->getData();\n-            $rapport->setUser($this->getUser());\n-            $manager->persist($rapport);\n-            $manager->flush();\n-            #return $this->redirectToRoute('site/succes.html.twig');\n-        }\n-        return $this->render('agent/rapport.html.twig', [\n-            'form' => $form,\n-        ]);\n-    }\n+\n }\n"
+                },
+                {
+                    "date": 1675332951356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,6 +18,22 @@\n         return $this->render('test/index.html.twig', [\n             'controller_name' => 'TestController',\n         ]);\n     }\n-\n+    #[Route('/AddRapport', name: 'agent_Rapport')]\n+    public function add(Request $request, EntityManagerInterface $manager): Response\n+    {\n+        $rapport = new RapportEmpotage();\n+        $form = $this->createForm(RapportEmpotageType::class, $rapport);\n+        $form->handleRequest($request);\n+        if ($form->isSubmitted() && $form->isValid()) {\n+            $rapport = $form->getData();\n+            $rapport->setUser($this->getUser());\n+            $manager->persist($rapport);\n+            $manager->flush();\n+            #return $this->redirectToRoute('site/succes.html.twig');\n+        }\n+        return $this->render('agent/rapport.html.twig', [\n+            'form' => $form,\n+        ]);\n+    }\n }\n"
+                },
+                {
+                    "date": 1675333877629,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,22 +18,6 @@\n         return $this->render('test/index.html.twig', [\n             'controller_name' => 'TestController',\n         ]);\n     }\n-    #[Route('/AddRapport', name: 'agent_Rapport')]\n-    public function add(Request $request, EntityManagerInterface $manager): Response\n-    {\n-        $rapport = new RapportEmpotage();\n-        $form = $this->createForm(RapportEmpotageType::class, $rapport);\n-        $form->handleRequest($request);\n-        if ($form->isSubmitted() && $form->isValid()) {\n-            $rapport = $form->getData();\n-            $rapport->setUser($this->getUser());\n-            $manager->persist($rapport);\n-            $manager->flush();\n-            #return $this->redirectToRoute('site/succes.html.twig');\n-        }\n-        return $this->render('agent/rapport.html.twig', [\n-            'form' => $form,\n-        ]);\n-    }\n+   \n }\n"
+                },
+                {
+                    "date": 1675335296602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,6 +18,22 @@\n         return $this->render('test/index.html.twig', [\n             'controller_name' => 'TestController',\n         ]);\n     }\n-   \n+    #[Route('/AddRapport', name: 'agent_Rapport')]\n+    public function add(Request $request, EntityManagerInterface $manager): Response\n+    {\n+        $rapport = new RapportEmpotage();\n+        $form = $this->createForm(RapportEmpotageType::class, $rapport);\n+        $form->handleRequest($request);\n+        if ($form->isSubmitted() && $form->isValid()) {\n+            $rapport = $form->getData();\n+            $rapport->setUser($this->getUser());\n+            $manager->persist($rapport);\n+            $manager->flush();\n+            #return $this->redirectToRoute('site/succes.html.twig');\n+        }\n+        return $this->render('agent/rapport.html.twig', [\n+            'form' => $form,\n+        ]);\n+    }\n }\n"
+                },
+                {
+                    "date": 1675338622384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,13 +22,15 @@\n     #[Route('/AddRapport', name: 'agent_Rapport')]\n     public function add(Request $request, EntityManagerInterface $manager): Response\n     {\n         $rapport = new RapportEmpotage();\n+        $fiche = new fiche();\n         $form = $this->createForm(RapportEmpotageType::class, $rapport);\n         $form->handleRequest($request);\n         if ($form->isSubmitted() && $form->isValid()) {\n             $rapport = $form->getData();\n             $rapport->setUser($this->getUser());\n+            if()\n             $manager->persist($rapport);\n             $manager->flush();\n             #return $this->redirectToRoute('site/succes.html.twig');\n         }\n"
+                },
+                {
+                    "date": 1675338631079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     #[Route('/AddRapport', name: 'agent_Rapport')]\n     public function add(Request $request, EntityManagerInterface $manager): Response\n     {\n         $rapport = new RapportEmpotage();\n-        $fiche = new fiche();\n+        $fiche = new Fiche();\n         $form = $this->createForm(RapportEmpotageType::class, $rapport);\n         $form->handleRequest($request);\n         if ($form->isSubmitted() && $form->isValid()) {\n             $rapport = $form->getData();\n"
+                },
+                {
+                    "date": 1675338764618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <?php\n \n namespace App\\Controller;\n \n+use App\\Entity\\Fiche;\n use App\\Entity\\RapportEmpotage;\n use App\\Form\\RapportEmpotageType;\n use Doctrine\\ORM\\EntityManagerInterface;\n use Symfony\\Component\\HttpFoundation\\Request;\n@@ -23,14 +24,15 @@\n     public function add(Request $request, EntityManagerInterface $manager): Response\n     {\n         $rapport = new RapportEmpotage();\n         $fiche = new Fiche();\n+        $nbre = $fiche->getUser()->getid();\n         $form = $this->createForm(RapportEmpotageType::class, $rapport);\n         $form->handleRequest($request);\n         if ($form->isSubmitted() && $form->isValid()) {\n             $rapport = $form->getData();\n             $rapport->setUser($this->getUser());\n-            if()\n+            if($nbre = 1)\n             $manager->persist($rapport);\n             $manager->flush();\n             #return $this->redirectToRoute('site/succes.html.twig');\n         }\n"
+                },
+                {
+                    "date": 1675338952048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,15 +24,17 @@\n     public function add(Request $request, EntityManagerInterface $manager): Response\n     {\n         $rapport = new RapportEmpotage();\n         $fiche = new Fiche();\n-        $nbre = $fiche->getUser()->getid();\n+        $nbres = $fiche->getUser()->getid();\n         $form = $this->createForm(RapportEmpotageType::class, $rapport);\n         $form->handleRequest($request);\n         if ($form->isSubmitted() && $form->isValid()) {\n             $rapport = $form->getData();\n             $rapport->setUser($this->getUser());\n-            if($nbre = 1)\n+            for($nbre in $nbres){}\n+\n+            }\n             $manager->persist($rapport);\n             $manager->flush();\n             #return $this->redirectToRoute('site/succes.html.twig');\n         }\n"
+                },
+                {
+                    "date": 1675339059036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n         $form->handleRequest($request);\n         if ($form->isSubmitted() && $form->isValid()) {\n             $rapport = $form->getData();\n             $rapport->setUser($this->getUser());\n-            for($nbre in $nbres){}\n+            foreach($nbres as $nbre){}\n \n             }\n             $manager->persist($rapport);\n             $manager->flush();\n"
+                },
+                {
+                    "date": 1675339472955,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,11 +30,8 @@\n         $form->handleRequest($request);\n         if ($form->isSubmitted() && $form->isValid()) {\n             $rapport = $form->getData();\n             $rapport->setUser($this->getUser());\n-            foreach($nbres as $nbre){}\n-\n-            }\n             $manager->persist($rapport);\n             $manager->flush();\n             #return $this->redirectToRoute('site/succes.html.twig');\n         }\n"
+                }
+            ],
+            "date": 1675331688417,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Controller;\n\nuse Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\nuse Symfony\\Component\\HttpFoundation\\Response;\nuse Symfony\\Component\\Routing\\Annotation\\Route;\n\nclass TestController extends AbstractController\n{\n    #[Route('/test', name: 'app_test')]\n    public function index(): Response\n    {\n        return $this->render('test/index.html.twig', [\n            'controller_name' => 'TestController',\n        ]);\n    }\n    #[Route('/AddRapport', name: 'agent_AddRapport')]\n    public function add(Request $request, EntityManagerInterface $manager): Response\n    {\n       \n        $rapport = new RapportEmpotage();\n        $form = $this->createForm(RapportEmpotageType::class, $rapport);\n        $form->handleRequest($request);\n        if ($form->isSubmitted() && $form->isValid()) {\n            $rapport = $form->getData();\n            $rapport->setUser($this->getUser());\n            $manager->persist($rapport);\n            $manager->flush();\n            #return $this->redirectToRoute('site/succes.html.twig');\n        }\n        return $this->render('agent/rapport.html.twig', [\n            'form' => $form,\n        ]);\n    }\n}\n"
+        }
+    ]
+}

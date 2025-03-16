@@ -1,0 +1,13 @@
+{% extends 'chefdashboardbase.html.twig' %}
+{% block body %}
+    <div class="container">
+    <div class="row">
+    <h1>Details du rapport</h1>
+        <div class="col-md-12 alert alert-info">
+         {% for rap in rapport %}
+                {{rap.contenu}}
+         {% endfor %}
+        </div>
+    </div>
+    </div>
+{% endblock %}

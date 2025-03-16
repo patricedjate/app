@@ -1,0 +1,115 @@
+{% extends 'connexionbase.html.twig' %}
+
+{% block title %}Connexion !
+{% endblock %}
+{% block stylesheets %}
+	{{ parent() }}
+	<style>
+.bg-image {
+  /* The image used */
+  background-image: url({{asset("assets/img/home2.jpg")}});
+  
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  
+  /* Full height */
+  height: 100%; 
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+}
+	</style>
+{% endblock %}
+{% block body %}
+<div class="bg-image"></div>
+<div class="bg-text">
+	<div class="container py-5 h-100">
+		<div class="row d-flex justify-content-center align-items-center h-100">
+			<div class="col col-xl-10">
+				<div class="card" style="border-radius: 1rem;">
+					<div class="row g-0">
+						<div class="col-md-6 col-lg-5 d-none d-md-block">
+							<img src="{{asset('assets/img/log.jpg')}}" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;"/>
+						</div>
+						<div class="col-md-6 col-lg-7 d-flex align-items-center">
+							<div class="card-body p-4 p-lg-5 text-black">
+
+								<form method="post">
+
+									<div class="d-flex align-items-center mb-3 pb-1">
+										<img src="{{asset('admin/assets/img/douane.jpg')}}" width="200px">
+									</div>
+									{% if error %}
+										<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+									{% endif %}
+
+									{% if app.user %}
+										<div class="mb-3">
+											Vous êtes connecté en tant que
+											{{ app.user.userIdentifier }},
+											<a href="{{ path('app_logout') }}">Se deconnecter</a>
+										</div>
+									{% endif %}
+
+									<h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Connectez-vous à votre compte</h5>
+
+									<div class="form-outline mb-4">
+										<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+										<label class="form-label" for="form2Example17">Email</label>
+									</div>
+
+									<div class="form-outline mb-4">
+										<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+										<label class="form-label" for="form2Example27">Mot de passe</label>
+									</div>
+									<input
+									type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+									{#
+																											        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+																											        See https://symfony.com/doc/current/security/remember_me.html
+																											
+																											        <div class="checkbox mb-3">
+																											            <label>
+																											                <input type="checkbox" name="_remember_me"> Se rappeler de moi
+																											            </label>
+																											        </div>
+																											    #}
+
+									<div class="pt-1 mb-4">
+										<button class="btn btn-dark btn-lg btn-block" type="submit">
+											Connexion
+										</button>
+									</div>
+
+									<a class="small text-muted" href="#!">Mot de passe oubliée?</a>
+									<p class="mb-5 pb-lg-2" style="color: #393f81;">
+										<a href="{{path("app_register")}}">Vous n'avez pas de compte?</a>
+									</p>
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+{% endblock %}

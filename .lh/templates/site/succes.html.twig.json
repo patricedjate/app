@@ -1,0 +1,62 @@
+{
+    "sourceFile": "templates/site/succes.html.twig",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1676895328404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1676895377876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n </div>\n <div class=\"row mb-1 mt-5 mb-5\">\n     <div class=\"col-4 mx-auto text-center\">\n        {{ render(controller(\n-        'App\\\\Controller\\\\BlogController::recentArticles'\n+        'App\\\\Controller\\\\DemandeEmpotageController::recentArticles'\n     )) }}\n     </div>\n </div>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1676895422084,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n </div>\n <div class=\"row mb-1 mt-5 mb-5\">\n     <div class=\"col-4 mx-auto text-center\">\n        {{ render(controller(\n-        'App\\\\Controller\\\\DemandeEmpotageController::recentArticles'\n+        'App\\\\Controller\\\\DemandeEmpotageController::index'\n     )) }}\n     </div>\n </div>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1676895812218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,10 +9,7 @@\n     </div>\n </div>\n <div class=\"row mb-1 mt-5 mb-5\">\n     <div class=\"col-4 mx-auto text-center\">\n-       {{ render(controller(\n-        'App\\\\Controller\\\\DemandeEmpotageController::index'\n-    )) }}\n     </div>\n </div>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1676896429006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,10 @@\n     </div>\n </div>\n <div class=\"row mb-1 mt-5 mb-5\">\n     <div class=\"col-4 mx-auto text-center\">\n+    {{nom}}\n+    {{prenom}}\n+    {{Contact}}\n     </div>\n </div>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1676903248378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,10 +9,7 @@\n     </div>\n </div>\n <div class=\"row mb-1 mt-5 mb-5\">\n     <div class=\"col-4 mx-auto text-center\">\n-    {{nom}}\n-    {{prenom}}\n-    {{Contact}}\n     </div>\n </div>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1676905530241,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,10 @@\n     </div>\n </div>\n <div class=\"row mb-1 mt-5 mb-5\">\n     <div class=\"col-4 mx-auto text-center\">\n+       {{ render(controller(\n+        'App\\\\Controller\\\\DemandeEmpotageController::index'\n+    )) }}\n     </div>\n </div>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1676906148130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n </div>\n <div class=\"row mb-1 mt-5 mb-5\">\n     <div class=\"col-4 mx-auto text-center\">\n        {{ render(controller(\n-        'App\\\\Controller\\\\DemandeEmpotageController::index'\n+        'App\\\\Controller\\\\DemandeEmpotageController::index', {nom}\n     )) }}\n     </div>\n </div>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1676906182879,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n </div>\n <div class=\"row mb-1 mt-5 mb-5\">\n     <div class=\"col-4 mx-auto text-center\">\n        {{ render(controller(\n-        'App\\\\Controller\\\\DemandeEmpotageController::index', {nom}\n+        'App\\\\Controller\\\\DemandeEmpotageController::index'\n     )) }}\n     </div>\n </div>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1676906682304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,10 +9,8 @@\n     </div>\n </div>\n <div class=\"row mb-1 mt-5 mb-5\">\n     <div class=\"col-4 mx-auto text-center\">\n-       {{ render(controller(\n-        'App\\\\Controller\\\\DemandeEmpotageController::index'\n-    )) }}\n+   {{nom}}\n     </div>\n </div>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1676907331656,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,8 @@\n     </div>\n </div>\n <div class=\"row mb-1 mt-5 mb-5\">\n     <div class=\"col-4 mx-auto text-center\">\n-   {{nom}}\n+ \n     </div>\n </div>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1676907601286,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,13 +4,9 @@\n \n {% block body %}\n <div class=\"row  mt-5\">\n     <div class=\"col-4 mx-auto text-center\">\n-        <img src=\"{{asset(\"assets/img/bas.png\")}}\" height=\"100px\">\n+        <img src=\"{{asset(\"assets/img/win.jpg\")}}\" height=\"200px\">\n     </div>\n </div>\n-<div class=\"row mb-1 mt-5 mb-5\">\n-    <div class=\"col-4 mx-auto text-center\">\n- \n-    </div>\n-</div>\n+<p class=\"fs-1 text-center mt-5\">Votre demande d'empotage a été enregistrer avec succès <br> Vous serez contacté par un agent pour la visite</p>\n {% endblock %}\n"
+                }
+            ],
+            "date": 1676895328404,
+            "name": "Commit-0",
+            "content": "{% extends 'base.html.twig' %}\n\n{% block title %}Acceuil{% endblock %}\n\n{% block body %}\n<div class=\"row  mt-5\">\n    <div class=\"col-4 mx-auto text-center\">\n        <img src=\"{{asset(\"assets/img/bas.png\")}}\" height=\"100px\">\n    </div>\n</div>\n<div class=\"row mb-1 mt-5 mb-5\">\n    <div class=\"col-4 mx-auto text-center\">\n       {{ render(controller(\n        'App\\\\Controller\\\\BlogController::recentArticles'\n    )) }}\n    </div>\n</div>\n{% endblock %}\n"
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "sourceFile": "src/Form/RapportEmpotageType.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1674817395052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1674817418561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,18 +3,22 @@\n namespace App\\Form;\n \n use App\\Entity\\RapportEmpotage;\n use Symfony\\Component\\Form\\AbstractType;\n-use Symfony\\Component\\Form\\Extension\\Core\\Type\\TextType;\n use Symfony\\Component\\Form\\FormBuilderInterface;\n use Symfony\\Component\\OptionsResolver\\OptionsResolver;\n+use Symfony\\Component\\Form\\Extension\\Core\\Type\\TextType;\n+use Symfony\\Component\\Form\\Extension\\Core\\Type\\SubmitType;\n \n class RapportEmpotageType extends AbstractType\n {\n     public function buildForm(FormBuilderInterface $builder, array $options): void\n     {\n         $builder\n             ->add('contenu',TextType::class,[\n+                \"attr\"=>[\n+                    \"class\"=>\"\"\n+                ]\n                 \n             ])\n             ->add('Submit',SubmitType::class,[\n                 \"attr\"=>[\n"
+                },
+                {
+                    "date": 1674817549613,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,10 +15,11 @@\n     {\n         $builder\n             ->add('contenu',TextType::class,[\n                 \"attr\"=>[\n-                    \"class\"=>\"\"\n-                ]\n+                    \"class\"=>\"form-control\"\n+                ],\n+                \"label\"=>\"Rediger le rapport d'empotage\"\n                 \n             ])\n             ->add('Submit',SubmitType::class,[\n                 \"attr\"=>[\n"
+                },
+                {
+                    "date": 1675335473993,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n {\n     public function buildForm(FormBuilderInterface $builder, array $options): void\n     {\n         $builder\n-            ->add('contenu',TextType::class,[\n+            ->add('contenu',TextareaType::class,[\n                 \"attr\"=>[\n                     \"class\"=>\"form-control\"\n                 ],\n                 \"label\"=>\"Rediger le rapport d'empotage\"\n"
+                },
+                {
+                    "date": 1675335481004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,10 @@\n use App\\Entity\\RapportEmpotage;\n use Symfony\\Component\\Form\\AbstractType;\n use Symfony\\Component\\Form\\FormBuilderInterface;\n use Symfony\\Component\\OptionsResolver\\OptionsResolver;\n-use Symfony\\Component\\Form\\Extension\\Core\\Type\\TextType;\n use Symfony\\Component\\Form\\Extension\\Core\\Type\\SubmitType;\n+use Symfony\\Component\\Form\\Extension\\Core\\Type\\TextareaType;\n \n class RapportEmpotageType extends AbstractType\n {\n     public function buildForm(FormBuilderInterface $builder, array $options): void\n"
+                }
+            ],
+            "date": 1674817395052,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Form;\n\nuse App\\Entity\\RapportEmpotage;\nuse Symfony\\Component\\Form\\AbstractType;\nuse Symfony\\Component\\Form\\Extension\\Core\\Type\\TextType;\nuse Symfony\\Component\\Form\\FormBuilderInterface;\nuse Symfony\\Component\\OptionsResolver\\OptionsResolver;\n\nclass RapportEmpotageType extends AbstractType\n{\n    public function buildForm(FormBuilderInterface $builder, array $options): void\n    {\n        $builder\n            ->add('contenu',TextType::class,[\n                \n            ])\n            ->add('Submit',SubmitType::class,[\n                \"attr\"=>[\n                    \"class\"=>\"btn btn-success mt-3 mb-3\",\n                    \n                ],\n                \"label\"=>\"Envoyer\"\n                ])\n        ;\n    }\n\n    public function configureOptions(OptionsResolver $resolver): void\n    {\n        $resolver->setDefaults([\n            'data_class' => RapportEmpotage::class,\n        ]);\n    }\n}\n"
+        }
+    ]
+}

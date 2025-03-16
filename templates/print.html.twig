@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}  
+{% block body %}
+<style>
+    @media print {
+        /* hide all elements that you don't want to be printed */
+        .no-print {
+            display: none;
+        }
+    }
+</style>
+    <button class="no-print" onclick="window.print()">Print this page</button
+{% endblock %}

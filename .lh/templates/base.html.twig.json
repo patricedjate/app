@@ -1,0 +1,90 @@
+{
+    "sourceFile": "templates/base.html.twig",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 18,
+            "patches": [
+                {
+                    "date": 1674463844223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1674465278572,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,14 +27,9 @@\n \t</head>\n \t<body>\n \t\t<div class=\"main-wrapper\">\n \t\t\t<div class=\"home-one-banner\">\n-\t\t\t\t<div class=\"bg-shapes\">\n-\t\t\t\t\t<img src=\"{{asset(\"assets/img/shapes/shape-10.png\")}}\" class=\"shape-01 aos\" alt=\"img\" data-aos=\"fade-right\">\n-\t\t\t\t\t<img src=\"{{asset(\"assets/img/shapes/shape-7.png\")}}\" class=\"shape-03 aos\" alt=\"img\" data-aos=\"zoom-out\">\n-\t\t\t\t\t<img src=\"{{asset(\"assets/img/shapes/shape-8.png\")}}\" class=\"shape-04 aos\" alt=\"img\" data-aos=\"fade-left\">\n-\t\t\t\t\t<img src=\"{{asset(\"assets/img/shapes/shape-6.png\")}}\" class=\"shape-02 aos\" alt=\"img\" data-aos=\"fade-down\">\n-\t\t\t\t</div>\n+\t\t\t\t\n \t\t\t\t<div class=\"container\">\n \t\t\t\t\t{% include \"navbar.html.twig\" %}\n \t\t\t\t\t{% block body %}{% endblock %}\n \t\t\t\t</div>\n"
+                },
+                {
+                    "date": 1674465342316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n \t<body>\n \t\t<div class=\"main-wrapper\">\n \t\t\t<div class=\"home-one-banner\">\n \t\t\t\t\n-\t\t\t\t<div class=\"container\">\n+\t\t\t\t<div class=\"container bg-success\">\n \t\t\t\t\t{% include \"navbar.html.twig\" %}\n \t\t\t\t\t{% block body %}{% endblock %}\n \t\t\t\t</div>\n \t\t\t</div>\n"
+                },
+                {
+                    "date": 1674465365347,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,11 +26,11 @@\n \n \t</head>\n \t<body>\n \t\t<div class=\"main-wrapper\">\n-\t\t\t<div class=\"home-one-banner\">\n+\t\t\t<div class=\"home-one-banner bg-success\">\n \t\t\t\t\n-\t\t\t\t<div class=\"container bg-success\">\n+\t\t\t\t<div class=\"container \">\n \t\t\t\t\t{% include \"navbar.html.twig\" %}\n \t\t\t\t\t{% block body %}{% endblock %}\n \t\t\t\t</div>\n \t\t\t</div>\n"
+                },
+                {
+                    "date": 1674465481503,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n \n \t</head>\n \t<body>\n \t\t<div class=\"main-wrapper\">\n-\t\t\t<div class=\"home-one-banner bg-success\">\n+\t\t\t<div class=\"home-one-banner bg-warning\">\n \t\t\t\t\n \t\t\t\t<div class=\"container \">\n \t\t\t\t\t{% include \"navbar.html.twig\" %}\n \t\t\t\t\t{% block body %}{% endblock %}\n"
+                },
+                {
+                    "date": 1674465606324,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,8 +37,11 @@\n \t\t\t\n \t\t\t\n \t\t\t\n \t\t</div>\n+        {% block footer %}\n+        \n+        {% endblock %}\n \t\t{% block script %}\n \t\t\t<script data-cfasync=\"false\" src=\"../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js\"></script>\n \t\t\t<script src=\"{{asset(\"assets/js/jquery-3.6.0.min.js\")}}\"></script>\n \n"
+                },
+                {
+                    "date": 1674465631835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n \t\t\t\n \t\t\t\n \t\t</div>\n         {% block footer %}\n-        \n+        {% include \"footer.html.twig\" %}\n         {% endblock %}\n \t\t{% block script %}\n \t\t\t<script data-cfasync=\"false\" src=\"../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js\"></script>\n \t\t\t<script src=\"{{asset(\"assets/js/jquery-3.6.0.min.js\")}}\"></script>\n"
+                },
+                {
+                    "date": 1674467072543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,15 +25,16 @@\n \t\t{% endblock %}\n \n \t</head>\n \t<body>\n-\t\t<div class=\"main-wrapper\">\n-\t\t\t<div class=\"home-one-banner bg-warning\">\n+    <div class=\"home-one-banner bg-warning\">\n \t\t\t\t\n \t\t\t\t<div class=\"container \">\n \t\t\t\t\t{% include \"navbar.html.twig\" %}\n \t\t\t\t\t{% block body %}{% endblock %}\n \t\t\t\t</div>\n+\t\t<div class=\"main-wrapper\">\n+\t\t\t\n \t\t\t</div>\n \t\t\t\n \t\t\t\n \t\t\t\n"
+                },
+                {
+                    "date": 1674467088343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,12 +29,12 @@\n     <div class=\"home-one-banner bg-warning\">\n \t\t\t\t\n \t\t\t\t<div class=\"container \">\n \t\t\t\t\t{% include \"navbar.html.twig\" %}\n-\t\t\t\t\t{% block body %}{% endblock %}\n+\t\t\t\t\t\n \t\t\t\t</div>\n \t\t<div class=\"main-wrapper\">\n-\t\t\t\n+\t\t\t{% block body %}{% endblock %}\n \t\t\t</div>\n \t\t\t\n \t\t\t\n \t\t\t\n"
+                },
+                {
+                    "date": 1674467116047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n \t\t\t\t<div class=\"container \">\n \t\t\t\t\t{% include \"navbar.html.twig\" %}\n \t\t\t\t\t\n \t\t\t\t</div>\n-\t\t<div class=\"main-wrapper\">\n+\t\t<div class=\"main-wrapper bg-light text-dark\">\n \t\t\t{% block body %}{% endblock %}\n \t\t\t</div>\n \t\t\t\n \t\t\t\n"
+                },
+                {
+                    "date": 1674467146489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,15 +31,16 @@\n \t\t\t\t<div class=\"container \">\n \t\t\t\t\t{% include \"navbar.html.twig\" %}\n \t\t\t\t\t\n \t\t\t\t</div>\n+                </div>\n \t\t<div class=\"main-wrapper bg-light text-dark\">\n \t\t\t{% block body %}{% endblock %}\n \t\t\t</div>\n \t\t\t\n \t\t\t\n \t\t\t\n-\t\t</div>\n+\t\t\n         {% block footer %}\n         {% include \"footer.html.twig\" %}\n         {% endblock %}\n \t\t{% block script %}\n"
+                },
+                {
+                    "date": 1674468886968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n \t\t\t\t\t{% include \"navbar.html.twig\" %}\n \t\t\t\t\t\n \t\t\t\t</div>\n                 </div>\n-\t\t<div class=\"main-wrapper bg-light text-dark\">\n+\t\t<div class=\"main-wrapper bg-light text-dark \" width=\"70%\">\n \t\t\t{% block body %}{% endblock %}\n \t\t\t</div>\n \t\t\t\n \t\t\t\n"
+                },
+                {
+                    "date": 1674468899459,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n \t\t\t\t\t{% include \"navbar.html.twig\" %}\n \t\t\t\t\t\n \t\t\t\t</div>\n                 </div>\n-\t\t<div class=\"main-wrapper bg-light text-dark \" width=\"70%\">\n+\t\t<div class=\"main-wrapper bg-light text-dark \" width=70%>\n \t\t\t{% block body %}{% endblock %}\n \t\t\t</div>\n \t\t\t\n \t\t\t\n"
+                },
+                {
+                    "date": 1674468914680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n \t\t\t\t\t{% include \"navbar.html.twig\" %}\n \t\t\t\t\t\n \t\t\t\t</div>\n                 </div>\n-\t\t<div class=\"main-wrapper bg-light text-dark \" width=70%>\n+\t\t<div class=\"main-wrapper bg-light text-dark \" height=70%>\n \t\t\t{% block body %}{% endblock %}\n \t\t\t</div>\n \t\t\t\n \t\t\t\n"
+                },
+                {
+                    "date": 1674468922475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n \t\t\t\t\t{% include \"navbar.html.twig\" %}\n \t\t\t\t\t\n \t\t\t\t</div>\n                 </div>\n-\t\t<div class=\"main-wrapper bg-light text-dark \" height=70%>\n+\t\t<div class=\"main-wrapper bg-light text-dark \" height=\"70%\">\n \t\t\t{% block body %}{% endblock %}\n \t\t\t</div>\n \t\t\t\n \t\t\t\n"
+                },
+                {
+                    "date": 1674469407639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n \t\t\t\t\t{% include \"navbar.html.twig\" %}\n \t\t\t\t\t\n \t\t\t\t</div>\n                 </div>\n-\t\t<div class=\"main-wrapper bg-light text-dark \" height=\"70%\">\n+\t\t<div class=\"main-wrapper bg-light text-dark \"   >\n \t\t\t{% block body %}{% endblock %}\n \t\t\t</div>\n \t\t\t\n \t\t\t\n"
+                },
+                {
+                    "date": 1674480440293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,21 +7,14 @@\n \t\t\t{% block title %}{% endblock %}\n \t\t</title>\n \t\t<link type=\"image/x-icon\" href=\"{{asset(\"assets/img/favicon.png\")}}\" rel=\"icon\">\n \t\t{% block stylesheets %}\n-\n-\n \t\t\t<link rel=\"stylesheet\" href=\"{{asset(\"assets/css/bootstrap.min.css\")}}\">\n-\n \t\t\t<link rel=\"stylesheet\" href=\"{{asset(\"assets/plugins/fontawesome/css/fontawesome.min.css\")}}\">\n \t\t\t<link rel=\"stylesheet\" href=\"{{asset(\"assets/plugins/fontawesome/css/all.min.css\")}}\">\n-\n \t\t\t<link rel=\"stylesheet\" href=\"{{asset(\"assets/css/feather.css\")}}\">\n-\n \t\t\t<link rel=\"stylesheet\" href=\"{{asset(\"assets/plugins/select2/css/select2.min.css\")}}\">\n-\n \t\t\t<link rel=\"stylesheet\" href=\"{{asset(\"assets/css/aos.css\")}}\">\n-\n \t\t\t<link rel=\"stylesheet\" href=\"{{asset(\"assets/css/style.css\")}}\">\n \t\t{% endblock %}\n \n \t</head>\n@@ -35,12 +28,9 @@\n                 </div>\n \t\t<div class=\"main-wrapper bg-light text-dark \"   >\n \t\t\t{% block body %}{% endblock %}\n \t\t\t</div>\n-\t\t\t\n-\t\t\t\n-\t\t\t\n-\t\t\n+\n         {% block footer %}\n         {% include \"footer.html.twig\" %}\n         {% endblock %}\n \t\t{% block script %}\n"
+                },
+                {
+                    "date": 1674557896628,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \t\t{% endblock %}\n \n \t</head>\n \t<body>\n-    <div class=\"home-one-banner bg-warning\">\n+    <div class=\"home-one-banner bg-warnin\">\n \t\t\t\t\n \t\t\t\t<div class=\"container \">\n \t\t\t\t\t{% include \"navbar.html.twig\" %}\n \t\t\t\t\t\n"
+                },
+                {
+                    "date": 1674557939887,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,16 +18,16 @@\n \t\t{% endblock %}\n \n \t</head>\n \t<body>\n-    <div class=\"home-one-banner bg-warnin\">\n+    <div class=\"home-one-banner bg-warning\">\n \t\t\t\t\n \t\t\t\t<div class=\"container \">\n \t\t\t\t\t{% include \"navbar.html.twig\" %}\n \t\t\t\t\t\n \t\t\t\t</div>\n-                </div>\n-\t\t<div class=\"main-wrapper bg-light text-dark \"   >\n+    </div>\n+\t\t<div class=\"main-wrapper  text-dark \"   >\n \t\t\t{% block body %}{% endblock %}\n \t\t\t</div>\n \n         {% block footer %}\n"
+                }
+            ],
+            "date": 1674463844223,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\n<html lang=\"fr\">\n\t<head>\n\t\t<meta charset=\"utf-8\">\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=0\">\n\t\t<title>\n\t\t\t{% block title %}{% endblock %}\n\t\t</title>\n\t\t<link type=\"image/x-icon\" href=\"{{asset(\"assets/img/favicon.png\")}}\" rel=\"icon\">\n\t\t{% block stylesheets %}\n\n\n\t\t\t<link rel=\"stylesheet\" href=\"{{asset(\"assets/css/bootstrap.min.css\")}}\">\n\n\t\t\t<link rel=\"stylesheet\" href=\"{{asset(\"assets/plugins/fontawesome/css/fontawesome.min.css\")}}\">\n\t\t\t<link rel=\"stylesheet\" href=\"{{asset(\"assets/plugins/fontawesome/css/all.min.css\")}}\">\n\n\t\t\t<link rel=\"stylesheet\" href=\"{{asset(\"assets/css/feather.css\")}}\">\n\n\t\t\t<link rel=\"stylesheet\" href=\"{{asset(\"assets/plugins/select2/css/select2.min.css\")}}\">\n\n\t\t\t<link rel=\"stylesheet\" href=\"{{asset(\"assets/css/aos.css\")}}\">\n\n\t\t\t<link rel=\"stylesheet\" href=\"{{asset(\"assets/css/style.css\")}}\">\n\t\t{% endblock %}\n\n\t</head>\n\t<body>\n\t\t<div class=\"main-wrapper\">\n\t\t\t<div class=\"home-one-banner\">\n\t\t\t\t<div class=\"bg-shapes\">\n\t\t\t\t\t<img src=\"{{asset(\"assets/img/shapes/shape-10.png\")}}\" class=\"shape-01 aos\" alt=\"img\" data-aos=\"fade-right\">\n\t\t\t\t\t<img src=\"{{asset(\"assets/img/shapes/shape-7.png\")}}\" class=\"shape-03 aos\" alt=\"img\" data-aos=\"zoom-out\">\n\t\t\t\t\t<img src=\"{{asset(\"assets/img/shapes/shape-8.png\")}}\" class=\"shape-04 aos\" alt=\"img\" data-aos=\"fade-left\">\n\t\t\t\t\t<img src=\"{{asset(\"assets/img/shapes/shape-6.png\")}}\" class=\"shape-02 aos\" alt=\"img\" data-aos=\"fade-down\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"container\">\n\t\t\t\t\t{% include \"navbar.html.twig\" %}\n\t\t\t\t\t{% block body %}{% endblock %}\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t</div>\n\t\t{% block script %}\n\t\t\t<script data-cfasync=\"false\" src=\"../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js\"></script>\n\t\t\t<script src=\"{{asset(\"assets/js/jquery-3.6.0.min.js\")}}\"></script>\n\n\t\t\t<script src=\"{{asset(\"assets/js/bootstrap.bundle.min.js\")}}\"></script>\n\n\t\t\t<script src=\"{{asset(\"assets/js/feather.min.js\")}}\"></script>\n\n\t\t\t<script src=\"{{asset(\"assets/plugins/select2/js/select2.min.js\")}}\"></script>\n\n\t\t\t<script src=\"{{asset(\"assets/js/slick.js\")}}\"></script>\n\n\t\t\t<script src=\"{{asset(\"assets/js/aos.js\")}}\"></script>\n\n\t\t\t<script src=\"{{asset(\"assets/js/script.js\")}}\"></script>\n\t\t{% endblock %}\n\t</body>\n</html>\n"
+        }
+    ]
+}

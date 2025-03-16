@@ -1,0 +1,13 @@
+{% extends 'chefdashboardbase.html.twig' %}
+
+{% block title %}Edition Fiche D'empotage{% endblock %}
+
+{% block body %}
+    <h1>Edition fiche d'empotage</h1>
+
+    {{ include('chef/fiche/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+    <a href="{{ path('app_fiche_index') }}" class="btn btn-warning">Revenir à la liste</a>
+
+    {{ include('chef/fiche/_delete_form.html.twig') }}
+{% endblock %}

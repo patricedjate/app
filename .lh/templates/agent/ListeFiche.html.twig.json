@@ -1,0 +1,82 @@
+{
+    "sourceFile": "templates/agent/ListeFiche.html.twig",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 16,
+            "patches": [
+                {
+                    "date": 1675328970750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1675328997091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,9 @@\n             <tr>\r\n                 <td>{{ fiche.id }}</td>\r\n                 <td>{{ fiche.nomCda }}</td>\r\n                 <td>{{ fiche.nomExportateur }}</td>\r\n+                <td>{{ fiche.natureMarchandise }}</td>\r\n                 <td>{{ fiche.date ? fiche.date|date('Y-m-d H:i:s') : '' }}</td>\r\n                 <td>\r\n                     <a href=\"{{ path('app_fiche_show', {'id': fiche.id}) }}\" class=\"btn btn-primary\">Voir</a>\r\n                     <a href=\"{{ path('app_fiche_edit', {'id': fiche.id}) }}\" class=\"btn btn-success\">Editer</a>\r\n"
+                },
+                {
+                    "date": 1675329304002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n                 <td>{{ fiche.nomExportateur }}</td>\r\n                 <td>{{ fiche.natureMarchandise }}</td>\r\n                 <td>{{ fiche.date ? fiche.date|date('Y-m-d H:i:s') : '' }}</td>\r\n                 <td>\r\n-                    <a href=\"{{ path('app_fiche_show', {'id': fiche.id}) }}\" class=\"btn btn-primary\">Voir</a>\r\n+                    <a href=\"{{ path('fiche_show', {'id': fiche.id}) }}\" class=\"btn btn-primary\">Voir</a>\r\n                     <a href=\"{{ path('app_fiche_edit', {'id': fiche.id}) }}\" class=\"btn btn-success\">Editer</a>\r\n                 </td>\r\n             </tr>\r\n         {% else %}\r\n"
+                },
+                {
+                    "date": 1675329433425,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n                 <td>{{ fiche.natureMarchandise }}</td>\r\n                 <td>{{ fiche.date ? fiche.date|date('Y-m-d H:i:s') : '' }}</td>\r\n                 <td>\r\n                     <a href=\"{{ path('fiche_show', {'id': fiche.id}) }}\" class=\"btn btn-primary\">Voir</a>\r\n-                    <a href=\"{{ path('app_fiche_edit', {'id': fiche.id}) }}\" class=\"btn btn-success\">Editer</a>\r\n+                    <a href=\"#\" class=\"btn btn-success\">Rediger le rapport</a>\r\n                 </td>\r\n             </tr>\r\n         {% else %}\r\n             <tr>\r\n"
+                },
+                {
+                    "date": 1675329443792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n                 <td>{{ fiche.nomExportateur }}</td>\r\n                 <td>{{ fiche.natureMarchandise }}</td>\r\n                 <td>{{ fiche.date ? fiche.date|date('Y-m-d H:i:s') : '' }}</td>\r\n                 <td>\r\n-                    <a href=\"{{ path('fiche_show', {'id': fiche.id}) }}\" class=\"btn btn-primary\">Voir</a>\r\n+                    <a href=\"{{ path('fiche_show', {'id': fiche.id}) }}\" class=\"btn btn-primary\">Voir Plus</a>\r\n                     <a href=\"#\" class=\"btn btn-success\">Rediger le rapport</a>\r\n                 </td>\r\n             </tr>\r\n         {% else %}\r\n"
+                },
+                {
+                    "date": 1675330635809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n                 <td>{{ fiche.natureMarchandise }}</td>\r\n                 <td>{{ fiche.date ? fiche.date|date('Y-m-d H:i:s') : '' }}</td>\r\n                 <td>\r\n                     <a href=\"{{ path('fiche_show', {'id': fiche.id}) }}\" class=\"btn btn-primary\">Voir Plus</a>\r\n-                    <a href=\"#\" class=\"btn btn-success\">Rediger le rapport</a>\r\n+                    <a href=\"{{path(\"agent_AddRapport\")}}\" class=\"btn btn-success\">Rediger le rapport</a>\r\n                 </td>\r\n             </tr>\r\n         {% else %}\r\n             <tr>\r\n"
+                },
+                {
+                    "date": 1675331131776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n                 <td>{{ fiche.natureMarchandise }}</td>\r\n                 <td>{{ fiche.date ? fiche.date|date('Y-m-d H:i:s') : '' }}</td>\r\n                 <td>\r\n                     <a href=\"{{ path('fiche_show', {'id': fiche.id}) }}\" class=\"btn btn-primary\">Voir Plus</a>\r\n-                    <a href=\"{{path(\"agent_AddRapport\")}}\" class=\"btn btn-success\">Rediger le rapport</a>\r\n+                    <a href=\"\" class=\"btn btn-success\">Rediger le rapport</a>\r\n                 </td>\r\n             </tr>\r\n         {% else %}\r\n             <tr>\r\n"
+                },
+                {
+                    "date": 1675332154828,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n                 <td>{{ fiche.natureMarchandise }}</td>\r\n                 <td>{{ fiche.date ? fiche.date|date('Y-m-d H:i:s') : '' }}</td>\r\n                 <td>\r\n                     <a href=\"{{ path('fiche_show', {'id': fiche.id}) }}\" class=\"btn btn-primary\">Voir Plus</a>\r\n-                    <a href=\"\" class=\"btn btn-success\">Rediger le rapport</a>\r\n+                    <a href=\"path{{\"agent_AddRapport\"}})\" class=\"btn btn-success\">Rediger le rapport</a>\r\n                 </td>\r\n             </tr>\r\n         {% else %}\r\n             <tr>\r\n"
+                },
+                {
+                    "date": 1675332401244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n                 <td>{{ fiche.natureMarchandise }}</td>\r\n                 <td>{{ fiche.date ? fiche.date|date('Y-m-d H:i:s') : '' }}</td>\r\n                 <td>\r\n                     <a href=\"{{ path('fiche_show', {'id': fiche.id}) }}\" class=\"btn btn-primary\">Voir Plus</a>\r\n-                    <a href=\"path{{\"agent_AddRapport\"}})\" class=\"btn btn-success\">Rediger le rapport</a>\r\n+                    <a href=\"path{{\"agent_AddRapport\"}}\" class=\"btn btn-success\">Rediger le rapport</a>\r\n                 </td>\r\n             </tr>\r\n         {% else %}\r\n             <tr>\r\n"
+                },
+                {
+                    "date": 1675332436259,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n                 <td>{{ fiche.natureMarchandise }}</td>\r\n                 <td>{{ fiche.date ? fiche.date|date('Y-m-d H:i:s') : '' }}</td>\r\n                 <td>\r\n                     <a href=\"{{ path('fiche_show', {'id': fiche.id}) }}\" class=\"btn btn-primary\">Voir Plus</a>\r\n-                    <a href=\"path{{\"agent_AddRapport\"}}\" class=\"btn btn-success\">Rediger le rapport</a>\r\n+                    <a href=\"{{path(\"agent_AddRapport\")}}\" class=\"btn btn-success\">Rediger le rapport</a>\r\n                 </td>\r\n             </tr>\r\n         {% else %}\r\n             <tr>\r\n"
+                },
+                {
+                    "date": 1675332805047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n                 <td>{{ fiche.natureMarchandise }}</td>\r\n                 <td>{{ fiche.date ? fiche.date|date('Y-m-d H:i:s') : '' }}</td>\r\n                 <td>\r\n                     <a href=\"{{ path('fiche_show', {'id': fiche.id}) }}\" class=\"btn btn-primary\">Voir Plus</a>\r\n-                    <a href=\"{{path(\"agent_AddRapport\")}}\" class=\"btn btn-success\">Rediger le rapport</a>\r\n+                    <a href=\"{{path(\"agent_Rapport\")}}\" class=\"btn btn-success\">Rediger le rapport</a>\r\n                 </td>\r\n             </tr>\r\n         {% else %}\r\n             <tr>\r\n"
+                },
+                {
+                    "date": 1675332841415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n                 <td>{{ fiche.natureMarchandise }}</td>\r\n                 <td>{{ fiche.date ? fiche.date|date('Y-m-d H:i:s') : '' }}</td>\r\n                 <td>\r\n                     <a href=\"{{ path('fiche_show', {'id': fiche.id}) }}\" class=\"btn btn-primary\">Voir Plus</a>\r\n-                    <a href=\"{{path(\"agent_Rapport\")}}\" class=\"btn btn-success\">Rediger le rapport</a>\r\n+                    <a href=\"{{path(\"agent_Rapport\", {'id': fiche.id})}}\" class=\"btn btn-success\">Rediger le rapport</a>\r\n                 </td>\r\n             </tr>\r\n         {% else %}\r\n             <tr>\r\n"
+                },
+                {
+                    "date": 1675332883152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,16 +29,17 @@\n                 <td>{{ fiche.natureMarchandise }}</td>\r\n                 <td>{{ fiche.date ? fiche.date|date('Y-m-d H:i:s') : '' }}</td>\r\n                 <td>\r\n                     <a href=\"{{ path('fiche_show', {'id': fiche.id}) }}\" class=\"btn btn-primary\">Voir Plus</a>\r\n-                    <a href=\"{{path(\"agent_Rapport\", {'id': fiche.id})}}\" class=\"btn btn-success\">Rediger le rapport</a>\r\n+                   \r\n                 </td>\r\n             </tr>\r\n         {% else %}\r\n             <tr>\r\n                 <td colspan=\"13\">Aucun Enregistrement Trouvé</td>\r\n             </tr>\r\n         {% endfor %}\r\n+        <td> <a href=\"{{path(\"agent_Rapport\")}}\" class=\"btn btn-success\">Rediger le rapport</a></td>\r\n         </tbody>\r\n     </table>\r\n     \r\n {% endblock %}\r\n"
+                },
+                {
+                    "date": 1675332912281,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,17 +29,16 @@\n                 <td>{{ fiche.natureMarchandise }}</td>\r\n                 <td>{{ fiche.date ? fiche.date|date('Y-m-d H:i:s') : '' }}</td>\r\n                 <td>\r\n                     <a href=\"{{ path('fiche_show', {'id': fiche.id}) }}\" class=\"btn btn-primary\">Voir Plus</a>\r\n-                   \r\n+                    <a href=\"{{path(\"agent_Rapport\")}}\" class=\"btn btn-success\">Rediger le rapport</a>\r\n                 </td>\r\n             </tr>\r\n         {% else %}\r\n             <tr>\r\n                 <td colspan=\"13\">Aucun Enregistrement Trouvé</td>\r\n             </tr>\r\n         {% endfor %}\r\n-        <td> <a href=\"{{path(\"agent_Rapport\")}}\" class=\"btn btn-success\">Rediger le rapport</a></td>\r\n         </tbody>\r\n     </table>\r\n     \r\n {% endblock %}\r\n"
+                },
+                {
+                    "date": 1675775675225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,11 @@\n                 <td>{{ fiche.natureMarchandise }}</td>\r\n                 <td>{{ fiche.date ? fiche.date|date('Y-m-d H:i:s') : '' }}</td>\r\n                 <td>\r\n                     <a href=\"{{ path('fiche_show', {'id': fiche.id}) }}\" class=\"btn btn-primary\">Voir Plus</a>\r\n-                    <a href=\"{{path(\"agent_Rapport\")}}\" class=\"btn btn-success\">Rediger le rapport</a>\r\n+                    {% for rapport in rapports %}\r\n+                        <a href=\"{{path(\"agent_Rapport\",{'id':rapport.id}) }}\" class=\"btn btn-success\">Rediger le rapport</a>\r\n+                    {% endfor %}\r\n                 </td>\r\n             </tr>\r\n         {% else %}\r\n             <tr>\r\n"
+                },
+                {
+                    "date": 1675777807125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n                 <td>{{ fiche.date ? fiche.date|date('Y-m-d H:i:s') : '' }}</td>\r\n                 <td>\r\n                     <a href=\"{{ path('fiche_show', {'id': fiche.id}) }}\" class=\"btn btn-primary\">Voir Plus</a>\r\n                     {% for rapport in rapports %}\r\n-                        <a href=\"{{path(\"agent_Rapport\",{'id':rapport.id}) }}\" class=\"btn btn-success\">Rediger le rapport</a>\r\n+                        <a href=\"{{path(\"edit_RapportEmpotage\",{'id':fiche.id}) }}\" class=\"btn btn-success\">Rediger le rapport</a>\r\n                     {% endfor %}\r\n                 </td>\r\n             </tr>\r\n         {% else %}\r\n"
+                },
+                {
+                    "date": 1675777852028,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,11 +29,9 @@\n                 <td>{{ fiche.natureMarchandise }}</td>\r\n                 <td>{{ fiche.date ? fiche.date|date('Y-m-d H:i:s') : '' }}</td>\r\n                 <td>\r\n                     <a href=\"{{ path('fiche_show', {'id': fiche.id}) }}\" class=\"btn btn-primary\">Voir Plus</a>\r\n-                    {% for rapport in rapports %}\r\n                         <a href=\"{{path(\"edit_RapportEmpotage\",{'id':fiche.id}) }}\" class=\"btn btn-success\">Rediger le rapport</a>\r\n-                    {% endfor %}\r\n                 </td>\r\n             </tr>\r\n         {% else %}\r\n             <tr>\r\n"
+                }
+            ],
+            "date": 1675328970750,
+            "name": "Commit-0",
+            "content": "{% extends 'agentdashboardbase.html.twig' %}\r\n\r\n{% block title %}Liste des fiches de demande d'empotage{% endblock %}\r\n{% block stylesheets %}\r\n{{ parent() }}\r\n\r\n<link rel=\"stylesheet\" href=\"https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css\" />\r\n{% endblock %}\r\n{% block body %}\r\n    <h1>Liste des fiches de demande d'empotage</h1>\r\n\r\n    <table class=\"table\"  id='table1'>\r\n        <thead>\r\n            <tr>\r\n                <th>Id</th>\r\n                <th>Nom cda</th>\r\n                <th>Nom exportateur</th>\r\n                <th>Nature marchandise</th>\r\n                <th>Date</th>\r\n                <th>actions</th>\r\n            </tr>\r\n        </thead>\r\n        <tbody>\r\n        {% for fiche in fiches %}\r\n            <tr>\r\n                <td>{{ fiche.id }}</td>\r\n                <td>{{ fiche.nomCda }}</td>\r\n                <td>{{ fiche.nomExportateur }}</td>\r\n                <td>{{ fiche.date ? fiche.date|date('Y-m-d H:i:s') : '' }}</td>\r\n                <td>\r\n                    <a href=\"{{ path('app_fiche_show', {'id': fiche.id}) }}\" class=\"btn btn-primary\">Voir</a>\r\n                    <a href=\"{{ path('app_fiche_edit', {'id': fiche.id}) }}\" class=\"btn btn-success\">Editer</a>\r\n                </td>\r\n            </tr>\r\n        {% else %}\r\n            <tr>\r\n                <td colspan=\"13\">Aucun Enregistrement Trouvé</td>\r\n            </tr>\r\n        {% endfor %}\r\n        </tbody>\r\n    </table>\r\n    \r\n{% endblock %}\r\n{% block script %}\r\n{{ parent() }}\r\n\r\n<script src=\"https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js\"></script>\r\n<script>\r\n\t$(document).ready(function () {\r\n    $('#table1').DataTable();\r\n});\r\n</script>\r\n{% endblock %}"
+        }
+    ]
+}

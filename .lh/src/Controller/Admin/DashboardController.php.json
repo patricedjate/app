@@ -1,0 +1,82 @@
+{
+    "sourceFile": "src/Controller/Admin/DashboardController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 16,
+            "patches": [
+                {
+                    "date": 1674458279156,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1674458387731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,28 +9,12 @@\n use Symfony\\Component\\Routing\\Annotation\\Route;\n \n class DashboardController extends AbstractDashboardController\n {\n-    #[Route('/admin', name: 'admin')]\n+    #[Route('/admin', name: 'admin.index')]\n     public function index(): Response\n     {\n-        return parent::index();\n-\n-        // Option 1. You can make your dashboard redirect to some common page of your backend\n-        //\n-        // $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);\n-        // return $this->redirect($adminUrlGenerator->setController(OneOfYourCrudController::class)->generateUrl());\n-\n-        // Option 2. You can make your dashboard redirect to different pages depending on the user\n-        //\n-        // if ('jane' === $this->getUser()->getUsername()) {\n-        //     return $this->redirect('...');\n-        // }\n-\n-        // Option 3. You can render some custom template to display a proper dashboard with widgets, etc.\n-        // (tip: it's easier if your template extends from @EasyAdmin/page/content.html.twig)\n-        //\n-         return $this->render('some/path/my-dashboard.html.twig');\n+         return $this->render('admin/dashboard.html.twig');\n     }\n \n     public function configureDashboard(): Dashboard\n     {\n"
+                },
+                {
+                    "date": 1674458612845,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n use Symfony\\Component\\Routing\\Annotation\\Route;\n \n class DashboardController extends AbstractDashboardController\n {\n-    #[Route('/admin', name: 'admin.index')]\n+    #[Route('/', name: 'admin.index')]\n     public function index(): Response\n     {\n          return $this->render('admin/dashboard.html.twig');\n     }\n"
+                },
+                {
+                    "date": 1674458629393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n use Symfony\\Component\\Routing\\Annotation\\Route;\n \n class DashboardController extends AbstractDashboardController\n {\n-    #[Route('/', name: 'admin.index')]\n+    #[Route('/admin', name: 'admin.index')]\n     public function index(): Response\n     {\n          return $this->render('admin/dashboard.html.twig');\n     }\n"
+                },
+                {
+                    "date": 1674458884639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,10 @@\n \n     public function configureDashboard(): Dashboard\n     {\n         return Dashboard::new()\n-            ->setTitle('Douane');\n+            ->setTitle('Douanes Ivoiriennes')\n+            ->setTitle('<img src=\"{{asset(\"\")}}\">  <span class=\"text-small\">Corp.</span>');\n     }\n \n     public function configureMenuItems(): iterable\n     {\n"
+                },
+                {
+                    "date": 1674458901082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     public function configureDashboard(): Dashboard\n     {\n         return Dashboard::new()\n             ->setTitle('Douanes Ivoiriennes')\n-            ->setTitle('<img src=\"{{asset(\"\")}}\">  <span class=\"text-small\">Corp.</span>');\n+            ->setTitle('<img src=\"{{asset(\"douane.jpg\")}}\">  <span class=\"text-small\">Corp.</span>');\n     }\n \n     public function configureMenuItems(): iterable\n     {\n"
+                },
+                {
+                    "date": 1674458943053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     public function configureDashboard(): Dashboard\n     {\n         return Dashboard::new()\n             ->setTitle('Douanes Ivoiriennes')\n-            ->setTitle('<img src=\"{{asset(\"douane.jpg\")}}\">  <span class=\"text-small\">Corp.</span>');\n+            ->setTitle('<img src=\"{{asset(\"assets/douane.jpg\")}}\">  <span class=\"text-small\">Corp.</span>');\n     }\n \n     public function configureMenuItems(): iterable\n     {\n"
+                },
+                {
+                    "date": 1674458954074,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     public function configureDashboard(): Dashboard\n     {\n         return Dashboard::new()\n             ->setTitle('Douanes Ivoiriennes')\n-            ->setTitle('<img src=\"{{asset(\"assets/douane.jpg\")}}\">  <span class=\"text-small\">Corp.</span>');\n+            ->setTitle('<img src=\"{{asset(\"admin/assets/douane.jpg\")}}\">  <span class=\"text-small\">Corp.</span>');\n     }\n \n     public function configureMenuItems(): iterable\n     {\n"
+                },
+                {
+                    "date": 1674458999896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     public function configureDashboard(): Dashboard\n     {\n         return Dashboard::new()\n             ->setTitle('Douanes Ivoiriennes')\n-            ->setTitle('<img src=\"{{asset(\"admin/assets/douane.jpg\")}}\">  <span class=\"text-small\">Corp.</span>');\n+            ->setTitle('<img src=\"{{asset(\"admin/assets/img/douane.jpg\")}}\">  <span class=\"text-small\">Corp.</span>');\n     }\n \n     public function configureMenuItems(): iterable\n     {\n"
+                },
+                {
+                    "date": 1674459072129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n use EasyCorp\\Bundle\\EasyAdminBundle\\Config\\Dashboard;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Config\\MenuItem;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractDashboardController;\n-use Symfony\\Component\\HttpFoundation\\Response;\n+use Symfony\\Component\\HttpFoundation\\Response;\\admin\n use Symfony\\Component\\Routing\\Annotation\\Route;\n \n class DashboardController extends AbstractDashboardController\n {\n@@ -18,9 +18,9 @@\n \n     public function configureDashboard(): Dashboard\n     {\n         return Dashboard::new()\n-            ->setTitle('Douanes Ivoiriennes')\n+           \n             ->setTitle('<img src=\"{{asset(\"admin/assets/img/douane.jpg\")}}\">  <span class=\"text-small\">Corp.</span>');\n     }\n \n     public function configureMenuItems(): iterable\n"
+                },
+                {
+                    "date": 1674459082550,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \n     public function configureDashboard(): Dashboard\n     {\n         return Dashboard::new()\n-           \n+            ->setTitle('Douanes Ivoiriennes')\n             ->setTitle('<img src=\"{{asset(\"admin/assets/img/douane.jpg\")}}\">  <span class=\"text-small\">Corp.</span>');\n     }\n \n     public function configureMenuItems(): iterable\n"
+                },
+                {
+                    "date": 1674459098812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n use EasyCorp\\Bundle\\EasyAdminBundle\\Config\\Dashboard;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Config\\MenuItem;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractDashboardController;\n-use Symfony\\Component\\HttpFoundation\\Response;\\admin\n+use Symfony\\Component\\HttpFoundation\\Response;\n use Symfony\\Component\\Routing\\Annotation\\Route;\n \n class DashboardController extends AbstractDashboardController\n {\n@@ -18,9 +18,9 @@\n \n     public function configureDashboard(): Dashboard\n     {\n         return Dashboard::new()\n-            ->setTitle('Douanes Ivoiriennes')\n+            \n             ->setTitle('<img src=\"{{asset(\"admin/assets/img/douane.jpg\")}}\">  <span class=\"text-small\">Corp.</span>');\n     }\n \n     public function configureMenuItems(): iterable\n"
+                },
+                {
+                    "date": 1674459122208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,10 +18,10 @@\n \n     public function configureDashboard(): Dashboard\n     {\n         return Dashboard::new()\n-            \n-            ->setTitle('<img src=\"{{asset(\"admin/assets/img/douane.jpg\")}}\">  <span class=\"text-small\">Corp.</span>');\n+            ->setTitle('Douanes Ivoiriennes')\n+            ->setTitle('<img src=\"{{asset(\"assets/img/douane.jpg\")}}\">  <span class=\"text-small\">Corp.</span>');\n     }\n \n     public function configureMenuItems(): iterable\n     {\n"
+                },
+                {
+                    "date": 1674459138053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     public function configureDashboard(): Dashboard\n     {\n         return Dashboard::new()\n             ->setTitle('Douanes Ivoiriennes')\n-            ->setTitle('<img src=\"{{asset(\"assets/img/douane.jpg\")}}\">  <span class=\"text-small\">Corp.</span>');\n+            ->setTitle('<img src=\"{{asset(\"assets/img/logoDouane.jpeg\")}}\">  <span class=\"text-small\">Corp.</span>');\n     }\n \n     public function configureMenuItems(): iterable\n     {\n"
+                },
+                {
+                    "date": 1674459158490,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,13 +17,12 @@\n     }\n \n     public function configureDashboard(): Dashboard\n     {\n-        return Dashboard::new()\n-            ->setTitle('Douanes Ivoiriennes')\n-            ->setTitle('<img src=\"{{asset(\"assets/img/logoDouane.jpeg\")}}\">  <span class=\"text-small\">Corp.</span>');\n+        return Dashboard::new ()\n+            ->setTitle('Douanes Ivoiriennes');\n+\n     }\n-\n     public function configureMenuItems(): iterable\n     {\n         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');\n         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);\n"
+                },
+                {
+                    "date": 1674459614052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,7 +24,7 @@\n     }\n     public function configureMenuItems(): iterable\n     {\n         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');\n-        // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);\n+        yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-list', EntityClass::class);\n     }\n }\n"
+                },
+                {
+                    "date": 1674459642261,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <?php\n \n namespace App\\Controller\\Admin;\n \n+use App\\Entity\\User;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Config\\Dashboard;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Config\\MenuItem;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractDashboardController;\n use Symfony\\Component\\HttpFoundation\\Response;\n@@ -24,7 +25,7 @@\n     }\n     public function configureMenuItems(): iterable\n     {\n         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');\n-        yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-list', EntityClass::class);\n+        yield MenuItem::linkToCrud('Utilisateurs', 'fa fa-user-circle-o', User::class);\n     }\n }\n"
+                }
+            ],
+            "date": 1674458279156,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Controller\\Admin;\n\nuse EasyCorp\\Bundle\\EasyAdminBundle\\Config\\Dashboard;\nuse EasyCorp\\Bundle\\EasyAdminBundle\\Config\\MenuItem;\nuse EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractDashboardController;\nuse Symfony\\Component\\HttpFoundation\\Response;\nuse Symfony\\Component\\Routing\\Annotation\\Route;\n\nclass DashboardController extends AbstractDashboardController\n{\n    #[Route('/admin', name: 'admin')]\n    public function index(): Response\n    {\n        return parent::index();\n\n        // Option 1. You can make your dashboard redirect to some common page of your backend\n        //\n        // $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);\n        // return $this->redirect($adminUrlGenerator->setController(OneOfYourCrudController::class)->generateUrl());\n\n        // Option 2. You can make your dashboard redirect to different pages depending on the user\n        //\n        // if ('jane' === $this->getUser()->getUsername()) {\n        //     return $this->redirect('...');\n        // }\n\n        // Option 3. You can render some custom template to display a proper dashboard with widgets, etc.\n        // (tip: it's easier if your template extends from @EasyAdmin/page/content.html.twig)\n        //\n         return $this->render('some/path/my-dashboard.html.twig');\n    }\n\n    public function configureDashboard(): Dashboard\n    {\n        return Dashboard::new()\n            ->setTitle('Douane');\n    }\n\n    public function configureMenuItems(): iterable\n    {\n        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');\n        // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);\n    }\n}\n"
+        }
+    ]
+}

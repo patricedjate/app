@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/Entity/RapportEmpotage.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1674457721899,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1674457721899,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Entity;\n\nuse App\\Repository\\RapportEmpotageRepository;\nuse Doctrine\\ORM\\Mapping as ORM;\n\n#[ORM\\Entity(repositoryClass: RapportEmpotageRepository::class)]\nclass RapportEmpotage\n{\n    #[ORM\\Id]\n    #[ORM\\GeneratedValue]\n    #[ORM\\Column]\n    private ?int $id = null;\n\n    #[ORM\\Column(length: 255)]\n    private ?string $contenu = null;\n\n    #[ORM\\Column]\n    private ?\\DateTimeImmutable $date = null;\n    public function __construct()\n    {\n        $this->date = new \\DateTimeImmutable();\n    }\n    public function getId(): ?int\n    {\n        return $this->id;\n    }\n\n    public function getContenu(): ?string\n    {\n        return $this->contenu;\n    }\n\n    public function setContenu(string $contenu): self\n    {\n        $this->contenu = $contenu;\n\n        return $this;\n    }\n\n    public function getDate(): ?\\DateTimeImmutable\n    {\n        return $this->date;\n    }\n\n    public function setDate(\\DateTimeImmutable $date): self\n    {\n        $this->date = $date;\n\n        return $this;\n    }\n}\n"
+        }
+    ]
+}

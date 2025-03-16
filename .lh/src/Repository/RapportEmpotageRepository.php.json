@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/Repository/RapportEmpotageRepository.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1675328656647,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1675328672565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,8 +56,10 @@\n \n     public function findNbre()\n     {\n         return $this->createQueryBuilder('r')\n+            ->andWhere('r.contenu != :val')\n+            ->setParameter('val', null)\n             ->getQuery()\n             ->getResult();\n     }\n }\n"
+                },
+                {
+                    "date": 1675328706607,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,10 +56,9 @@\n \n     public function findNbre()\n     {\n         return $this->createQueryBuilder('r')\n-            ->andWhere('r.contenu != :val')\n-            ->setParameter('val', null)\n+            ->andWhere('r.contenu != ')\n             ->getQuery()\n             ->getResult();\n     }\n }\n"
+                },
+                {
+                    "date": 1675328715381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,8 @@\n \n     public function findNbre()\n     {\n         return $this->createQueryBuilder('r')\n-            ->andWhere('r.contenu != ')\n             ->getQuery()\n             ->getResult();\n     }\n }\n"
+                }
+            ],
+            "date": 1675328656647,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Repository;\n\nuse App\\Entity\\RapportEmpotage;\nuse Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository;\nuse Doctrine\\Persistence\\ManagerRegistry;\n\n/**\n * @extends ServiceEntityRepository<RapportEmpotage>\n *\n * @method RapportEmpotage|null find($id, $lockMode = null, $lockVersion = null)\n * @method RapportEmpotage|null findOneBy(array $criteria, array $orderBy = null)\n * @method RapportEmpotage[]    findAll()\n * @method RapportEmpotage[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)\n */\nclass RapportEmpotageRepository extends ServiceEntityRepository\n{\n    public function __construct(ManagerRegistry $registry)\n    {\n        parent::__construct($registry, RapportEmpotage::class);\n    }\n\n    public function save(RapportEmpotage $entity, bool $flush = false): void\n    {\n        $this->getEntityManager()->persist($entity);\n\n        if ($flush) {\n            $this->getEntityManager()->flush();\n        }\n    }\n\n    public function remove(RapportEmpotage $entity, bool $flush = false): void\n    {\n        $this->getEntityManager()->remove($entity);\n\n        if ($flush) {\n            $this->getEntityManager()->flush();\n        }\n    }\n\n//    /**\n//     * @return RapportEmpotage[] Returns an array of RapportEmpotage objects\n//     */\n//    public function findByExampleField($value): array\n//    {\n//        return $this->createQueryBuilder('r')\n//            ->andWhere('r.exampleField = :val')\n//            ->setParameter('val', $value)\n//            ->orderBy('r.id', 'ASC')\n//            ->setMaxResults(10)\n//            ->getQuery()\n//            ->getResult()\n//        ;\n//    }\n\n    public function findNbre()\n    {\n        return $this->createQueryBuilder('r')\n            ->getQuery()\n            ->getResult();\n    }\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "templates/chef/ListeAgent.html.twig",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1677501976838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1677501976838,
+            "name": "Commit-0",
+            "content": "{% extends 'chefdashboardbase.html.twig' %}\r\n\r\n{% block title %}Liste Des Différents Agents De Visite{% endblock %}\r\n{% block stylesheets %}\r\n{{ parent() }}\r\n\r\n<link rel=\"stylesheet\" href=\"https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css\" />\r\n{% endblock %}\r\n{% block body %}\r\n    <h1>Liste Des Différents Agents De Visite</h1>\r\n\r\n    <table class=\"table\"  id='table1'>\r\n        <thead>\r\n            <tr>\r\n                <th>Nom</th>\r\n                <th>Prenom</th>\r\n                <th>Contact</th>\r\n                <th>Nombre de Dossier</th>\r\n                <th >Voir les Demandes</th>\r\n            </tr>\r\n        </thead>\r\n        <tbody>\r\n        {% for agent in agents %}\r\n            <tr>\r\n                <td>{{ agent.nom }}</td>\r\n                <td>{{ agent.prenom }}</td>\r\n                <td>{{ agent.contact }}</td>\r\n                <td>{{ agent.NombreDossier }}</td>\r\n                <td><a href=\"{{path('ListeFicheTraite', {'id': agent.id})}}\" class=\"btn btn-success\">Traité<br> ()</a>\r\n                <a href=\"{{path('ListeFicheNonTraite', {'id': agent.id})}}\" class=\"btn btn-danger\">Non Traité<br> ()</a></td>\r\n            </tr>\r\n        {% else %}\r\n            <tr>\r\n                <td colspan=\"13\">Aucun Enregistrement Trouvé</td>\r\n            </tr>\r\n        {% endfor %}\r\n        </tbody>\r\n    </table>\r\n    \r\n{% endblock %}\r\n{% block script %}\r\n{{ parent() }}\r\n\r\n<script src=\"https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js\"></script>\r\n<script>\r\n\t$(document).ready(function () {\r\n    $('#table1').DataTable();\r\n});\r\n</script>\r\n{% endblock %}"
+        }
+    ]
+}

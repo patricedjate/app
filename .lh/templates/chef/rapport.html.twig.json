@@ -1,0 +1,50 @@
+{
+    "sourceFile": "templates/chef/rapport.html.twig",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1677701933644,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1677701982405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n {% block body %}\r\n     <div class=\"container\">\r\n     <div class=\"row\">\r\n         <div class=\"col-md-12 alert alert-info\">\r\n-        \r\n+        {{rapport}}\r\n         </div>\r\n     </div>\r\n     </div>\r\n {% endblock %}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1677702008111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n {% block body %}\r\n     <div class=\"container\">\r\n     <div class=\"row\">\r\n         <div class=\"col-md-12 alert alert-info\">\r\n-        {{rapport}}\r\n+        {{rapport.contenu}}\r\n         </div>\r\n     </div>\r\n     </div>\r\n {% endblock %}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1677702640418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n {% block body %}\r\n     <div class=\"container\">\r\n     <div class=\"row\">\r\n         <div class=\"col-md-12 alert alert-info\">\r\n-        {{rapport.contenu}}\r\n+        {{rapport.id}}\r\n         </div>\r\n     </div>\r\n     </div>\r\n {% endblock %}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1677702657530,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n {% block body %}\r\n     <div class=\"container\">\r\n     <div class=\"row\">\r\n         <div class=\"col-md-12 alert alert-info\">\r\n-        {{rapport.id}}\r\n+        \r\n         </div>\r\n     </div>\r\n     </div>\r\n {% endblock %}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1677703086214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,12 @@\n {% block body %}\r\n     <div class=\"container\">\r\n     <div class=\"row\">\r\n         <div class=\"col-md-12 alert alert-info\">\r\n-        \r\n+         {% for rap in rapport %}\r\n+\r\n+                {{rap.contenu}}\r\n+         {% endfor %}\r\n         </div>\r\n     </div>\r\n     </div>\r\n {% endblock %}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1677703159006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n {% extends 'chefdashboardbase.html.twig' %}\r\n {% block body %}\r\n     <div class=\"container\">\r\n     <div class=\"row\">\r\n+    <h1>Detail du rapport</h1>\r\n         <div class=\"col-md-12 alert alert-info\">\r\n          {% for rap in rapport %}\r\n \r\n                 {{rap.contenu}}\r\n"
+                },
+                {
+                    "date": 1677703963385,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n {% extends 'chefdashboardbase.html.twig' %}\r\n {% block body %}\r\n     <div class=\"container\">\r\n     <div class=\"row\">\r\n-    <h1>Detail du rapport</h1>\r\n+    <h1>Details du rapport</h1>\r\n         <div class=\"col-md-12 alert alert-info\">\r\n          {% for rap in rapport %}\r\n \r\n                 {{rap.contenu}}\r\n"
+                },
+                {
+                    "date": 1677737723308,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,8 @@\n     <div class=\"row\">\r\n     <h1>Details du rapport</h1>\r\n         <div class=\"col-md-12 alert alert-info\">\r\n          {% for rap in rapport %}\r\n-\r\n                 {{rap.contenu}}\r\n          {% endfor %}\r\n         </div>\r\n     </div>\r\n"
+                }
+            ],
+            "date": 1677701933644,
+            "name": "Commit-0",
+            "content": "{% extends 'chefdashboardbase.html.twig' %}\r\n{% block body %}\r\n    <div class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12 alert alert-info\">\r\n        \r\n        </div>\r\n    </div>\r\n    </div>\r\n{% endblock %}"
+        }
+    ]
+}

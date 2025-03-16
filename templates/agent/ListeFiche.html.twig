@@ -1,0 +1,53 @@
+{% extends 'agentdashboardbase.html.twig' %}
+
+{% block title %}Liste des fiches de demande d'empotage{% endblock %}
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" />
+{% endblock %}
+{% block body %}
+    <h1>Liste des fiches de demande d'empotage</h1>
+
+    <table class="table"  id='table1'>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom cda</th>
+                <th>Nom exportateur</th>
+                <th>Nature marchandise</th>
+                <th>Date</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for fiche in fiches %}
+            <tr>
+                <td>{{ fiche.id }}</td>
+                <td>{{ fiche.nomCda }}</td>
+                <td>{{ fiche.nomExportateur }}</td>
+                <td>{{ fiche.natureMarchandise }}</td>
+                <td>{{ fiche.date ? fiche.date|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('fiche_show', {'id': fiche.id}) }}" class="btn btn-primary">Voir Plus</a>
+                        <a href="{{path("edit_RapportEmpotage",{'id':fiche.id}) }}" class="btn btn-success">Rediger le rapport</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="13">Aucun Enregistrement Trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    
+{% endblock %}
+{% block script %}
+{{ parent() }}
+
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script>
+	$(document).ready(function () {
+    $('#table1').DataTable();
+});
+</script>
+{% endblock %}

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "templates/chef/fiche/index.html.twig",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1675328204677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1675328204677,
+            "name": "Commit-0",
+            "content": "{% extends 'chefdashboardbase.html.twig' %}\n\n{% block title %}Liste des fiches de demande d'empotage{% endblock %}\n{% block stylesheets %}\n{{ parent() }}\n\n<link rel=\"stylesheet\" href=\"https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css\" />\n{% endblock %}\n{% block body %}\n    <h1>Liste des fiches de demande d'empotage</h1>\n\n    <table class=\"table\"  id='table1'>\n        <thead>\n            <tr>\n                <th>Id</th>\n                <th>Nom cda</th>\n                <th>Nom exportateur</th>\n                <th>Nature marchandise</th>\n                <th>Date</th>\n                <th>actions</th>\n            </tr>\n        </thead>\n        <tbody>\n        {% for fiche in fiches %}\n            <tr>\n                <td>{{ fiche.id }}</td>\n                <td>{{ fiche.nomCda }}</td>\n                <td>{{ fiche.nomExportateur }}</td>\n                <td>{{ fiche.natureMarchandise }}</td>\n                <td>{{ fiche.date ? fiche.date|date('Y-m-d H:i:s') : '' }}</td>\n                <td>\n                    <a href=\"{{ path('app_fiche_show', {'id': fiche.id}) }}\" class=\"btn btn-primary\">Voir</a>\n                    <a href=\"{{ path('app_fiche_edit', {'id': fiche.id}) }}\" class=\"btn btn-success\">Editer</a>\n                </td>\n            </tr>\n        {% else %}\n            <tr>\n                <td colspan=\"13\">Aucun Enregistrement Trouvé</td>\n            </tr>\n        {% endfor %}\n        </tbody>\n    </table>\n    \n{% endblock %}\n{% block script %}\n{{ parent() }}\n\n<script src=\"https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js\"></script>\n<script>\n\t$(document).ready(function () {\n    $('#table1').DataTable();\n});\n</script>\n{% endblock %}"
+        }
+    ]
+}

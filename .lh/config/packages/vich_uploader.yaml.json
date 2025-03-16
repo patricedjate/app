@@ -1,0 +1,46 @@
+{
+    "sourceFile": "config/packages/vich_uploader.yaml",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1674461721716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1674462206329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n vich_uploader:\n     db_driver: orm\n-\n+metadata:\n+ \n     mappings:\n         products:\n           uri_prefix: /images/douane\n           upload_destination: '%kernel.project_dir%/public/images/douane'\n"
+                },
+                {
+                    "date": 1674462450713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n vich_uploader:\n     db_driver: orm\n metadata:\n- \n+    type: attribute\n     mappings:\n         products:\n           uri_prefix: /images/douane\n           upload_destination: '%kernel.project_dir%/public/images/douane'\n"
+                },
+                {
+                    "date": 1674462541709,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n vich_uploader:\n     db_driver: orm\n-metadata:\n-    type: attribute\n+    metadata:\n+        type: attribute\n     mappings:\n         products:\n           uri_prefix: /images/douane\n           upload_destination: '%kernel.project_dir%/public/images/douane'\n"
+                },
+                {
+                    "date": 1674462680295,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,8 @@\n     mappings:\n         products:\n           uri_prefix: /images/douane\n           upload_destination: '%kernel.project_dir%/public/images/douane'\n-           namer: Vich\\UploaderBundle\\Naming\\SmartUniqueNamer\n+          namer: Vich\\UploaderBundle\\Naming\\SmartUniqueNamer\n+            inject_on_load: false\n+            delete_on_update: true\n+            delete_on_remove: true\n"
+                },
+                {
+                    "date": 1674462689542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,5 @@\n     mappings:\n         products:\n           uri_prefix: /images/douane\n           upload_destination: '%kernel.project_dir%/public/images/douane'\n-          namer: Vich\\UploaderBundle\\Naming\\SmartUniqueNamer\n-            inject_on_load: false\n-            delete_on_update: true\n-            delete_on_remove: true\n+        \n"
+                },
+                {
+                    "date": 1674462722075,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,5 @@\n     mappings:\n         products:\n           uri_prefix: /images/douane\n           upload_destination: '%kernel.project_dir%/public/images/douane'\n-        \n+        namer: Vich\\UploaderBundle\\Naming\\SmartUniqueNamer\n"
+                },
+                {
+                    "date": 1674463337609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,5 @@\n     mappings:\n         products:\n           uri_prefix: /images/douane\n           upload_destination: '%kernel.project_dir%/public/images/douane'\n-        namer: Vich\\UploaderBundle\\Naming\\SmartUniqueNamer\n+          namer: Vich\\UploaderBundle\\Naming\\SmartUniqueNamer\n"
+                }
+            ],
+            "date": 1674461721716,
+            "name": "Commit-0",
+            "content": "vich_uploader:\n    db_driver: orm\n\n    mappings:\n        products:\n          uri_prefix: /images/douane\n          upload_destination: '%kernel.project_dir%/public/images/douane'\n           namer: Vich\\UploaderBundle\\Naming\\SmartUniqueNamer\n"
+        }
+    ]
+}

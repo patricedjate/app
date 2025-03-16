@@ -1,0 +1,82 @@
+{
+    "sourceFile": "templates/chef/index.html.twig",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 16,
+            "patches": [
+                {
+                    "date": 1674487839768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1674487893029,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n {% extends 'chefdashboardbase.html.twig' %}\n \n-{% block title %}Ched Dashboard{% endblock %}\n+{% block title %}Chef Dashboard{% endblock %}\n \n {% block body %}\n-\n+connectée en tant que chef de bureau\n {% endblock %}\n"
+                },
+                {
+                    "date": 1677510435267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,106 @@\n {% extends 'chefdashboardbase.html.twig' %}\n \n-{% block title %}Chef Dashboard{% endblock %}\n+{% block title %}Chef Dashboard\n+{% endblock %}\n+{% block body %}\n+\t<h4 class=\"mb-3\">Tableau De Bord</h4>\n+\t<div class=\"row\">\n+\t\t<div class=\"col-xl-4 col-sm-6 col-12\">\n+\t\t\t<div class=\"card\">\n+\t\t\t\t<div class=\"card-body\">\n+\t\t\t\t\t<div class=\"dash-widget-header\">\n+\t\t\t\t\t\t<span class=\"dash-widget-icon bg-primary\">\n+\t\t\t\t\t\t\t<i class=\"feather-user-plus\"></i>\n+\t\t\t\t\t\t</span>\n+\t\t\t\t\t\t<div class=\"dash-count\">\n+\t\t\t\t\t\t\t<h5 class=\"dash-title\">Demande D'empotage</h5>\n+\t\t\t\t\t\t\t<div class=\"dash-counts\">\n+\t\t\t\t\t\t\t\t<p>{{nombreFiche}}</p>\n+\t\t\t\t\t\t\t</div>\n+\t\t\t\t\t\t</div>\n+\t\t\t\t\t</div>\n+\t\t\t\t</div>\n+\t\t\t</div>\n+\t\t</div>\n+\t\t<div class=\"col-xl-4 col-sm-6 col-12\">\n+\t\t\t<div class=\"card\">\n+\t\t\t\t<div class=\"card-body\">\n+\t\t\t\t\t<div class=\"dash-widget-header\">\n+\t\t\t\t\t\t<span class=\"dash-widget-icon bg-blue\">\n+\t\t\t\t\t\t\t<i class=\"feather-users\"></i>\n+\t\t\t\t\t\t</span>\n+\t\t\t\t\t\t<div class=\"dash-count\">\n+\t\t\t\t\t\t\t<h5 class=\"dash-title\">Agent de visite</h5>\n+\t\t\t\t\t\t\t<div class=\"dash-counts\">\n+\t\t\t\t\t\t\t\t<p>{{nombreAgent}}</p>\n+\t\t\t\t\t\t\t</div>\n+\t\t\t\t\t\t</div>\n+\t\t\t\t\t</div>\n+\t\t\t\t</div>\n+\t\t\t</div>\n+\t\t</div>\n \n-{% block body %}\n-connectée en tant que chef de bureau\n+\t</div>\n+\t<div class=\"row\">\n+\t\t<div class=\"col-xl-4 col-sm-6 col-12\">\n+\t\t\t<div class=\"card\">\n+\t\t\t\t<div class=\"card-body\">\n+\t\t\t\t\t<div class=\"dash-widget-header\">\n+\t\t\t\t\t\t<span class=\"dash-widget-icon bg-success\">\n+\t\t\t\t\t\t\t<i class=\"feather-edit\"></i>\n+\t\t\t\t\t\t</span>\n+\t\t\t\t\t\t<div class=\"dash-count\">\n+\t\t\t\t\t\t\t<h5 class=\"dash-title\">Rapport de visite Effectué</h5>\n+\t\t\t\t\t\t\t<div class=\"dash-counts\">\n+\t\t\t\t\t\t\t\t<p>{{nombre}}</p>\n+\t\t\t\t\t\t\t</div>\n+\t\t\t\t\t\t</div>\n+\t\t\t\t\t</div>\n+\t\t\t\t</div>\n+\t\t\t</div>\n+\t\t</div>\n+\t\t<div class=\"col-xl-4 col-sm-6 col-12\">\n+\t\t\t<div class=\"card\">\n+\t\t\t\t<div class=\"card-body\">\n+\t\t\t\t\t<div class=\"dash-widget-header\">\n+\t\t\t\t\t\t<span class=\"dash-widget-icon bg-danger\">\n+\t\t\t\t\t\t\t<i class=\"feather-alert-circle\"></i>\n+\t\t\t\t\t\t</span>\n+\t\t\t\t\t\t<div class=\"dash-count\">\n+\t\t\t\t\t\t\t<h5 class=\"dash-title\">Rapport de visite non Effectué</h5>\n+\t\t\t\t\t\t\t<div class=\"dash-counts\">\n+\t\t\t\t\t\t\t\t<p>{{nonEffectue}}</p>\n+\t\t\t\t\t\t\t</div>\n+\t\t\t\t\t\t</div>\n+\t\t\t\t\t</div>\n+\t\t\t\t</div>\n+\t\t\t</div>\n+\t\t</div>\n+\t</div>\n+\t<div class=\"row\">\n+\t\t<p class=\"fs-3\">Statistique des demandes d'empotage</p>\n+\t\t<canvas id=\"myChart\" height=\"100px\" width=\"250px\"></canvas>\n+\t</div>\n {% endblock %}\n+{% block script %}\n+\t{{ parent() }}\n+\t<script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js\" integrity=\"sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>\n+\t<script>\n+\t\tlet myChart = document.querySelector(\"#myChart\")\n+let graphe = new Chart(myChart, {\n+type: \"bar\",\n+data: {\n+labels: {{ date | raw }},\n+datasets: [\n+\t\t{\n+label: \"Nombre de demande\",\n+data: {{ nbre | raw }},\n+backgroundColor: \"orange\"\n+\t\t\t\t}\n+\t\t\t]\n+\t\t}\n+\t\t\n+})\n+\t</script>\n+\n+{% endblock %}\n"
+                },
+                {
+                    "date": 1677510451030,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,9 +78,9 @@\n \t\t</div>\n \t</div>\n \t<div class=\"row\">\n \t\t<p class=\"fs-3\">Statistique des demandes d'empotage</p>\n-\t\t<canvas id=\"myChart\" height=\"100px\" width=\"250px\"></canvas>\n+\t\t<canvas id=\"myChart\" height=\"100px\" width=\"400px\"></canvas>\n \t</div>\n {% endblock %}\n {% block script %}\n \t{{ parent() }}\n"
+                },
+                {
+                    "date": 1677510461714,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,9 +78,9 @@\n \t\t</div>\n \t</div>\n \t<div class=\"row\">\n \t\t<p class=\"fs-3\">Statistique des demandes d'empotage</p>\n-\t\t<canvas id=\"myChart\" height=\"100px\" width=\"400px\"></canvas>\n+\t\t<canvas id=\"myChart\" height=\"90px\" width=\"400px\"></canvas>\n \t</div>\n {% endblock %}\n {% block script %}\n \t{{ parent() }}\n"
+                },
+                {
+                    "date": 1677510470880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,9 +78,9 @@\n \t\t</div>\n \t</div>\n \t<div class=\"row\">\n \t\t<p class=\"fs-3\">Statistique des demandes d'empotage</p>\n-\t\t<canvas id=\"myChart\" height=\"90px\" width=\"400px\"></canvas>\n+\t\t<canvas id=\"myChart\" height=\"90px\" width=\"500px\"></canvas>\n \t</div>\n {% endblock %}\n {% block script %}\n \t{{ parent() }}\n"
+                },
+                {
+                    "date": 1677510484456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,9 +78,9 @@\n \t\t</div>\n \t</div>\n \t<div class=\"row\">\n \t\t<p class=\"fs-3\">Statistique des demandes d'empotage</p>\n-\t\t<canvas id=\"myChart\" height=\"90px\" width=\"500px\"></canvas>\n+\t\t<canvas id=\"myChart\" height=\"90px\" width=\"400px\"></canvas>\n \t</div>\n {% endblock %}\n {% block script %}\n \t{{ parent() }}\n"
+                },
+                {
+                    "date": 1677515949905,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,11 +8,11 @@\n \t\t<div class=\"col-xl-4 col-sm-6 col-12\">\n \t\t\t<div class=\"card\">\n \t\t\t\t<div class=\"card-body\">\n \t\t\t\t\t<div class=\"dash-widget-header\">\n-\t\t\t\t\t\t<span class=\"dash-widget-icon bg-primary\">\n+\t\t\t\t\t\t<a href=\"{{path(\"\")}}\"><span class=\"dash-widget-icon bg-primary\">\n \t\t\t\t\t\t\t<i class=\"feather-user-plus\"></i>\n-\t\t\t\t\t\t</span>\n+\t\t\t\t\t\t</span></a>\n \t\t\t\t\t\t<div class=\"dash-count\">\n \t\t\t\t\t\t\t<h5 class=\"dash-title\">Demande D'empotage</h5>\n \t\t\t\t\t\t\t<div class=\"dash-counts\">\n \t\t\t\t\t\t\t\t<p>{{nombreFiche}}</p>\n"
+                },
+                {
+                    "date": 1677516006003,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \t\t<div class=\"col-xl-4 col-sm-6 col-12\">\n \t\t\t<div class=\"card\">\n \t\t\t\t<div class=\"card-body\">\n \t\t\t\t\t<div class=\"dash-widget-header\">\n-\t\t\t\t\t\t<a href=\"{{path(\"\")}}\"><span class=\"dash-widget-icon bg-primary\">\n+\t\t\t\t\t\t<a href=\"{{path(\"app_fiche_index\")}}\"><span class=\"dash-widget-icon bg-primary\">\n \t\t\t\t\t\t\t<i class=\"feather-user-plus\"></i>\n \t\t\t\t\t\t</span></a>\n \t\t\t\t\t\t<div class=\"dash-count\">\n \t\t\t\t\t\t\t<h5 class=\"dash-title\">Demande D'empotage</h5>\n"
+                },
+                {
+                    "date": 1677516052671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,11 +25,11 @@\n \t\t<div class=\"col-xl-4 col-sm-6 col-12\">\n \t\t\t<div class=\"card\">\n \t\t\t\t<div class=\"card-body\">\n \t\t\t\t\t<div class=\"dash-widget-header\">\n-\t\t\t\t\t\t<span class=\"dash-widget-icon bg-blue\">\n+\t\t\t\t\t\t<a href=\"><span class=\"dash-widget-icon bg-blue\">\n \t\t\t\t\t\t\t<i class=\"feather-users\"></i>\n-\t\t\t\t\t\t</span>\n+\t\t\t\t\t\t</span></a>\n \t\t\t\t\t\t<div class=\"dash-count\">\n \t\t\t\t\t\t\t<h5 class=\"dash-title\">Agent de visite</h5>\n \t\t\t\t\t\t\t<div class=\"dash-counts\">\n \t\t\t\t\t\t\t\t<p>{{nombreAgent}}</p>\n"
+                },
+                {
+                    "date": 1677516077723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \t\t<div class=\"col-xl-4 col-sm-6 col-12\">\n \t\t\t<div class=\"card\">\n \t\t\t\t<div class=\"card-body\">\n \t\t\t\t\t<div class=\"dash-widget-header\">\n-\t\t\t\t\t\t<a href=\"><span class=\"dash-widget-icon bg-blue\">\n+\t\t\t\t\t\t<a href=\"{{path(\"\")}}\"><span class=\"dash-widget-icon bg-blue\">\n \t\t\t\t\t\t\t<i class=\"feather-users\"></i>\n \t\t\t\t\t\t</span></a>\n \t\t\t\t\t\t<div class=\"dash-count\">\n \t\t\t\t\t\t\t<h5 class=\"dash-title\">Agent de visite</h5>\n"
+                },
+                {
+                    "date": 1677516101461,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \t\t<div class=\"col-xl-4 col-sm-6 col-12\">\n \t\t\t<div class=\"card\">\n \t\t\t\t<div class=\"card-body\">\n \t\t\t\t\t<div class=\"dash-widget-header\">\n-\t\t\t\t\t\t<a href=\"{{path(\"\")}}\"><span class=\"dash-widget-icon bg-blue\">\n+\t\t\t\t\t\t<a href=\"{{path(\"chef_ListeAgent\")}}\"><span class=\"dash-widget-icon bg-blue\">\n \t\t\t\t\t\t\t<i class=\"feather-users\"></i>\n \t\t\t\t\t\t</span></a>\n \t\t\t\t\t\t<div class=\"dash-count\">\n \t\t\t\t\t\t\t<h5 class=\"dash-title\">Agent de visite</h5>\n"
+                },
+                {
+                    "date": 1677737966248,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -89,13 +89,13 @@\n \t\tlet myChart = document.querySelector(\"#myChart\")\n let graphe = new Chart(myChart, {\n type: \"bar\",\n data: {\n-labels: {{ date | raw }},\n+labels: ['Jan', 'Feb', 'Mar','Apr','May', 'Jun', 'Jul', 'Aug', 'Sep', 'oct', 'Nov', 'Dec'],\n datasets: [\n \t\t{\n label: \"Nombre de demande\",\n-data: {{ nbre | raw }},\n+data: [],\n backgroundColor: \"orange\"\n \t\t\t\t}\n \t\t\t]\n \t\t}\n"
+                },
+                {
+                    "date": 1677738084302,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -93,9 +93,9 @@\n labels: ['Jan', 'Feb', 'Mar','Apr','May', 'Jun', 'Jul', 'Aug', 'Sep', 'oct', 'Nov', 'Dec'],\n datasets: [\n \t\t{\n label: \"Nombre de demande\",\n-data: [],\n+data: [26,45,84,23,45,65,78,65,42,36,28,60],\n backgroundColor: \"orange\"\n \t\t\t\t}\n \t\t\t]\n \t\t}\n"
+                },
+                {
+                    "date": 1677738194343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,9 +78,9 @@\n \t\t</div>\n \t</div>\n \t<div class=\"row\">\n \t\t<p class=\"fs-3\">Statistique des demandes d'empotage</p>\n-\t\t<canvas id=\"myChart\" height=\"90px\" width=\"400px\"></canvas>\n+\t\t<canvas id=\"myChart\"></canvas>\n \t</div>\n {% endblock %}\n {% block script %}\n \t{{ parent() }}\n"
+                },
+                {
+                    "date": 1677738211767,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,9 +78,9 @@\n \t\t</div>\n \t</div>\n \t<div class=\"row\">\n \t\t<p class=\"fs-3\">Statistique des demandes d'empotage</p>\n-\t\t<canvas id=\"myChart\"></canvas>\n+\t\t<div><canvas id=\"myChart\"></canvas></div>\n \t</div>\n {% endblock %}\n {% block script %}\n \t{{ parent() }}\n"
+                },
+                {
+                    "date": 1677738225371,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,9 +78,9 @@\n \t\t</div>\n \t</div>\n \t<div class=\"row\">\n \t\t<p class=\"fs-3\">Statistique des demandes d'empotage</p>\n-\t\t<div><canvas id=\"myChart\"></canvas></div>\n+\t\t<div style=\"width: 800px;\"><canvas id=\"myChart\"></canvas></div>\n \t</div>\n {% endblock %}\n {% block script %}\n \t{{ parent() }}\n"
+                }
+            ],
+            "date": 1674487839768,
+            "name": "Commit-0",
+            "content": "{% extends 'chefdashboardbase.html.twig' %}\n\n{% block title %}Ched Dashboard{% endblock %}\n\n{% block body %}\n\n{% endblock %}\n"
+        }
+    ]
+}

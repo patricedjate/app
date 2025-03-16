@@ -1,0 +1,18 @@
+{
+    "sourceFile": "templates/agentdashboardsidebar.html.twig",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1674484504327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1674484504327,
+            "name": "Commit-0",
+            "content": "<div class=\"sidebar\" id=\"sidebar\">\r\n\t<div class=\"sidebar-inner slimscroll\">\r\n\t\t<div id=\"sidebar-menu\" class=\"sidebar-menu\">\r\n\t\t\t<ul>\r\n\t\t\t\t<li class=\"menu-title\">\r\n\t\t\t\t\t<span>Main</span>\r\n\t\t\t\t</li>\r\n\t\t\t\t<li class=\"active\">\r\n\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t<i class=\"feather-grid\"></i>\r\n\t\t\t\t\t\t<span>Tableau de bord</span>\r\n\t\t\t\t\t</a>\r\n\t\t\t\t</li>\r\n\t\t\t\t<li class=\"submenu\">\r\n\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t<i class=\"feather-file-text\"></i>\r\n\t\t\t\t\t\t<span>Demande d'empotage</span>\r\n\t\t\t\t\t\t<span class=\"menu-arrow\"></span>\r\n\t\t\t\t\t</a>\r\n\t\t\t\t\t<ul>\r\n\t\t\t\t\t\t<li><a href=\"\">Effectué</a></li>\r\n                        <li><a href=\"\">En attente</a></li>\r\n\t\t\t\t\t</ul>\r\n\t\t\t\t</li>\r\n\t\t\t\t<li class=\"menu-title\">\r\n\t\t\t\t\t<span>Paramètre</span>\r\n\t\t\t\t</li>\r\n\t\t\t\t<li class=\"submenu\">\r\n\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t<i class=\"feather-file-text\"></i>\r\n\t\t\t\t\t\t<span>Compte</span>\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t</a>\r\n\t\t\t\t</li>\r\n\t\t\t\t\t<li class=\"submenu\">\r\n\t\t\t\t\t<a href=\"{{path(\"app_logout\")}}\">\r\n\t\t\t\t\t\t<i class=\"feather-file-text\"></i>\r\n\t\t\t\t\t\t<span> Se deconnecter</span>\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t</a>\r\n\t\t\t\t</li>\r\n\t\t\t</ul>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n"
+        }
+    ]
+}

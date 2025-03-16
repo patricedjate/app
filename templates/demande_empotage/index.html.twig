@@ -1,0 +1,92 @@
+{% extends 'CDADashboardBase.html.twig' %}
+{% block title %}Formulaire demande d'empotage
+{% endblock %}
+{% block body %}
+	
+			<div class="col">
+				<p>ministere du budget et du
+					<br>
+					portefeuille de l'etat
+					<br>
+					<span class="text-center">----------<span>
+							<br>
+							direction generale des douanes
+							<br><span class="text-center">----------<span><br>
+									direction des services douaniers 
+																																										            du port et des services speciaux
+									<br>
+									sous direction des service
+									<br>
+									douaniers du port
+									<br><span class="text-center">----------<span><br>
+											bureau export</p>
+									</div>
+									<div class="col">
+										<img src="{{asset("assets/img/logoDouane.png")}}" class="rounded mx-auto d-block" alt="..." width="80px">
+									</div>
+									<div class="col">
+										<p>republique de côte d'ivoire</p>
+										<p>Union - Discipline - Travail</p>
+									</div>
+								</div>
+								{{ form_start(form) }}
+								<hr class="mt-0">
+								<h5 class="mb-1">Informations personnels</h5>
+								<p class="mb-3"></p>
+								<div class="row">
+									<div class="col">
+										{{ form_row(form.nom_cda) }}
+									</div>
+									<div class="col">
+										{{ form_row(form.nom_exportateur) }}
+									</div>
+								</div>
+								<hr class="mt-2">
+								<h5 class="mb-1">Informations sur la marchandise</h5>
+								<p class="mb-3"></p>
+								<div class="row">
+									<div class="col">
+										{{ form_row(form.nature_marchandise) }}
+									</div>
+									<div class="col">
+										{{ form_row(form.colis_marchandise) }}
+									</div>
+									<div class="col">
+										{{ form_row(form.poidsNet_marchandise) }}
+									</div>
+								</div>
+								<div class="row">
+									<div class="col">
+										{{ form_row(form.conditionnement_marchandise) }}
+									</div>
+									<div class="col">
+										{{ form_row(form.lieuEmpotage_marchandise) }}
+									</div>
+								</div>
+								<hr class="mt-2">
+								<h5 class="mb-1">Informations sur le conteneur</h5>
+								<p class="mb-3"></p>
+								<div class="row">
+									<div class="col">
+										{{ form_row(form.nconteneurs) }}
+									</div>
+									<div class="col">
+										{{ form_row(form.typeTC) }}
+									</div>
+									<div class="col">
+										{{ form_row(form.nplombs) }}
+									</div>
+									<div class="col change-photo-btn mt-3">
+										<span>
+											<i class="fa fa-upload"></i>Upload BLC
+										</span>
+										{{form_row(form.imageFile)}}
+									</div>
+								
+
+
+							<div class="container">
+								{{ form_row(form.Submit) }}
+							</div>
+							{{ form_end(form) }}
+						{% endblock %}

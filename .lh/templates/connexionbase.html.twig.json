@@ -1,0 +1,34 @@
+{
+    "sourceFile": "templates/connexionbase.html.twig",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1677017484900,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1677017515133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,22 +18,9 @@\n \t\t{% endblock %}\r\n \r\n \t</head>\r\n \t<body>\r\n-    <div class=\"home-one-banner bg-warning\">\r\n-\t\t\t\t\r\n-\t\t\t\t<div class=\"container \">\r\n-\t\t\t\t\t{% include \"navbar.html.twig\" %}\r\n-\t\t\t\t\t\r\n-\t\t\t\t</div>\r\n-    </div>\r\n-\t\t<div class=\"main-wrapper  text-dark \"   >\r\n \t\t\t{% block body %}{% endblock %}\r\n-\t\t\t</div>\r\n-\r\n-        {% block footer %}\r\n-        {% include \"footer.html.twig\" %}\r\n-        {% endblock %}\r\n \t\t{% block script %}\r\n \t\t\t<script data-cfasync=\"false\" src=\"../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js\"></script>\r\n \t\t\t<script src=\"{{asset(\"assets/js/jquery-3.6.0.min.js\")}}\"></script>\r\n \r\n"
+                },
+                {
+                    "date": 1677509390007,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,7 +34,14 @@\n \r\n \t\t\t<script src=\"{{asset(\"assets/js/aos.js\")}}\"></script>\r\n \r\n \t\t\t<script src=\"{{asset(\"assets/js/script.js\")}}\"></script>\r\n+\t\t<script>\tconst myModal = document.getElementById('myModal')\r\n+const myInput = document.getElementById('myInput')\r\n+\r\n+myModal.addEventListener('shown.bs.modal', () => {\r\n+  myInput.focus()\r\n+})\r\n+</script>\r\n \t\t{% endblock %}\r\n \t</body>\r\n </html>\r\n"
+                },
+                {
+                    "date": 1677509541387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,7 +41,8 @@\n myModal.addEventListener('shown.bs.modal', () => {\r\n   myInput.focus()\r\n })\r\n </script>\r\n+ <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN\" crossorigin=\"anonymous\"></script>\r\n \t\t{% endblock %}\r\n \t</body>\r\n </html>\r\n"
+                },
+                {
+                    "date": 1677509734233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,15 +34,9 @@\n \r\n \t\t\t<script src=\"{{asset(\"assets/js/aos.js\")}}\"></script>\r\n \r\n \t\t\t<script src=\"{{asset(\"assets/js/script.js\")}}\"></script>\r\n-\t\t<script>\tconst myModal = document.getElementById('myModal')\r\n-const myInput = document.getElementById('myInput')\r\n \r\n-myModal.addEventListener('shown.bs.modal', () => {\r\n-  myInput.focus()\r\n-})\r\n-</script>\r\n  <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN\" crossorigin=\"anonymous\"></script>\r\n \t\t{% endblock %}\r\n \t</body>\r\n </html>\r\n"
+                }
+            ],
+            "date": 1677017484900,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\r\n<html lang=\"fr\">\r\n\t<head>\r\n\t\t<meta charset=\"utf-8\">\r\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=0\">\r\n\t\t<title>\r\n\t\t\t{% block title %}{% endblock %}\r\n\t\t</title>\r\n\t\t<link type=\"image/x-icon\" href=\"{{asset(\"assets/img/favicon.png\")}}\" rel=\"icon\">\r\n\t\t{% block stylesheets %}\r\n\t\t\t<link rel=\"stylesheet\" href=\"{{asset(\"assets/css/bootstrap.min.css\")}}\">\r\n\t\t\t<link rel=\"stylesheet\" href=\"{{asset(\"assets/plugins/fontawesome/css/fontawesome.min.css\")}}\">\r\n\t\t\t<link rel=\"stylesheet\" href=\"{{asset(\"assets/plugins/fontawesome/css/all.min.css\")}}\">\r\n\t\t\t<link rel=\"stylesheet\" href=\"{{asset(\"assets/css/feather.css\")}}\">\r\n\t\t\t<link rel=\"stylesheet\" href=\"{{asset(\"assets/plugins/select2/css/select2.min.css\")}}\">\r\n\t\t\t<link rel=\"stylesheet\" href=\"{{asset(\"assets/css/aos.css\")}}\">\r\n\t\t\t<link rel=\"stylesheet\" href=\"{{asset(\"assets/css/style.css\")}}\">\r\n\t\t{% endblock %}\r\n\r\n\t</head>\r\n\t<body>\r\n    <div class=\"home-one-banner bg-warning\">\r\n\t\t\t\t\r\n\t\t\t\t<div class=\"container \">\r\n\t\t\t\t\t{% include \"navbar.html.twig\" %}\r\n\t\t\t\t\t\r\n\t\t\t\t</div>\r\n    </div>\r\n\t\t<div class=\"main-wrapper  text-dark \"   >\r\n\t\t\t{% block body %}{% endblock %}\r\n\t\t\t</div>\r\n\r\n        {% block footer %}\r\n        {% include \"footer.html.twig\" %}\r\n        {% endblock %}\r\n\t\t{% block script %}\r\n\t\t\t<script data-cfasync=\"false\" src=\"../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js\"></script>\r\n\t\t\t<script src=\"{{asset(\"assets/js/jquery-3.6.0.min.js\")}}\"></script>\r\n\r\n\t\t\t<script src=\"{{asset(\"assets/js/bootstrap.bundle.min.js\")}}\"></script>\r\n\r\n\t\t\t<script src=\"{{asset(\"assets/js/feather.min.js\")}}\"></script>\r\n\r\n\t\t\t<script src=\"{{asset(\"assets/plugins/select2/js/select2.min.js\")}}\"></script>\r\n\r\n\t\t\t<script src=\"{{asset(\"assets/js/slick.js\")}}\"></script>\r\n\r\n\t\t\t<script src=\"{{asset(\"assets/js/aos.js\")}}\"></script>\r\n\r\n\t\t\t<script src=\"{{asset(\"assets/js/script.js\")}}\"></script>\r\n\t\t{% endblock %}\r\n\t</body>\r\n</html>\r\n"
+        }
+    ]
+}
